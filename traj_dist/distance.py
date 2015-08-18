@@ -4,8 +4,6 @@ from lcss import e_lcss, g_lcss
 from frechet import frechet
 from discret_frechet import discret_frechet
 from hausdorff import e_hausdorff, g_hausdorff
-from segment_distance import segments_distance
-
 
 from c_sspd import c_e_sspd, c_g_sspd
 from c_dtw import c_e_dtw, c_g_dtw
@@ -13,26 +11,55 @@ from c_lcss import c_e_lcss, c_g_lcss
 from c_hausdorff import c_e_hausdorff, c_g_hausdorff
 from c_discret_frechet import c_discret_frechet
 from c_frechet import c_frechet
-from c_segment_distance import c_segments_distance
-
 
 import numpy as np
 
-__all__=['distance']
+__all__ = ['distance']
 
-def remove_consecutive_point(traj):
-    ind_g=np.array(map(lambda x : not(np.all(x)),traj[:-1]==traj[1:]))
-    ind=np.where(ind_g)[0]
-    return traj[np.hstack((ind_g,True))],ind
+METRIC_DIC = {"geographical": {"cython": {"sspd": c_g_sspd, "dtw": c_g_dtw, "lcss": c_g_lcss, "hausdorff":
+    c_g_hausdorff},
+                               "python": {"sspd": g_sspd, "dtw": g_dtw, "lcss": g_lcss, "hausdorff":
+                                   g_hausdorff}},
+              "euclidean": {"cython": {"sspd": c_e_sspd, "dtw": c_e_dtw, "lcss": c_e_lcss, "hausdorff":
+                  c_e_hausdorff, "discret_frechet": c_discret_frechet, "frechet": c_frechet},
+                            "python": {"sspd": e_sspd, "dtw": e_dtw, "lcss": e_lcss, "hausdorff":
+                                e_hausdorff, "discret_frechet": discret_frechet, "frechet": frechet}}}
 
+# ####################
+# Pairwise Distance #
+# ####################
 
-def mat_distance(traj_list, dist="sspd", type="euclidean",extra_arg=None,implementation="auto" ):
+def pdist(traj_list, metric="sspd", type="euclidean", extra_arg=None, implementation="auto"):
     """
     Usage
     -----
-    Compute the "dist" distance between trajectory traj_0, traj_1.
+    Pairwise distances between trajectory in traj_list.
 
-    dist available are : "sspd", "dtw", "lcss", "hausdorff", "frechet", "discret frechet"
+    metrics available are :
+
+    1. 'sspd'
+
+        Computes the distances using the Symmetrized Segment Path distance.
+
+    2. 'dtw'
+
+        Computes the distances using the Dynamic Path Warping distance.
+
+    3. 'lcss'
+
+        Computes the distances using the Longuest Common SubSequence distance
+
+    4. 'hausdorf'
+
+        Computes the distances using the Hausdorff distance.
+
+    5. 'frechet'
+
+        Computes the distances using the Frechet distance.
+
+    6. 'discret_frechet'
+
+        Computes the distances using the Discrete Frechet distance.
 
     type available are "euclidean" or "geographical". Some distance can be computing according to geographical space
     instead of euclidean. If so, traj_0 and traj_1 have to be 2-dimensional. First column is longitude, second one
@@ -44,285 +71,170 @@ def mat_distance(traj_list, dist="sspd", type="euclidean",extra_arg=None,impleme
     Parameters
     ----------
 
-    param traj_0: len(traj_0) x n numpy array, trajectory
-    param traj_1: len(traj_1) x n numpy array, trajectory
-    param dist : string, distance used
-    param type : string, distance type
+    param traj_list: a list of nT numpy array trajectory
+    param metric : string, distance used
+    param type : string, distance type used
     param extra_arg : dict, extra argument needeed to some distance
 
     Returns
     -------
+
+    M : a nT x nT numpy array. Where the i,j entry is the distance between traj_list[i] and traj_list[j]
     """
 
-    list_dim = map(lambda x : x.shape[1],traj_list)
+    list_dim = map(lambda x: x.shape[1], traj_list)
     nb_traj = len(traj_list)
-    if not(np.all(map(lambda x : x==2,list_dim))) :
-        raise ValueError("The trajectories must have same dimesion !")
-    else:
-        if list_dim[0]!=2 or implementation == "python":
-            print("Computing "+type+" distance "+dist+" with Python for %d trajectories" %nb_traj)
+    if not (len(set(list_dim)) == 1):
+        raise ValueError("All trajectories must have same dimesion !")
+    dim= list_dim[0]
 
-            if type =="euclidean":
-                M=m_e_distance(traj_list,nb_traj, dist=dist,extra_arg=extra_arg )
-            elif type == "geographical":
-                M=m_g_distance(traj_list,nb_traj, dist=dist,extra_arg=extra_arg )
-            else:
-                raise ValueError("type " + type + "Unknown \nShould be geographical or euclidean")
-        else :
-            print("Computing "+type+" distance "+dist+" with Cython for %d trajectories" %nb_traj)
-            if type =="euclidean":
-                  M=c_m_e_distance(traj_list,nb_traj, dist=dist,extra_arg=extra_arg )
-            elif type == "geographical":
-                M=c_m_g_distance(traj_list,nb_traj, dist=dist,extra_arg=extra_arg )
-            else:
-                raise ValueError("type " + type + "Unknown \nShould be geographical or euclidean")
+    if not (metric in ["sspd", "dtw", "lcss", "hausdorff", "frechet", "discret_frechet"]):
+        raise ValueError("The metric argument should be 'sspd', 'dtw', 'lcss', 'hausdorff', 'frechet','discret_frechet'\nmetric given is : " + metric)
+
+    if not (type in ["geographical", "euclidean"]):
+        raise ValueError("The type argument should be 'euclidean' or 'geographical'\ntype given is : " + type)
+
+    if not (implementation in ["cython", "python", "auto"]):
+        raise ValueError("The implementation argument should be 'cython', 'python' or 'auto'\nimplementation given is : " + implementation)
+
+    if type == "geographical" and (metric in ["frechet", "discret_frechet"]):
+        raise ValueError("Geographical implementation for distance "+metric+" is not "
+                         "disponible")
+    if dim!=2 and implementation == "cython":
+        raise ValueError("Implementation with cython is disponible only with 2-dimension trajectories, "
+                         "not %d-dimension" %dim)
+
+    if implementation =="auto":
+        if dim == 2:
+            implementation = "cython"
+        else:
+            implementation = "python"
+    print("Computing " + type + " distance " + metric + " with implementation " + implementation + " for %d trajectories" % nb_traj)
+    M = np.zeros((nb_traj, nb_traj))
+    dist = METRIC_DIC[type][implementation][metric]
+    if metric == "lcss":
+        eps = extra_arg["eps"]
+        for i in range(nb_traj):
+            for j in range(i + 1, nb_traj):
+                M[i, j] = dist(traj_list[i], traj_list[j],eps)
+                M[j, i] = M[i, j]
+    else:
+        for i in range(nb_traj):
+            for j in range(i + 1, nb_traj):
+                M[i, j] = dist(traj_list[i], traj_list[j])
+                M[j, i] = M[i, j]
+
     return M
 
-def m_g_distance(traj_list,nb_traj, dist="sspd",extra_arg=None ):
+# ########################
+#  Distance between list #
+# ########################
+
+def cdist(traj_list_1, traj_list_2, metric="sspd", type="euclidean", extra_arg=None, implementation="auto"):
     """
     Usage
     -----
-    Compute the geographical "dist" distance between trajectory traj_0, traj_1.
+    Computes distance between each pair of the two list of trajectories
 
-    dist available are : "sspd", "dtw", "lcss", "hausdorff"
+    metrics available are :
+
+    1. 'sspd'
+
+        Computes the distances using the Symmetrized Segment Path distance.
+
+    2. 'dtw'
+
+        Computes the distances using the Dynamic Path Warping distance.
+
+    3. 'lcss'
+
+        Computes the distances using the Longuest Common SubSequence distance
+
+    4. 'hausdorf'
+
+        Computes the distances using the Hausdorff distance.
+
+    5. 'frechet'
+
+        Computes the distances using the Frechet distance.
+
+    6. 'discret_frechet'
+
+        Computes the distances using the Discrete Frechet distance.
+
+    type available are "euclidean" or "geographical". Some distance can be computing according to geographical space
+    instead of euclidean. If so, traj_0 and traj_1 have to be 2-dimensional. First column is longitude, second one
+    is latitude.
+
+    If the distance traj_0 and traj_1 are 2-dimensional, the cython implementation is used else the python one is used.
+    unless "python" implementation is specified
 
     Parameters
     ----------
 
-    param traj_0: len(traj_0) x n numpy array, trajectory
-    param traj_1: len(traj_1) x n numpy array, trajectory
-    param dist : string, distance used
+    param traj_list_1: a list of nT1 numpy array trajectory
+    param traj_list_2: a list of nT2 numpy array trajectory
+    param metric : string, distance used
+    param type : string, distance type used
     param extra_arg : dict, extra argument needeed to some distance
 
     Returns
     -------
-    """
-    M=np.zeros((nb_traj,nb_traj))
+    M : a nT1 x nT2 numpy array. Where the i,j entry is the distance between traj_list_1[i] and traj_list_2[j]
 
-    if dist == "sspd":
-        for i in range(nb_traj):
-            for j in range(i+1,nb_traj):
-                M[i,j]=g_sspd(traj_list[i],traj_list[j])
-                M[j,i]=M[i,j]
-    elif dist == "dtw":
-        for i in range(nb_traj):
-            for j in range(i+1,nb_traj):
-                M[i,j]=g_dtw(traj_list[i],traj_list[j])
-                M[j,i]=M[i,j]
-    elif dist == "lcss":
+    """
+
+    list_dim_1 = map(lambda x: x.shape[1], traj_list_1)
+    nb_traj_1 = len(traj_list_1)
+    list_dim_2 = map(lambda x: x.shape[1], traj_list_2)
+    nb_traj_2 = len(traj_list_2)
+    if not (len(set(list_dim_1 + list_dim_2)) == 1):
+        raise ValueError("All trajectories must have same dimesion !")
+    dim= list_dim_1[0]
+
+    if not (metric in ["sspd", "dtw", "lcss", "hausdorff", "frechet", "discret_frechet"]):
+        raise ValueError("The metric argument should be 'sspd', 'dtw', 'lcss', 'hausdorff', 'frechet','discret_frechet'\nmetric given is : " + metric)
+
+    if not (type in ["geographical", "euclidean"]):
+        raise ValueError("The type argument should be 'euclidean' or 'geographical'\ntype given is : " + type)
+
+    if not (implementation in ["cython", "python", "auto"]):
+        raise ValueError("The implementation argument should be 'cython', 'python' or 'auto'\nimplementation given is : " + implementation)
+
+    if type == "geographical" and (metric in ["frechet", "discret_frechet"]):
+        raise ValueError("Geographical implementation for distance "+metric+" is not "
+                         "disponible")
+    if dim!=2 and implementation == "cython":
+        raise ValueError("Implementation with cython is disponible only with 2-dimension trajectories, "
+                         "not %d-dimension" %dim)
+
+    if implementation =="auto":
+        if dim == 2:
+            implementation = "cython"
+        else:
+            implementation = "python"
+    print("Computing " + type + " distance " + metric + " with implementation " + implementation + " for %d and %d "
+                                                                                                   "trajectories" %
+          (nb_traj_1,nb_traj_2))
+    M = np.zeros((nb_traj_1, nb_traj_2))
+    dist = METRIC_DIC[type][implementation][metric]
+    if metric == "lcss":
         eps = extra_arg["eps"]
-        for i in range(nb_traj):
-            for j in range(i+1,nb_traj):
-                M[i,j]=g_lcss(traj_list[i],traj_list[j],eps)
-                M[j,i]=M[i,j]
-    elif dist == "hausdorff":
-        for i in range(nb_traj):
-            for j in range(i+1,nb_traj):
-                M[i,j]=g_hausdorff(traj_list[i],traj_list[j])
-                M[j,i]=M[i,j]
+        for i in range(nb_traj_1):
+            for j in range(nb_traj_2):
+                M[i, j] = dist(traj_list_1[i], traj_list_2[j],eps)
     else:
-        raise ValueError("Distance " + dist +" not implemented\n Should be sspd, dtw, lcss, hausdorff")
-    return M
-
-def c_m_g_distance(traj_list,nb_traj, dist="sspd",extra_arg=None ):
-    """
-    Usage
-    -----
-    Compute the geographical "dist" distance between trajectory traj_0, traj_1.
-
-    dist available are : "sspd", "dtw", "lcss", "hausdorff"
-
-    Parameters
-    ----------
-
-    param traj_0: len(traj_0) x n numpy array, trajectory
-    param traj_1: len(traj_1) x n numpy array, trajectory
-    param dist : string, distance used
-    param extra_arg : dict, extra argument needeed to some distance
-
-    Returns
-    -------
-    """
-    M=np.zeros((nb_traj,nb_traj))
-    if dist == "sspd":
-        for i in range(nb_traj):
-            for j in range(i+1,nb_traj):
-                M[i,j]=c_g_sspd(traj_list[i],traj_list[j])
-                M[j,i]=M[i,j]
-    elif dist == "dtw":
-        for i in range(nb_traj):
-            for j in range(i+1,nb_traj):
-                M[i,j]=c_g_dtw(traj_list[i],traj_list[j])
-                M[j,i]=M[i,j]
-    elif dist == "lcss":
-        eps = extra_arg["eps"]
-        for i in range(nb_traj):
-            for j in range(i+1,nb_traj):
-                M[i,j]=c_g_lcss(traj_list[i],traj_list[j],eps)
-                M[j,i]=M[i,j]
-    elif dist == "hausdorff":
-        for i in range(nb_traj):
-            for j in range(i+1,nb_traj):
-                M[i,j]=c_g_hausdorff(traj_list[i],traj_list[j])
-                M[j,i]=M[i,j]
-    else:
-        raise ValueError("Distance " + dist +" not implemented\n Should be sspd, dtw, lcss, hausdorff")
+        for i in range(nb_traj_1):
+            for j in range(nb_traj_2):
+                M[i, j] = dist(traj_list_1[i], traj_list_2[j])
     return M
 
 
-def m_e_distance(traj_list,nb_traj, dist="sspd",extra_arg=None ):
-    """
-    Usage
-    -----
-    Compute the geographical "dist" distance between trajectory traj_0, traj_1.
+###################
+# Simple distance #
+###################
 
-    dist available are : "sspd", "dtw", "lcss", "hausdorff"
-
-    Parameters
-    ----------
-
-    param traj_0: len(traj_0) x n numpy array, trajectory
-    param traj_1: len(traj_1) x n numpy array, trajectory
-    param dist : string, distance used
-    param extra_arg : dict, extra argument needeed to some distance
-
-    Returns
-    -------
-    """
-    M=np.zeros((nb_traj,nb_traj))
-    if dist == "sspd":
-        for i in range(nb_traj):
-            for j in range(i+1,nb_traj):
-                M[i,j]=e_sspd(traj_list[i],traj_list[j])
-                M[j,i]=M[i,j]
-    elif dist == "dtw":
-        for i in range(nb_traj):
-            for j in range(i+1,nb_traj):
-                M[i,j]=e_dtw(traj_list[i],traj_list[j])
-                M[j,i]=M[i,j]
-    elif dist == "lcss":
-        eps = extra_arg["eps"]
-        for i in range(nb_traj):
-            for j in range(i+1,nb_traj):
-                M[i,j]=e_lcss(traj_list[i],traj_list[j],eps)
-                M[j,i]=M[i,j]
-    elif dist == "hausdorff":
-        for i in range(nb_traj):
-            for j in range(i+1,nb_traj):
-                M[i,j]=e_hausdorff(traj_list[i],traj_list[j])
-                M[j,i]=M[i,j]
-    elif dist == "frechet":
-        for i in range(nb_traj):
-            for j in range(i+1,nb_traj):
-                M[i,j]=frechet(traj_list[i],traj_list[j])
-                M[j,i]=M[i,j]
-    elif dist == "discret_frechet":
-        for i in range(nb_traj):
-            for j in range(i+1,nb_traj):
-                M[i,j]=discret_frechet(traj_list[i],traj_list[j])
-                M[j,i]=M[i,j]
-    elif dist == "segments":
-        traj__list=[]
-        ind_list=[]
-        traj_inds=[]
-        for i in range(nb_traj):
-            traj_i_,ind_i=remove_consecutive_point(traj_list[i])
-            if len(ind_i!=0):
-                traj__list.append(traj_i_)
-                ind_list.extend(map(lambda x : (i,x),ind_i))
-                traj_inds.append(i)
-        M=np.zeros((len(ind_list),len(ind_list)))
-        ind_list=np.array(ind_list)
-        ind_mat=map(lambda x : np.where(ind_list[:,0]==x)[0],traj_inds)
-        for ni in traj_inds:
-            for nj in traj_inds[ni:]:
-                MIJ=segments_distance(traj__list[ni],traj__list[nj])
-                M[ind_mat[ni][0]:ind_mat[ni][-1]+1,ind_mat[nj][0]:ind_mat[nj][-1]+1]=MIJ
-                if ni!=nj:
-                    M[ind_mat[nj][0]:ind_mat[nj][-1]+1,ind_mat[ni][0]:ind_mat[ni][-1]+1]=MIJ.T
-        M=(M,ind_list)
-    else:
-        raise ValueError("Distance " + dist +" not implemented\n Should be sspd, dtw, lcss, hausdorff")
-    return M
-
-def c_m_e_distance(traj_list,nb_traj, dist="sspd",extra_arg=None ):
-    """
-    Usage
-    -----
-    Compute the geographical "dist" distance between trajectory traj_0, traj_1.
-
-    dist available are : "sspd", "dtw", "lcss", "hausdorff"
-
-    Parameters
-    ----------
-
-    param traj_0: len(traj_0) x n numpy array, trajectory
-    param traj_1: len(traj_1) x n numpy array, trajectory
-    param dist : string, distance used
-    param extra_arg : dict, extra argument needeed to some distance
-
-    Returns
-    -------
-    """
-    M=np.zeros((nb_traj,nb_traj))
-    if dist == "sspd":
-        for i in range(nb_traj):
-            for j in range(i+1,nb_traj):
-                M[i,j]=c_e_sspd(traj_list[i],traj_list[j])
-                M[j,i]=M[i,j]
-
-    elif dist == "dtw":
-        for i in range(nb_traj):
-            for j in range(i+1,nb_traj):
-                M[i,j]=c_e_dtw(traj_list[i],traj_list[j])
-                M[j,i]=M[i,j]
-    elif dist == "lcss":
-        eps = extra_arg["eps"]
-        for i in range(nb_traj):
-            for j in range(i+1,nb_traj):
-                M[i,j]=c_e_lcss(traj_list[i],traj_list[j],eps)
-                M[j,i]=M[i,j]
-    elif dist == "hausdorff":
-        for i in range(nb_traj):
-            for j in range(i+1,nb_traj):
-                M[i,j]=c_e_hausdorff(traj_list[i],traj_list[j])
-                M[j,i]=M[i,j]
-    elif dist == "frechet":
-        for i in range(nb_traj):
-            for j in range(i+1,nb_traj):
-                M[i,j]=c_frechet(traj_list[i],traj_list[j])
-                M[j,i]=M[i,j]
-    elif dist == "discret_frechet":
-        for i in range(nb_traj):
-            for j in range(i+1,nb_traj):
-                M[i,j]=c_discret_frechet(traj_list[i],traj_list[j])
-                M[j,i]=M[i,j]
-    elif dist == "segments":
-        traj__list=[]
-        ind_list=[]
-        traj_inds=[]
-        for i in range(nb_traj):
-            traj_i_,ind_i=remove_consecutive_point(traj_list[i])
-            if len(ind_i!=0):
-                traj__list.append(traj_i_)
-                ind_list.extend(map(lambda x : (i,x),ind_i))
-                traj_inds.append(i)
-        M=np.zeros((len(ind_list),len(ind_list)))
-        ind_list=np.array(ind_list)
-        ind_mat=map(lambda x : np.where(ind_list[:,0]==x)[0],traj_inds)
-        for ni in traj_inds:
-            for nj in traj_inds[ni:]:
-                MIJ=c_segments_distance(traj__list[ni],traj__list[nj])
-                M[ind_mat[ni][0]:ind_mat[ni][-1]+1,ind_mat[nj][0]:ind_mat[nj][-1]+1]=MIJ
-                if ni!=nj:
-                    M[ind_mat[nj][0]:ind_mat[nj][-1]+1,ind_mat[ni][0]:ind_mat[ni][-1]+1]=MIJ.T
-        M=(M,ind_list)
-
-    else:
-        raise ValueError("Distance " + dist +" not implemented\n Should be sspd, dtw, lcss, hausdorff")
-    return M
-
-def distance(traj_0, traj_1, dist="sspd", type="euclidean",extra_arg=None,implementation="auto" ):
+def distance(traj_0, traj_1, metric="sspd", type="euclidean", extra_arg=None, implementation="auto"):
     """
     Usage
     -----
@@ -342,36 +254,36 @@ def distance(traj_0, traj_1, dist="sspd", type="euclidean",extra_arg=None,implem
 
     param traj_0: len(traj_0) x n numpy array, trajectory
     param traj_1: len(traj_1) x n numpy array, trajectory
-    param dist : string, distance used
+    param metric : string, distance used
     param type : string, distance type
     param extra_arg : dict, extra argument needeed to some distance
 
     Returns
     -------
     """
-    n0= traj_0.shape[1]
-    n1= traj_1.shape[1]
-    if n0!=n1 :
+    n0 = traj_0.shape[1]
+    n1 = traj_1.shape[1]
+    if n0 != n1:
         raise ValueError("The trajectories must have same dimesion !")
     else:
-        if n0!=2 or implementation == "python":
-            if type =="euclidean":
-                d=e_distance(traj_0, traj_1, dist=dist,extra_arg=extra_arg )
+        if n0 != 2 or implementation == "python":
+            if type == "euclidean":
+                d = eucl_dist(traj_0, traj_1, metric=metric, extra_arg=extra_arg)
             elif type == "geographical":
-                d=g_distance(traj_0, traj_1, dist=dist,extra_arg=extra_arg )
+                d = geo_dist(traj_0, traj_1, metric=metric, extra_arg=extra_arg)
             else:
                 raise ValueError("type " + type + "Unknown \nShould be geographical or euclidean")
-        else :
-            if type =="euclidean":
-                d=c_e_distance(traj_0, traj_1, dist=dist,extra_arg=extra_arg )
+        else:
+            if type == "euclidean":
+                d = c_eucl_dist(traj_0, traj_1, metric=metric, extra_arg=extra_arg)
             elif type == "geographical":
-                d=c_g_distance(traj_0, traj_1, dist=dist,extra_arg=extra_arg )
+                d = c_geo_dist(traj_0, traj_1, metric=metric, extra_arg=extra_arg)
             else:
                 raise ValueError("type " + type + "Unknown \nShould be geographical or euclidean")
     return d
 
 
-def g_distance(traj_0, traj_1, dist="sspd",extra_arg=None ):
+def geo_dist(traj_0, traj_1, metric="sspd", extra_arg=None):
     """
     Usage
     -----
@@ -384,26 +296,27 @@ def g_distance(traj_0, traj_1, dist="sspd",extra_arg=None ):
 
     param traj_0: len(traj_0) x n numpy array, trajectory
     param traj_1: len(traj_1) x n numpy array, trajectory
-    param dist : string, distance used
+    param metric : string, distance used
     param extra_arg : dict, extra argument needeed to some distance
 
     Returns
     -------
     """
-    if dist == "sspd":
-        d=g_sspd(traj_0,traj_1)
-    elif dist == "dtw":
-        d=g_dtw(traj_0,traj_1)
-    elif dist == "lcss":
+    if metric == "sspd":
+        d = g_sspd(traj_0, traj_1)
+    elif metric == "dtw":
+        d = g_dtw(traj_0, traj_1)
+    elif metric == "lcss":
         eps = extra_arg["eps"]
-        d=g_lcss(traj_0,traj_1,eps)
-    elif dist == "hausdorff":
-        d=g_hausdorff(traj_0,traj_1)
+        d = g_lcss(traj_0, traj_1, eps)
+    elif metric == "hausdorff":
+        d = g_hausdorff(traj_0, traj_1)
     else:
-        raise ValueError("Distance " + dist +" not implemented\n Should be sspd, dtw, lcss, hausdorff")
+        raise ValueError("Distance " + metric + " not implemented\n Should be sspd, dtw, lcss, hausdorff")
     return d
 
-def e_distance(traj_0, traj_1, dist="sspd",extra_arg=None ):
+
+def eucl_dist(traj_0, traj_1, metric="sspd", extra_arg=None):
     """
     Usage
     -----
@@ -416,36 +329,33 @@ def e_distance(traj_0, traj_1, dist="sspd",extra_arg=None ):
 
     param traj_0: len(traj_0) x n numpy array, trajectory
     param traj_1: len(traj_1) x n numpy array, trajectory
-    param dist : string, distance used
+    param metric : string, distance used
     param type : string, distance type
     param extra_arg : dict, extra argument needeed to some distance
 
     Returns
     -------
     """
-    if dist == "sspd":
-        d=e_sspd(traj_0,traj_1)
-    elif dist == "dtw":
-        d=e_dtw(traj_0,traj_1)
-    elif dist == "lcss":
+    if metric == "sspd":
+        d = e_sspd(traj_0, traj_1)
+    elif metric == "dtw":
+        d = e_dtw(traj_0, traj_1)
+    elif metric == "lcss":
         eps = extra_arg["eps"]
-        d=e_lcss(traj_0,traj_1,eps)
-    elif dist == "hausdorff":
-        d=e_hausdorff(traj_0,traj_1)
-    elif dist == "frechet":
-        d=frechet(traj_0,traj_1)
-    elif dist == "discret_frechet":
-        d=discret_frechet(traj_0,traj_1)
-    elif dist == "segments":
-        traj_0_,ind_0=remove_consecutive_point(traj_0)
-        traj_1_,ind_1=remove_consecutive_point(traj_1)
-        d=(segments_distance(traj_0_,traj_1_),ind_0,ind_1)
+        d = e_lcss(traj_0, traj_1, eps)
+    elif metric == "hausdorff":
+        d = e_hausdorff(traj_0, traj_1)
+    elif metric == "frechet":
+        d = frechet(traj_0, traj_1)
+    elif metric == "discret_frechet":
+        d = discret_frechet(traj_0, traj_1)
     else:
-        raise ValueError("Distance " + dist +" not implemented\n Should be sspd, dtw, lcss, hausdorff, "
-                                           "frechet or discret frechet")
+        raise ValueError("Distance " + metric + " not implemented\n Should be sspd, dtw, lcss, hausdorff, "
+                                                "frechet or discret frechet")
     return d
 
-def c_g_distance(traj_0, traj_1, dist="sspd",extra_arg=None ):
+
+def c_geo_dist(traj_0, traj_1, metric="sspd", extra_arg=None):
     """
     Usage
     -----
@@ -458,26 +368,27 @@ def c_g_distance(traj_0, traj_1, dist="sspd",extra_arg=None ):
 
     param traj_0: len(traj_0) x n numpy array, trajectory
     param traj_1: len(traj_1) x n numpy array, trajectory
-    param dist : string, distance used
+    param metric : string, distance used
     param extra_arg : dict, extra argument needeed to some distance
 
     Returns
     -------
     """
-    if dist == "sspd":
-        d=c_g_sspd(traj_0,traj_1)
-    elif dist == "dtw":
-        d=c_g_dtw(traj_0,traj_1)
-    elif dist == "lcss":
+    if metric == "sspd":
+        d = c_g_sspd(traj_0, traj_1)
+    elif metric == "dtw":
+        d = c_g_dtw(traj_0, traj_1)
+    elif metric == "lcss":
         eps = extra_arg["eps"]
-        d=c_g_lcss(traj_0,traj_1,eps)
-    elif dist == "hausdorff":
-        d=c_g_hausdorff(traj_0,traj_1)
+        d = c_g_lcss(traj_0, traj_1, eps)
+    elif metric == "hausdorff":
+        d = c_g_hausdorff(traj_0, traj_1)
     else:
-        raise ValueError("Distance " + dist +" not implemented\n Should be sspd, dtw, lcss, hausdorff")
+        raise ValueError("Distance " + metric + " not implemented\n Should be sspd, dtw, lcss, hausdorff")
     return d
 
-def c_e_distance(traj_0, traj_1, dist="sspd",extra_arg=None ):
+
+def c_eucl_dist(traj_0, traj_1, metric="sspd", extra_arg=None):
     """
     Usage
     -----
@@ -490,33 +401,29 @@ def c_e_distance(traj_0, traj_1, dist="sspd",extra_arg=None ):
 
     param traj_0: len(traj_0) x n numpy array, trajectory
     param traj_1: len(traj_1) x n numpy array, trajectory
-    param dist : string, distance used
+    param metric : string, distance used
     param type : string, distance type
     param extra_arg : dict, extra argument needeed to some distance
 
     Returns
     -------
     """
-    if dist == "sspd":
-        d=c_e_sspd(traj_0,traj_1)
-    elif dist == "dtw":
-        d=c_e_dtw(traj_0,traj_1)
-    elif dist == "lcss":
+    if metric == "sspd":
+        d = c_e_sspd(traj_0, traj_1)
+    elif metric == "dtw":
+        d = c_e_dtw(traj_0, traj_1)
+    elif metric == "lcss":
         eps = extra_arg["eps"]
-        d=c_e_lcss(traj_0,traj_1,eps)
-    elif dist == "hausdorff":
-        d=c_e_hausdorff(traj_0,traj_1)
-    elif dist == "frechet":
-        d=c_frechet(traj_0,traj_1)
-    elif dist == "discret_frechet":
-        d=c_discret_frechet(traj_0,traj_1)
-    elif dist == "segments":
-        traj_0_,ind_0=remove_consecutive_point(traj_0)
-        traj_1_,ind_1=remove_consecutive_point(traj_1)
-        d=(c_segments_distance(traj_0_,traj_1_),ind_0,ind_1)
+        d = c_e_lcss(traj_0, traj_1, eps)
+    elif metric == "hausdorff":
+        d = c_e_hausdorff(traj_0, traj_1)
+    elif metric == "frechet":
+        d = c_frechet(traj_0, traj_1)
+    elif metric == "discret_frechet":
+        d = c_discret_frechet(traj_0, traj_1)
     else:
-        raise ValueError("Distance " + dist +" not implemented\n Should be sspd, dtw, lcss, hausdorff, "
-                                           "frechet, discret frechet or segments    ")
+        raise ValueError("Distance " + metric + " not implemented\n Should be sspd, dtw, lcss, hausdorff, "
+                                                "frechet or discret frechet")
     return d
 
 

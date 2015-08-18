@@ -18,6 +18,7 @@ traj_dist/dtw.py
 traj_dist/frechet.py
 traj_dist/hausdorff.py
 traj_dist/lcss.py
+traj_dist/linecell.py
 traj_dist/segment_distance.py
 traj_dist/sspd.py
 trajectory_distance.egg-info/PKG-INFO
