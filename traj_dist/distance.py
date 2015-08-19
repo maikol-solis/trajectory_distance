@@ -1,9 +1,12 @@
+from linecell import trajectory_set_grid
+
 from sspd import e_sspd, g_sspd
 from dtw import e_dtw, g_dtw
 from lcss import e_lcss, g_lcss
 from frechet import frechet
 from discret_frechet import discret_frechet
 from hausdorff import e_hausdorff, g_hausdorff
+from sowd import sowd_grid,sowd_grid_brut
 
 from c_sspd import c_e_sspd, c_g_sspd
 from c_dtw import c_e_dtw, c_g_dtw
@@ -11,25 +14,27 @@ from c_lcss import c_e_lcss, c_g_lcss
 from c_hausdorff import c_e_hausdorff, c_g_hausdorff
 from c_discret_frechet import c_discret_frechet
 from c_frechet import c_frechet
+from c_sowd import c_sowd_grid_brut,c_sowd_grid
 
 import numpy as np
 
 __all__ = ['distance']
 
 METRIC_DIC = {"geographical": {"cython": {"sspd": c_g_sspd, "dtw": c_g_dtw, "lcss": c_g_lcss, "hausdorff":
-    c_g_hausdorff},
+    c_g_hausdorff, "sowd_grid": c_sowd_grid, "sowd_grid_brut": c_sowd_grid_brut },
                                "python": {"sspd": g_sspd, "dtw": g_dtw, "lcss": g_lcss, "hausdorff":
-                                   g_hausdorff}},
+                                   g_hausdorff, "sowd_grid": sowd_grid, "sowd_grid_brut": sowd_grid_brut  }},
               "euclidean": {"cython": {"sspd": c_e_sspd, "dtw": c_e_dtw, "lcss": c_e_lcss, "hausdorff":
-                  c_e_hausdorff, "discret_frechet": c_discret_frechet, "frechet": c_frechet},
+                  c_e_hausdorff, "discret_frechet": c_discret_frechet, "frechet": c_frechet, "sowd_grid": c_sowd_grid,
+                                       "sowd_grid_brut": c_sowd_grid_brut },
                             "python": {"sspd": e_sspd, "dtw": e_dtw, "lcss": e_lcss, "hausdorff":
-                                e_hausdorff, "discret_frechet": discret_frechet, "frechet": frechet}}}
+                                e_hausdorff, "discret_frechet": discret_frechet, "frechet": frechet, "sowd_grid": sowd_grid, "sowd_grid_brut": sowd_grid_brut }}}
 
 # ####################
 # Pairwise Distance #
 # ####################
 
-def pdist(traj_list, metric="sspd", type="euclidean", extra_arg=None, implementation="auto"):
+def pdist(traj_list, metric="sspd", type_d="euclidean", extra_arg=None, implementation="auto"):
     """
     Usage
     -----
@@ -61,7 +66,7 @@ def pdist(traj_list, metric="sspd", type="euclidean", extra_arg=None, implementa
 
         Computes the distances using the Discrete Frechet distance.
 
-    type available are "euclidean" or "geographical". Some distance can be computing according to geographical space
+    type_d available are "euclidean" or "geographical". Some distance can be computing according to geographical space
     instead of euclidean. If so, traj_0 and traj_1 have to be 2-dimensional. First column is longitude, second one
     is latitude.
 
@@ -73,7 +78,7 @@ def pdist(traj_list, metric="sspd", type="euclidean", extra_arg=None, implementa
 
     param traj_list: a list of nT numpy array trajectory
     param metric : string, distance used
-    param type : string, distance type used
+    param type_d : string, distance type_d used
     param extra_arg : dict, extra argument needeed to some distance
 
     Returns
@@ -88,16 +93,19 @@ def pdist(traj_list, metric="sspd", type="euclidean", extra_arg=None, implementa
         raise ValueError("All trajectories must have same dimesion !")
     dim= list_dim[0]
 
-    if not (metric in ["sspd", "dtw", "lcss", "hausdorff", "frechet", "discret_frechet"]):
-        raise ValueError("The metric argument should be 'sspd', 'dtw', 'lcss', 'hausdorff', 'frechet','discret_frechet'\nmetric given is : " + metric)
+    if not (metric in ["sspd", "dtw", "lcss", "hausdorff", "frechet", "discret_frechet", "sowd_grid",
+                       "sowd_grid_brut"]):
+        raise ValueError("The metric argument should be 'sspd', 'dtw', 'lcss', 'hausdorff', 'frechet',"
+                         "'discret_frechet', 'sowd_grid' or 'sowd_grid_brut'\nmetric given is : " + metric)
 
-    if not (type in ["geographical", "euclidean"]):
-        raise ValueError("The type argument should be 'euclidean' or 'geographical'\ntype given is : " + type)
+    if not (type_d in ["geographical", "euclidean"]):
+        raise ValueError("The type_d argument should be 'euclidean' or 'geographical'\ntype_d given is : " + type_d)
 
     if not (implementation in ["cython", "python", "auto"]):
-        raise ValueError("The implementation argument should be 'cython', 'python' or 'auto'\nimplementation given is : " + implementation)
+        raise ValueError("The implementation argument should be 'cython', 'python' or 'auto'\n implementation given "
+                         "is : " + implementation)
 
-    if type == "geographical" and (metric in ["frechet", "discret_frechet"]):
+    if type_d == "geographical" and (metric in ["frechet", "discret_frechet"]):
         raise ValueError("Geographical implementation for distance "+metric+" is not "
                          "disponible")
     if dim!=2 and implementation == "cython":
@@ -109,19 +117,37 @@ def pdist(traj_list, metric="sspd", type="euclidean", extra_arg=None, implementa
             implementation = "cython"
         else:
             implementation = "python"
-    print("Computing " + type + " distance " + metric + " with implementation " + implementation + " for %d trajectories" % nb_traj)
+    print("Computing " + type_d + " distance " + metric + " with implementation " + implementation + " for %d trajectories" % nb_traj)
     M = np.zeros((nb_traj, nb_traj))
-    dist = METRIC_DIC[type][implementation][metric]
-    if metric == "lcss":
+    dist = METRIC_DIC[type_d][implementation][metric]
+    if metric.startswith("sowd_grid"):
+        converted = extra_arg["converted"]
+        if converted:
+            cells_list=traj_list
+        else:
+            precision = extra_arg["precision"]
+            cells_list, _, _ =trajectory_set_grid(traj_list,precision)
+        for i in range(nb_traj):
+            cells_list_i=cells_list[i]
+            for j in range(i + 1, nb_traj):
+                cells_list_j=cells_list[j]
+                M[i, j] = dist(cells_list_i, cells_list_j)
+                M[j, i] = M[i, j]
+
+    elif metric == "lcss":
         eps = extra_arg["eps"]
         for i in range(nb_traj):
+            traj_list_i = traj_list[i]
             for j in range(i + 1, nb_traj):
-                M[i, j] = dist(traj_list[i], traj_list[j],eps)
+                traj_list_j = traj_list[j]
+                M[i, j] = dist(traj_list_i, traj_list_j,eps)
                 M[j, i] = M[i, j]
     else:
         for i in range(nb_traj):
+            traj_list_i = traj_list[i]
             for j in range(i + 1, nb_traj):
-                M[i, j] = dist(traj_list[i], traj_list[j])
+                traj_list_j = traj_list[j]
+                M[i, j] = dist(traj_list_i, traj_list_j)
                 M[j, i] = M[i, j]
 
     return M
@@ -130,7 +156,7 @@ def pdist(traj_list, metric="sspd", type="euclidean", extra_arg=None, implementa
 #  Distance between list #
 # ########################
 
-def cdist(traj_list_1, traj_list_2, metric="sspd", type="euclidean", extra_arg=None, implementation="auto"):
+def cdist(traj_list_1, traj_list_2, metric="sspd", type_d="euclidean", extra_arg=None, implementation="auto"):
     """
     Usage
     -----
@@ -162,7 +188,7 @@ def cdist(traj_list_1, traj_list_2, metric="sspd", type="euclidean", extra_arg=N
 
         Computes the distances using the Discrete Frechet distance.
 
-    type available are "euclidean" or "geographical". Some distance can be computing according to geographical space
+    type_d available are "euclidean" or "geographical". Some distance can be computing according to geographical space
     instead of euclidean. If so, traj_0 and traj_1 have to be 2-dimensional. First column is longitude, second one
     is latitude.
 
@@ -175,7 +201,7 @@ def cdist(traj_list_1, traj_list_2, metric="sspd", type="euclidean", extra_arg=N
     param traj_list_1: a list of nT1 numpy array trajectory
     param traj_list_2: a list of nT2 numpy array trajectory
     param metric : string, distance used
-    param type : string, distance type used
+    param type_d : string, distance type_d used
     param extra_arg : dict, extra argument needeed to some distance
 
     Returns
@@ -192,16 +218,18 @@ def cdist(traj_list_1, traj_list_2, metric="sspd", type="euclidean", extra_arg=N
         raise ValueError("All trajectories must have same dimesion !")
     dim= list_dim_1[0]
 
-    if not (metric in ["sspd", "dtw", "lcss", "hausdorff", "frechet", "discret_frechet"]):
-        raise ValueError("The metric argument should be 'sspd', 'dtw', 'lcss', 'hausdorff', 'frechet','discret_frechet'\nmetric given is : " + metric)
+    if not (metric in ["sspd", "dtw", "lcss", "hausdorff", "frechet", "discret_frechet", "sowd_grid",
+        "sowd_grid_brut"]):
+        raise ValueError("The metric argument should be 'sspd', 'dtw', 'lcss', 'hausdorff', 'frechet',"
+                         "'discret_frechet', 'sowd_grid' or 'sowd_grid_brut'\nmetric given is : " + metric)
 
-    if not (type in ["geographical", "euclidean"]):
-        raise ValueError("The type argument should be 'euclidean' or 'geographical'\ntype given is : " + type)
+    if not (type_d in ["geographical", "euclidean"]):
+        raise ValueError("The type_d argument should be 'euclidean' or 'geographical'\ntype_d given is : " + type_d)
 
     if not (implementation in ["cython", "python", "auto"]):
         raise ValueError("The implementation argument should be 'cython', 'python' or 'auto'\nimplementation given is : " + implementation)
 
-    if type == "geographical" and (metric in ["frechet", "discret_frechet"]):
+    if type_d == "geographical" and (metric in ["frechet", "discret_frechet"]):
         raise ValueError("Geographical implementation for distance "+metric+" is not "
                          "disponible")
     if dim!=2 and implementation == "cython":
@@ -213,20 +241,40 @@ def cdist(traj_list_1, traj_list_2, metric="sspd", type="euclidean", extra_arg=N
             implementation = "cython"
         else:
             implementation = "python"
-    print("Computing " + type + " distance " + metric + " with implementation " + implementation + " for %d and %d "
+    print("Computing " + type_d + " distance " + metric + " with implementation " + implementation + " for %d and %d "
                                                                                                    "trajectories" %
           (nb_traj_1,nb_traj_2))
     M = np.zeros((nb_traj_1, nb_traj_2))
-    dist = METRIC_DIC[type][implementation][metric]
+    dist = METRIC_DIC[type_d][implementation][metric]
+    if metric.startswith("sowd_grid"):
+        converted = extra_arg["converted"]
+        if converted:
+            cells_list_1=traj_list_1
+            cells_list_2=traj_list_2
+        else:
+            precision = extra_arg["precision"]
+            cells_list, _, _ =trajectory_set_grid(traj_list_1+traj_list_2,precision)
+            cells_list_1 = cells_list[:nb_traj_1]
+            cells_list_2 = cells_list[nb_traj_1:]
+        for i in range(nb_traj_1):
+            cells_list_1_i = cells_list_1[i]
+            for j in range(nb_traj_2):
+                cells_list_2_j = cells_list_2[j]
+                M[i, j] = dist(cells_list_1_i, cells_list_2_j)
+
     if metric == "lcss":
         eps = extra_arg["eps"]
         for i in range(nb_traj_1):
+            traj_list_1_i = traj_list_1[i]
             for j in range(nb_traj_2):
-                M[i, j] = dist(traj_list_1[i], traj_list_2[j],eps)
+                traj_list_2_j = traj_list_2[j]
+                M[i, j] = dist(traj_list_1_i, traj_list_2_j,eps)
     else:
         for i in range(nb_traj_1):
+            traj_list_1_i = traj_list_1[i]
             for j in range(nb_traj_2):
-                M[i, j] = dist(traj_list_1[i], traj_list_2[j])
+                traj_list_2_j = traj_list_2[j]
+                M[i, j] = dist(traj_list_1_i, traj_list_2_j)
     return M
 
 
@@ -234,7 +282,7 @@ def cdist(traj_list_1, traj_list_2, metric="sspd", type="euclidean", extra_arg=N
 # Simple distance #
 ###################
 
-def distance(traj_0, traj_1, metric="sspd", type="euclidean", extra_arg=None, implementation="auto"):
+def distance(traj_0, traj_1, metric="sspd", type_d="euclidean", extra_arg=None, implementation="auto"):
     """
     Usage
     -----
@@ -242,7 +290,7 @@ def distance(traj_0, traj_1, metric="sspd", type="euclidean", extra_arg=None, im
 
     dist available are : "sspd", "dtw", "lcss", "hausdorff", "frechet", "discret_frechet"
 
-    type available are "euclidean" or "geographical". Some distance can be computing according to geographical space
+    type_d available are "euclidean" or "geographical". Some distance can be computing according to geographical space
     instead of euclidean. If so, traj_0 and traj_1 have to be 2-dimensional. First column is longitude, second one
     is latitude.
 
@@ -255,7 +303,7 @@ def distance(traj_0, traj_1, metric="sspd", type="euclidean", extra_arg=None, im
     param traj_0: len(traj_0) x n numpy array, trajectory
     param traj_1: len(traj_1) x n numpy array, trajectory
     param metric : string, distance used
-    param type : string, distance type
+    param type_d : string, distance type_d
     param extra_arg : dict, extra argument needeed to some distance
 
     Returns
@@ -267,19 +315,19 @@ def distance(traj_0, traj_1, metric="sspd", type="euclidean", extra_arg=None, im
         raise ValueError("The trajectories must have same dimesion !")
     else:
         if n0 != 2 or implementation == "python":
-            if type == "euclidean":
+            if type_d == "euclidean":
                 d = eucl_dist(traj_0, traj_1, metric=metric, extra_arg=extra_arg)
-            elif type == "geographical":
+            elif type_d == "geographical":
                 d = geo_dist(traj_0, traj_1, metric=metric, extra_arg=extra_arg)
             else:
-                raise ValueError("type " + type + "Unknown \nShould be geographical or euclidean")
+                raise ValueError("type_d " + type_d + "Unknown \nShould be geographical or euclidean")
         else:
-            if type == "euclidean":
+            if type_d == "euclidean":
                 d = c_eucl_dist(traj_0, traj_1, metric=metric, extra_arg=extra_arg)
-            elif type == "geographical":
+            elif type_d == "geographical":
                 d = c_geo_dist(traj_0, traj_1, metric=metric, extra_arg=extra_arg)
             else:
-                raise ValueError("type " + type + "Unknown \nShould be geographical or euclidean")
+                raise ValueError("type_d " + type_d + "Unknown \nShould be geographical or euclidean")
     return d
 
 
@@ -330,7 +378,7 @@ def eucl_dist(traj_0, traj_1, metric="sspd", extra_arg=None):
     param traj_0: len(traj_0) x n numpy array, trajectory
     param traj_1: len(traj_1) x n numpy array, trajectory
     param metric : string, distance used
-    param type : string, distance type
+    param type_d : string, distance type_d
     param extra_arg : dict, extra argument needeed to some distance
 
     Returns
@@ -402,7 +450,7 @@ def c_eucl_dist(traj_0, traj_1, metric="sspd", extra_arg=None):
     param traj_0: len(traj_0) x n numpy array, trajectory
     param traj_1: len(traj_1) x n numpy array, trajectory
     param metric : string, distance used
-    param type : string, distance type
+    param type_d : string, distance type_d
     param extra_arg : dict, extra argument needeed to some distance
 
     Returns

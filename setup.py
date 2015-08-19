@@ -12,7 +12,8 @@ ext_modules = [Extension("traj_dist.c_basic_geographical", [ "traj_dist/c_basic_
                Extension("traj_dist.c_discret_frechet", [ "traj_dist/c_discret_frechet.pyx" ]),
                Extension("traj_dist.c_frechet", [ "traj_dist/c_frechet.pyx" ]),
                Extension("traj_dist.c_distance", [ "traj_dist/c_distance.pyx" ]),
-               Extension("traj_dist.c_segment_distance", [ "traj_dist/c_segment_distance.pyx" ])]
+               Extension("traj_dist.c_segment_distance", [ "traj_dist/c_segment_distance.pyx" ]),
+               Extension("traj_dist.c_sowd", [ "traj_dist/c_sowd.pyx" ])]
 
 setup(
     name = "trajectory_distance",

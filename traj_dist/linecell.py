@@ -15,149 +15,6 @@ def truncate_colormap(cmap, minval=0.0, maxval=1.0, n=100):
 
 CMAP_HIST = truncate_colormap(plt.get_cmap("Blues"),0.2,1)
 
-
-def lines_cell_lons_bigger(p1,p2,precision):
-    reverse=False
-    if p2[1]<p1[1]:
-        tmp=p1
-        p1=p2
-        p2=tmp
-        reverse=True
-
-    if p1[0]<p2[0]:
-        order="croissant"
-        idx_step=1
-    else:
-        order="decroissant"
-        idx_step=-1
-
-    p1e=geoh.encode(p1[1],p1[0],precision)
-    p2e=geoh.encode(p2[1],p2[0],precision)
-    line = geos.LineString([p1,p2])
-    lat1,lon1,dlat,dlon=geoh.decode_exactly(p1e)
-    lat2,lon2,dlat,dlon=geoh.decode_exactly(p2e)
-
-
-    lats=np.arange(lat1-dlat,lat2+3*dlat,dlat*2)
-    lons=np.arange(lon1-idx_step*dlon,lon2+idx_step*(3*dlon),idx_step*dlon*2)
-    lats_center=np.arange(lat1,lat2+2*dlat,dlat*2)
-    lons_center=np.arange(lon1,lon2+idx_step*(2*dlon),idx_step*dlon*2)
-
-    nlons=len(lons)-2
-
-    if order=="croissant":
-        cell = [[0,0]]
-    else:
-        cell = [[nlons,0]]
-        lons_center = lons_center[::-1]
-
-    lons_inter = []
-    for l in lons[1:-1]:
-        lons_shape=geos.LineString([[l,lats[0]],[l,lats[-1]]])
-        lons_inter.append(lons_shape.intersection(line))
-
-    idx_lat = 0
-    for p_int in lons_inter:
-        if p_int.y<lats[idx_lat+1]:
-            cell.append([cell[-1][0]+idx_step,cell[-1][1]])
-        else:
-            cell.append([cell[-1][0],cell[-1][1]+1])
-            cell.append([cell[-1][0]+idx_step,cell[-1][1]])
-            idx_lat+=1
-    if lat2>lats[idx_lat+1]:
-        cell.append([cell[-1][0],cell[-1][1]+1])
-    #if lat2 > lats[-2]:
-    #    cell.append([cell[-1][0],cell[-1][1]+1])
-    if reverse:
-        cell.reverse()
-    cells_coord = map(lambda x : [lons_center[x[0]],lats_center[x[1]]], cell)
-    return cells_coord,cell,lons,lats
-
-
-def lines_cell_lats_bigger(p1,p2,precision):
-    reverse=False
-    if p2[0]<p1[0]:
-        tmp=p1
-        p1=p2
-        p2=tmp
-        reverse=True
-
-    if p1[1]<p2[1]:
-        order="croissant"
-        idx_step=1
-    else:
-        order="decroissant"
-        idx_step=-1
-
-    p1e=geoh.encode(p1[1],p1[0],precision)
-    p2e=geoh.encode(p2[1],p2[0],precision)
-    line = geos.LineString([p1,p2])
-    lat1,lon1,dlat,dlon=geoh.decode_exactly(p1e)
-    lat2,lon2,dlat,dlon=geoh.decode_exactly(p2e)
-
-
-    lats=np.arange(lat1-idx_step*dlat,lat2+idx_step*(3*dlat),idx_step*dlat*2)
-    lons=np.arange(lon1-dlon,lon2+3*dlon,dlon*2)
-
-    lats_center=np.arange(lat1,lat2+idx_step*(2*dlat),idx_step*dlat*2)
-    lons_center=np.arange(lon1,lon2+2*dlon,dlon*2)
-
-    nlats=len(lats)-2
-
-    if order=="croissant":
-        cell = [[0,0]]
-    else:
-        cell = [[0,nlats]]
-        lats_center=lats_center[::-1]
-
-    lats_inter = []
-    for l in lats[1:-1] :
-        lats_shape=geos.LineString([[lons[0],l],[lons[-1],l]])
-        lats_inter.append(lats_shape.intersection(line))
-
-    idx_lon = 0
-    for p_int in lats_inter:
-        if p_int.x<lons[idx_lon+1]:
-            cell.append([cell[-1][0],cell[-1][1]+idx_step])
-        else:
-            cell.append([cell[-1][0]+1,cell[-1][1]])
-            cell.append([cell[-1][0],cell[-1][1]+idx_step])
-            idx_lon+=1
-    if lon2>lons[idx_lon+1]:
-        cell.append([cell[-1][0]+1,cell[-1][1]])
-    if reverse:
-        cell.reverse()
-    cells_coord = map(lambda x : [lons_center[x[0]],lats_center[x[1]]], cell)
-    return cells_coord,cell,lons,lats
-
-
-def plot_line_cells_segment(fig,ax,p1,p2,lons,lats,cells,cells_coord):
-
-    maplon = [min(lons),max(lons)]
-    maplat = [min(lats),max(lats)]
-
-    lons=sorted(lons)
-    lats=sorted(lats)
-    m = Basemap(maplon[0],maplat[0],maplon[1],maplat[1],ax=ax)
-    #latitude
-    for l in lats :
-        m.plot([maplon[0],maplon[1]],[l,l],linestyle="-",color="black")
-    #longitude
-    for l in lons :
-        m.plot([l,l],[maplat[0],maplat[1]],linestyle="-",color="black")
-    for idx,(x,y) in enumerate(cells_coord):
-        plt.text(x,y,"%d \n (%.3f,%.3f)"%(idx,cells_coord[idx][0],cells_coord[idx][1]),
-                 verticalalignment="center",horizontalalignment="center",fontsize=6)
-    #plot segment exemple
-    x,y = m([p1[0],p2[0]],[p1[1],p2[1]])
-    plt.text(p1[0],p1[1],r"$p_{1}$",color="grey")
-    plt.text(p2[0],p2[1],r"$p_{2}$",color="grey")
-    m.plot(x,y,marker=".", linestyle="-",color="grey")
-
-    ax.set_xlim(maplon[0],maplon[1])
-    ax.set_ylim(maplat[0],maplat[1])
-
-
 def linecell_lons_bigger_step(p1,p2,cell_start,lons_all,lats_all,lons_center_all,lats_center_all):
 
     reverse=False
@@ -289,8 +146,6 @@ def get_extremum(traj):
     max_lat=max(lats)
     return min_lon,min_lat,max_lon,max_lat
 
-
-
 def trajectory_set_grid(traj_set,precision):
     extremums=np.array(map(get_extremum,traj_set))
     p_bottom_left=[min(extremums[:,0]),min(extremums[:,1])]
@@ -326,14 +181,12 @@ def trajectory_set_grid(traj_set,precision):
             cell_start=cell[-1]
         cells.append(cell_start)
         cells_traj.append(cells)
-    return cells_traj,lons_all,lats_all
-
+        cells_traj_=map(np.array,cells_traj)
+    return cells_traj_,lons_all,lats_all
 
 def trajectory_grid(traj_0,precision):
     cells_list,lons_all,lats_all=trajectory_set_grid([traj_0],precision)
     return cells_list[0],lons_all,lats_all
-
-
 
 def plot_line_cells_trajectory(fig,ax,traj,lons,lats,cells,display="number",grid=True,patch=False,plot_traj=True):
 

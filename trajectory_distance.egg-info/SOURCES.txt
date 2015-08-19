@@ -11,6 +11,7 @@ traj_dist/c_frechet.pyx
 traj_dist/c_hausdorff.pyx
 traj_dist/c_lcss.pyx
 traj_dist/c_segment_distance.pyx
+traj_dist/c_sowd.pyx
 traj_dist/c_sspd.pyx
 traj_dist/discret_frechet.py
 traj_dist/distance.py
@@ -20,6 +21,7 @@ traj_dist/hausdorff.py
 traj_dist/lcss.py
 traj_dist/linecell.py
 traj_dist/segment_distance.py
+traj_dist/sowd.py
 traj_dist/sspd.py
 trajectory_distance.egg-info/PKG-INFO
 trajectory_distance.egg-info/SOURCES.txt
