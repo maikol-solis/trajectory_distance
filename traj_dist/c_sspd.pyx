@@ -37,8 +37,8 @@ cdef double _e_spd (np.ndarray[np.float64_t,ndim=2] t1, np.ndarray[np.float64_t,
     nt=len(t1)
     spd=0
     for i from 0 <= i < (nt):
-        px=t1[i][0]
-        py=t1[i][1]
+        px=t1[i,0]
+        py=t1[i,1]
         spd=spd+c_point_to_trajectory(px,py,t2)
     spd=spd/nt
     return spd
@@ -66,8 +66,8 @@ def c_e_spd (np.ndarray[np.float64_t,ndim=2] t1, np.ndarray[np.float64_t,ndim=2]
     nt=len(t1)
     spd=0
     for i from 0 <= i < (nt):
-        px=t1[i][0]
-        py=t1[i][1]
+        px=t1[i,0]
+        py=t1[i,1]
         spd=spd+c_point_to_trajectory(px,py,t2)
     spd=spd/nt
     return spd

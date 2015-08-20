@@ -93,8 +93,8 @@ def c_segments_distance(np.ndarray[np.float64_t,ndim=2] traj_0,np.ndarray[np.flo
     M=np.zeros((n0-1,n1-1))
     for i in range(n0-1):
         for j in range(n1-1):
-            M[i,j]=_mixed_distance(traj_0[i][0],traj_0[i][1],traj_0[i+1][0],traj_0[i+1][1],
-                                   traj_1[j][0],traj_1[j][1],traj_1[j+1][0],traj_1[j+1][1])
+            M[i,j]=_mixed_distance(traj_0[i,0],traj_0[i,1],traj_0[i+1,0],traj_0[i+1,1],
+                                   traj_1[j,0],traj_1[j,1],traj_1[j+1,0],traj_1[j+1,1])
     return M
 
 

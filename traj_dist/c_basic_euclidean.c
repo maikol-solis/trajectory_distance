@@ -231,8 +231,8 @@ void __Pyx_call_destructor(T* x) {
 #define _USE_MATH_DEFINES
 #endif
 #include <math.h>
-#define __PYX_HAVE__trajectory_distance__c_basic_euclidean
-#define __PYX_HAVE_API__trajectory_distance__c_basic_euclidean
+#define __PYX_HAVE__traj_dist__c_basic_euclidean
+#define __PYX_HAVE_API__traj_dist__c_basic_euclidean
 #include "math.h"
 #include "string.h"
 #include "stdio.h"
@@ -443,7 +443,7 @@ static const char *__pyx_filename;
 
 
 static const char *__pyx_f[] = {
-  "trajectory_distance/c_basic_euclidean.pyx",
+  "traj_dist/c_basic_euclidean.pyx",
   "__init__.pxd",
   "type.pxd",
   "bool.pxd",
@@ -485,7 +485,7 @@ typedef struct {
 } __Pyx_BufFmt_Context;
 
 
-/* "../../lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":723
+/* "../trajectory_review/dev/src/python/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":723
  * # in Cython to enable them only on the right systems.
  * 
  * ctypedef npy_int8       int8_t             # <<<<<<<<<<<<<<
@@ -494,7 +494,7 @@ typedef struct {
  */
 typedef npy_int8 __pyx_t_5numpy_int8_t;
 
-/* "../../lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":724
+/* "../trajectory_review/dev/src/python/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":724
  * 
  * ctypedef npy_int8       int8_t
  * ctypedef npy_int16      int16_t             # <<<<<<<<<<<<<<
@@ -503,7 +503,7 @@ typedef npy_int8 __pyx_t_5numpy_int8_t;
  */
 typedef npy_int16 __pyx_t_5numpy_int16_t;
 
-/* "../../lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":725
+/* "../trajectory_review/dev/src/python/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":725
  * ctypedef npy_int8       int8_t
  * ctypedef npy_int16      int16_t
  * ctypedef npy_int32      int32_t             # <<<<<<<<<<<<<<
@@ -512,7 +512,7 @@ typedef npy_int16 __pyx_t_5numpy_int16_t;
  */
 typedef npy_int32 __pyx_t_5numpy_int32_t;
 
-/* "../../lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":726
+/* "../trajectory_review/dev/src/python/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":726
  * ctypedef npy_int16      int16_t
  * ctypedef npy_int32      int32_t
  * ctypedef npy_int64      int64_t             # <<<<<<<<<<<<<<
@@ -521,7 +521,7 @@ typedef npy_int32 __pyx_t_5numpy_int32_t;
  */
 typedef npy_int64 __pyx_t_5numpy_int64_t;
 
-/* "../../lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":730
+/* "../trajectory_review/dev/src/python/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":730
  * #ctypedef npy_int128     int128_t
  * 
  * ctypedef npy_uint8      uint8_t             # <<<<<<<<<<<<<<
@@ -530,7 +530,7 @@ typedef npy_int64 __pyx_t_5numpy_int64_t;
  */
 typedef npy_uint8 __pyx_t_5numpy_uint8_t;
 
-/* "../../lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":731
+/* "../trajectory_review/dev/src/python/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":731
  * 
  * ctypedef npy_uint8      uint8_t
  * ctypedef npy_uint16     uint16_t             # <<<<<<<<<<<<<<
@@ -539,7 +539,7 @@ typedef npy_uint8 __pyx_t_5numpy_uint8_t;
  */
 typedef npy_uint16 __pyx_t_5numpy_uint16_t;
 
-/* "../../lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":732
+/* "../trajectory_review/dev/src/python/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":732
  * ctypedef npy_uint8      uint8_t
  * ctypedef npy_uint16     uint16_t
  * ctypedef npy_uint32     uint32_t             # <<<<<<<<<<<<<<
@@ -548,7 +548,7 @@ typedef npy_uint16 __pyx_t_5numpy_uint16_t;
  */
 typedef npy_uint32 __pyx_t_5numpy_uint32_t;
 
-/* "../../lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":733
+/* "../trajectory_review/dev/src/python/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":733
  * ctypedef npy_uint16     uint16_t
  * ctypedef npy_uint32     uint32_t
  * ctypedef npy_uint64     uint64_t             # <<<<<<<<<<<<<<
@@ -557,7 +557,7 @@ typedef npy_uint32 __pyx_t_5numpy_uint32_t;
  */
 typedef npy_uint64 __pyx_t_5numpy_uint64_t;
 
-/* "../../lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":737
+/* "../trajectory_review/dev/src/python/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":737
  * #ctypedef npy_uint128    uint128_t
  * 
  * ctypedef npy_float32    float32_t             # <<<<<<<<<<<<<<
@@ -566,7 +566,7 @@ typedef npy_uint64 __pyx_t_5numpy_uint64_t;
  */
 typedef npy_float32 __pyx_t_5numpy_float32_t;
 
-/* "../../lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":738
+/* "../trajectory_review/dev/src/python/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":738
  * 
  * ctypedef npy_float32    float32_t
  * ctypedef npy_float64    float64_t             # <<<<<<<<<<<<<<
@@ -575,7 +575,7 @@ typedef npy_float32 __pyx_t_5numpy_float32_t;
  */
 typedef npy_float64 __pyx_t_5numpy_float64_t;
 
-/* "../../lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":747
+/* "../trajectory_review/dev/src/python/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":747
  * # The int types are mapped a bit surprising --
  * # numpy.int corresponds to 'l' and numpy.long to 'q'
  * ctypedef npy_long       int_t             # <<<<<<<<<<<<<<
@@ -584,7 +584,7 @@ typedef npy_float64 __pyx_t_5numpy_float64_t;
  */
 typedef npy_long __pyx_t_5numpy_int_t;
 
-/* "../../lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":748
+/* "../trajectory_review/dev/src/python/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":748
  * # numpy.int corresponds to 'l' and numpy.long to 'q'
  * ctypedef npy_long       int_t
  * ctypedef npy_longlong   long_t             # <<<<<<<<<<<<<<
@@ -593,7 +593,7 @@ typedef npy_long __pyx_t_5numpy_int_t;
  */
 typedef npy_longlong __pyx_t_5numpy_long_t;
 
-/* "../../lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":749
+/* "../trajectory_review/dev/src/python/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":749
  * ctypedef npy_long       int_t
  * ctypedef npy_longlong   long_t
  * ctypedef npy_longlong   longlong_t             # <<<<<<<<<<<<<<
@@ -602,7 +602,7 @@ typedef npy_longlong __pyx_t_5numpy_long_t;
  */
 typedef npy_longlong __pyx_t_5numpy_longlong_t;
 
-/* "../../lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":751
+/* "../trajectory_review/dev/src/python/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":751
  * ctypedef npy_longlong   longlong_t
  * 
  * ctypedef npy_ulong      uint_t             # <<<<<<<<<<<<<<
@@ -611,7 +611,7 @@ typedef npy_longlong __pyx_t_5numpy_longlong_t;
  */
 typedef npy_ulong __pyx_t_5numpy_uint_t;
 
-/* "../../lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":752
+/* "../trajectory_review/dev/src/python/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":752
  * 
  * ctypedef npy_ulong      uint_t
  * ctypedef npy_ulonglong  ulong_t             # <<<<<<<<<<<<<<
@@ -620,7 +620,7 @@ typedef npy_ulong __pyx_t_5numpy_uint_t;
  */
 typedef npy_ulonglong __pyx_t_5numpy_ulong_t;
 
-/* "../../lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":753
+/* "../trajectory_review/dev/src/python/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":753
  * ctypedef npy_ulong      uint_t
  * ctypedef npy_ulonglong  ulong_t
  * ctypedef npy_ulonglong  ulonglong_t             # <<<<<<<<<<<<<<
@@ -629,7 +629,7 @@ typedef npy_ulonglong __pyx_t_5numpy_ulong_t;
  */
 typedef npy_ulonglong __pyx_t_5numpy_ulonglong_t;
 
-/* "../../lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":755
+/* "../trajectory_review/dev/src/python/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":755
  * ctypedef npy_ulonglong  ulonglong_t
  * 
  * ctypedef npy_intp       intp_t             # <<<<<<<<<<<<<<
@@ -638,7 +638,7 @@ typedef npy_ulonglong __pyx_t_5numpy_ulonglong_t;
  */
 typedef npy_intp __pyx_t_5numpy_intp_t;
 
-/* "../../lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":756
+/* "../trajectory_review/dev/src/python/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":756
  * 
  * ctypedef npy_intp       intp_t
  * ctypedef npy_uintp      uintp_t             # <<<<<<<<<<<<<<
@@ -647,7 +647,7 @@ typedef npy_intp __pyx_t_5numpy_intp_t;
  */
 typedef npy_uintp __pyx_t_5numpy_uintp_t;
 
-/* "../../lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":758
+/* "../trajectory_review/dev/src/python/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":758
  * ctypedef npy_uintp      uintp_t
  * 
  * ctypedef npy_double     float_t             # <<<<<<<<<<<<<<
@@ -656,7 +656,7 @@ typedef npy_uintp __pyx_t_5numpy_uintp_t;
  */
 typedef npy_double __pyx_t_5numpy_float_t;
 
-/* "../../lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":759
+/* "../trajectory_review/dev/src/python/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":759
  * 
  * ctypedef npy_double     float_t
  * ctypedef npy_double     double_t             # <<<<<<<<<<<<<<
@@ -665,7 +665,7 @@ typedef npy_double __pyx_t_5numpy_float_t;
  */
 typedef npy_double __pyx_t_5numpy_double_t;
 
-/* "../../lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":760
+/* "../trajectory_review/dev/src/python/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":760
  * ctypedef npy_double     float_t
  * ctypedef npy_double     double_t
  * ctypedef npy_longdouble longdouble_t             # <<<<<<<<<<<<<<
@@ -696,7 +696,7 @@ typedef npy_longdouble __pyx_t_5numpy_longdouble_t;
 
 /*--- Type declarations ---*/
 
-/* "../../lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":762
+/* "../trajectory_review/dev/src/python/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":762
  * ctypedef npy_longdouble longdouble_t
  * 
  * ctypedef npy_cfloat      cfloat_t             # <<<<<<<<<<<<<<
@@ -705,7 +705,7 @@ typedef npy_longdouble __pyx_t_5numpy_longdouble_t;
  */
 typedef npy_cfloat __pyx_t_5numpy_cfloat_t;
 
-/* "../../lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":763
+/* "../trajectory_review/dev/src/python/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":763
  * 
  * ctypedef npy_cfloat      cfloat_t
  * ctypedef npy_cdouble     cdouble_t             # <<<<<<<<<<<<<<
@@ -714,7 +714,7 @@ typedef npy_cfloat __pyx_t_5numpy_cfloat_t;
  */
 typedef npy_cdouble __pyx_t_5numpy_cdouble_t;
 
-/* "../../lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":764
+/* "../trajectory_review/dev/src/python/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":764
  * ctypedef npy_cfloat      cfloat_t
  * ctypedef npy_cdouble     cdouble_t
  * ctypedef npy_clongdouble clongdouble_t             # <<<<<<<<<<<<<<
@@ -723,7 +723,7 @@ typedef npy_cdouble __pyx_t_5numpy_cdouble_t;
  */
 typedef npy_clongdouble __pyx_t_5numpy_clongdouble_t;
 
-/* "../../lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":766
+/* "../trajectory_review/dev/src/python/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":766
  * ctypedef npy_clongdouble clongdouble_t
  * 
  * ctypedef npy_cdouble     complex_t             # <<<<<<<<<<<<<<
@@ -1128,21 +1128,21 @@ static PyTypeObject *__pyx_ptype_7cpython_7complex_complex = 0;
 
 /* Module declarations from 'cpython' */
 
-/* Module declarations from 'trajectory_distance.c_basic_euclidean' */
-static double __pyx_f_19trajectory_distance_17c_basic_euclidean__eucl_dist(double, double, double, double); /*proto*/
-static double __pyx_f_19trajectory_distance_17c_basic_euclidean__point_to_seg(double, double, double, double, double, double); /*proto*/
+/* Module declarations from 'traj_dist.c_basic_euclidean' */
+static double __pyx_f_9traj_dist_17c_basic_euclidean__eucl_dist(double, double, double, double); /*proto*/
+static double __pyx_f_9traj_dist_17c_basic_euclidean__point_to_seg(double, double, double, double, double, double); /*proto*/
 static __Pyx_TypeInfo __Pyx_TypeInfo_nn___pyx_t_5numpy_float64_t = { "float64_t", NULL, sizeof(__pyx_t_5numpy_float64_t), { 0 }, 0, 'R', 0, 0 };
-#define __Pyx_MODULE_NAME "trajectory_distance.c_basic_euclidean"
-int __pyx_module_is_main_trajectory_distance__c_basic_euclidean = 0;
+#define __Pyx_MODULE_NAME "traj_dist.c_basic_euclidean"
+int __pyx_module_is_main_traj_dist__c_basic_euclidean = 0;
 
-/* Implementation of 'trajectory_distance.c_basic_euclidean' */
+/* Implementation of 'traj_dist.c_basic_euclidean' */
 static PyObject *__pyx_builtin_ValueError;
 static PyObject *__pyx_builtin_range;
 static PyObject *__pyx_builtin_RuntimeError;
-static PyObject *__pyx_pf_19trajectory_distance_17c_basic_euclidean_c_eucl_dist(CYTHON_UNUSED PyObject *__pyx_self, double __pyx_v_x1, double __pyx_v_y1, double __pyx_v_x2, double __pyx_v_y2); /* proto */
-static PyObject *__pyx_pf_19trajectory_distance_17c_basic_euclidean_2c_point_to_seg(CYTHON_UNUSED PyObject *__pyx_self, double __pyx_v_px, double __pyx_v_py, double __pyx_v_p1x, double __pyx_v_p1y, double __pyx_v_p2x, double __pyx_v_p2y); /* proto */
-static PyObject *__pyx_pf_19trajectory_distance_17c_basic_euclidean_4c_point_to_trajectory(CYTHON_UNUSED PyObject *__pyx_self, double __pyx_v_px, double __pyx_v_py, PyArrayObject *__pyx_v_t); /* proto */
-static PyObject *__pyx_pf_19trajectory_distance_17c_basic_euclidean_6c_circle_line_intersection(CYTHON_UNUSED PyObject *__pyx_self, double __pyx_v_px, double __pyx_v_py, double __pyx_v_s1x, double __pyx_v_s1y, double __pyx_v_s2x, double __pyx_v_s2y, double __pyx_v_eps); /* proto */
+static PyObject *__pyx_pf_9traj_dist_17c_basic_euclidean_c_eucl_dist(CYTHON_UNUSED PyObject *__pyx_self, double __pyx_v_x1, double __pyx_v_y1, double __pyx_v_x2, double __pyx_v_y2); /* proto */
+static PyObject *__pyx_pf_9traj_dist_17c_basic_euclidean_2c_point_to_seg(CYTHON_UNUSED PyObject *__pyx_self, double __pyx_v_px, double __pyx_v_py, double __pyx_v_p1x, double __pyx_v_p1y, double __pyx_v_p2x, double __pyx_v_p2y); /* proto */
+static PyObject *__pyx_pf_9traj_dist_17c_basic_euclidean_4c_point_to_trajectory(CYTHON_UNUSED PyObject *__pyx_self, double __pyx_v_px, double __pyx_v_py, PyArrayObject *__pyx_v_t); /* proto */
+static PyObject *__pyx_pf_9traj_dist_17c_basic_euclidean_6c_circle_line_intersection(CYTHON_UNUSED PyObject *__pyx_self, double __pyx_v_px, double __pyx_v_py, double __pyx_v_s1x, double __pyx_v_s1y, double __pyx_v_s2x, double __pyx_v_s2y, double __pyx_v_eps); /* proto */
 static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, Py_buffer *__pyx_v_info, int __pyx_v_flags); /* proto */
 static void __pyx_pf_5numpy_7ndarray_2__releasebuffer__(PyArrayObject *__pyx_v_self, Py_buffer *__pyx_v_info); /* proto */
 static char __pyx_k_A[] = "A";
@@ -1218,13 +1218,13 @@ static char __pyx_k_delta_strict_sup_0[] = "delta_strict_sup_0";
 static char __pyx_k_c_point_to_trajectory[] = "c_point_to_trajectory";
 static char __pyx_k_c_circle_line_intersection[] = "c_circle_line_intersection";
 static char __pyx_k_ndarray_is_not_C_contiguous[] = "ndarray is not C contiguous";
+static char __pyx_k_traj_dist_c_basic_euclidean[] = "traj_dist.c_basic_euclidean";
 static char __pyx_k_The_intersection_between_circle[] = "The intersection between circle and line is supposed to exist";
-static char __pyx_k_Users_bguillouet_These_trajecto[] = "/Users/bguillouet/These/trajectory_review/dev/src/python/dev/trajectory_distance/trajectory_distance/c_basic_euclidean.pyx";
+static char __pyx_k_Users_bguillouet_These_trajecto[] = "/Users/bguillouet/These/trajectory_distance/traj_dist/c_basic_euclidean.pyx";
 static char __pyx_k_unknown_dtype_code_in_numpy_pxd[] = "unknown dtype code in numpy.pxd (%d)";
 static char __pyx_k_Format_string_allocated_too_shor[] = "Format string allocated too short, see comment in numpy.pxd";
 static char __pyx_k_Non_native_byte_order_not_suppor[] = "Non-native byte order not supported";
 static char __pyx_k_ndarray_is_not_Fortran_contiguou[] = "ndarray is not Fortran contiguous";
-static char __pyx_k_trajectory_distance_c_basic_eucl[] = "trajectory_distance.c_basic_euclidean";
 static char __pyx_k_Format_string_allocated_too_shor_2[] = "Format string allocated too short.";
 static PyObject *__pyx_n_s_A;
 static PyObject *__pyx_n_s_B;
@@ -1281,7 +1281,7 @@ static PyObject *__pyx_n_s_sdelta;
 static PyObject *__pyx_n_s_segl;
 static PyObject *__pyx_n_s_t;
 static PyObject *__pyx_n_s_test;
-static PyObject *__pyx_n_s_trajectory_distance_c_basic_eucl;
+static PyObject *__pyx_n_s_traj_dist_c_basic_euclidean;
 static PyObject *__pyx_n_s_u;
 static PyObject *__pyx_n_s_u1;
 static PyObject *__pyx_kp_u_unknown_dtype_code_in_numpy_pxd;
@@ -1320,7 +1320,7 @@ static PyObject *__pyx_codeobj__20;
 static PyObject *__pyx_codeobj__22;
 static PyObject *__pyx_codeobj__24;
 
-/* "trajectory_distance/c_basic_euclidean.pyx":12
+/* "traj_dist/c_basic_euclidean.pyx":12
  * 
  * 
  * cdef double _eucl_dist(double x1,double y1,double x2,double y2):             # <<<<<<<<<<<<<<
@@ -1328,7 +1328,7 @@ static PyObject *__pyx_codeobj__24;
  *     Usage
  */
 
-static double __pyx_f_19trajectory_distance_17c_basic_euclidean__eucl_dist(double __pyx_v_x1, double __pyx_v_y1, double __pyx_v_x2, double __pyx_v_y2) {
+static double __pyx_f_9traj_dist_17c_basic_euclidean__eucl_dist(double __pyx_v_x1, double __pyx_v_y1, double __pyx_v_x2, double __pyx_v_y2) {
   double __pyx_v_dx;
   double __pyx_v_dy;
   double __pyx_v_dist;
@@ -1336,7 +1336,7 @@ static double __pyx_f_19trajectory_distance_17c_basic_euclidean__eucl_dist(doubl
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("_eucl_dist", 0);
 
-  /* "trajectory_distance/c_basic_euclidean.pyx":31
+  /* "traj_dist/c_basic_euclidean.pyx":31
  *     """
  *     cdef double d,dx,dy
  *     dx=(x1-x2)             # <<<<<<<<<<<<<<
@@ -1345,7 +1345,7 @@ static double __pyx_f_19trajectory_distance_17c_basic_euclidean__eucl_dist(doubl
  */
   __pyx_v_dx = (__pyx_v_x1 - __pyx_v_x2);
 
-  /* "trajectory_distance/c_basic_euclidean.pyx":32
+  /* "traj_dist/c_basic_euclidean.pyx":32
  *     cdef double d,dx,dy
  *     dx=(x1-x2)
  *     dy=(y1-y2)             # <<<<<<<<<<<<<<
@@ -1354,7 +1354,7 @@ static double __pyx_f_19trajectory_distance_17c_basic_euclidean__eucl_dist(doubl
  */
   __pyx_v_dy = (__pyx_v_y1 - __pyx_v_y2);
 
-  /* "trajectory_distance/c_basic_euclidean.pyx":33
+  /* "traj_dist/c_basic_euclidean.pyx":33
  *     dx=(x1-x2)
  *     dy=(y1-y2)
  *     dist=sqrt(dx*dx+dy*dy)             # <<<<<<<<<<<<<<
@@ -1363,7 +1363,7 @@ static double __pyx_f_19trajectory_distance_17c_basic_euclidean__eucl_dist(doubl
  */
   __pyx_v_dist = sqrt(((__pyx_v_dx * __pyx_v_dx) + (__pyx_v_dy * __pyx_v_dy)));
 
-  /* "trajectory_distance/c_basic_euclidean.pyx":34
+  /* "traj_dist/c_basic_euclidean.pyx":34
  *     dy=(y1-y2)
  *     dist=sqrt(dx*dx+dy*dy)
  *     return dist             # <<<<<<<<<<<<<<
@@ -1373,7 +1373,7 @@ static double __pyx_f_19trajectory_distance_17c_basic_euclidean__eucl_dist(doubl
   __pyx_r = __pyx_v_dist;
   goto __pyx_L0;
 
-  /* "trajectory_distance/c_basic_euclidean.pyx":12
+  /* "traj_dist/c_basic_euclidean.pyx":12
  * 
  * 
  * cdef double _eucl_dist(double x1,double y1,double x2,double y2):             # <<<<<<<<<<<<<<
@@ -1387,7 +1387,7 @@ static double __pyx_f_19trajectory_distance_17c_basic_euclidean__eucl_dist(doubl
   return __pyx_r;
 }
 
-/* "trajectory_distance/c_basic_euclidean.pyx":37
+/* "traj_dist/c_basic_euclidean.pyx":37
  * 
  * 
  * def c_eucl_dist(double x1,double y1,double x2,double y2):             # <<<<<<<<<<<<<<
@@ -1396,10 +1396,10 @@ static double __pyx_f_19trajectory_distance_17c_basic_euclidean__eucl_dist(doubl
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_19trajectory_distance_17c_basic_euclidean_1c_eucl_dist(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static char __pyx_doc_19trajectory_distance_17c_basic_euclidean_c_eucl_dist[] = "\n    Usage\n    -----\n    L2-norm between point (x1,y1) and (x2,y2)\n\n    Parameters\n    ----------\n    param x1 : float\n    param y1 : float\n    param x2 : float\n    param y2 : float\n\n    Returns\n    -------\n    dist : float\n           L2-norm between (x1,y1) and (x2,y2)\n    ";
-static PyMethodDef __pyx_mdef_19trajectory_distance_17c_basic_euclidean_1c_eucl_dist = {"c_eucl_dist", (PyCFunction)__pyx_pw_19trajectory_distance_17c_basic_euclidean_1c_eucl_dist, METH_VARARGS|METH_KEYWORDS, __pyx_doc_19trajectory_distance_17c_basic_euclidean_c_eucl_dist};
-static PyObject *__pyx_pw_19trajectory_distance_17c_basic_euclidean_1c_eucl_dist(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+static PyObject *__pyx_pw_9traj_dist_17c_basic_euclidean_1c_eucl_dist(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static char __pyx_doc_9traj_dist_17c_basic_euclidean_c_eucl_dist[] = "\n    Usage\n    -----\n    L2-norm between point (x1,y1) and (x2,y2)\n\n    Parameters\n    ----------\n    param x1 : float\n    param y1 : float\n    param x2 : float\n    param y2 : float\n\n    Returns\n    -------\n    dist : float\n           L2-norm between (x1,y1) and (x2,y2)\n    ";
+static PyMethodDef __pyx_mdef_9traj_dist_17c_basic_euclidean_1c_eucl_dist = {"c_eucl_dist", (PyCFunction)__pyx_pw_9traj_dist_17c_basic_euclidean_1c_eucl_dist, METH_VARARGS|METH_KEYWORDS, __pyx_doc_9traj_dist_17c_basic_euclidean_c_eucl_dist};
+static PyObject *__pyx_pw_9traj_dist_17c_basic_euclidean_1c_eucl_dist(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   double __pyx_v_x1;
   double __pyx_v_y1;
   double __pyx_v_x2;
@@ -1465,18 +1465,18 @@ static PyObject *__pyx_pw_19trajectory_distance_17c_basic_euclidean_1c_eucl_dist
   __pyx_L5_argtuple_error:;
   __Pyx_RaiseArgtupleInvalid("c_eucl_dist", 1, 4, 4, PyTuple_GET_SIZE(__pyx_args)); {__pyx_filename = __pyx_f[0]; __pyx_lineno = 37; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
   __pyx_L3_error:;
-  __Pyx_AddTraceback("trajectory_distance.c_basic_euclidean.c_eucl_dist", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("traj_dist.c_basic_euclidean.c_eucl_dist", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_19trajectory_distance_17c_basic_euclidean_c_eucl_dist(__pyx_self, __pyx_v_x1, __pyx_v_y1, __pyx_v_x2, __pyx_v_y2);
+  __pyx_r = __pyx_pf_9traj_dist_17c_basic_euclidean_c_eucl_dist(__pyx_self, __pyx_v_x1, __pyx_v_y1, __pyx_v_x2, __pyx_v_y2);
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_19trajectory_distance_17c_basic_euclidean_c_eucl_dist(CYTHON_UNUSED PyObject *__pyx_self, double __pyx_v_x1, double __pyx_v_y1, double __pyx_v_x2, double __pyx_v_y2) {
+static PyObject *__pyx_pf_9traj_dist_17c_basic_euclidean_c_eucl_dist(CYTHON_UNUSED PyObject *__pyx_self, double __pyx_v_x1, double __pyx_v_y1, double __pyx_v_x2, double __pyx_v_y2) {
   double __pyx_v_d;
   double __pyx_v_dx;
   double __pyx_v_dy;
@@ -1488,7 +1488,7 @@ static PyObject *__pyx_pf_19trajectory_distance_17c_basic_euclidean_c_eucl_dist(
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("c_eucl_dist", 0);
 
-  /* "trajectory_distance/c_basic_euclidean.pyx":56
+  /* "traj_dist/c_basic_euclidean.pyx":56
  *     """
  *     cdef double d,dx,dy
  *     dx=(x1-x2)             # <<<<<<<<<<<<<<
@@ -1497,7 +1497,7 @@ static PyObject *__pyx_pf_19trajectory_distance_17c_basic_euclidean_c_eucl_dist(
  */
   __pyx_v_dx = (__pyx_v_x1 - __pyx_v_x2);
 
-  /* "trajectory_distance/c_basic_euclidean.pyx":57
+  /* "traj_dist/c_basic_euclidean.pyx":57
  *     cdef double d,dx,dy
  *     dx=(x1-x2)
  *     dy=(y1-y2)             # <<<<<<<<<<<<<<
@@ -1506,7 +1506,7 @@ static PyObject *__pyx_pf_19trajectory_distance_17c_basic_euclidean_c_eucl_dist(
  */
   __pyx_v_dy = (__pyx_v_y1 - __pyx_v_y2);
 
-  /* "trajectory_distance/c_basic_euclidean.pyx":58
+  /* "traj_dist/c_basic_euclidean.pyx":58
  *     dx=(x1-x2)
  *     dy=(y1-y2)
  *     d=sqrt(dx*dx+dy*dy)             # <<<<<<<<<<<<<<
@@ -1515,7 +1515,7 @@ static PyObject *__pyx_pf_19trajectory_distance_17c_basic_euclidean_c_eucl_dist(
  */
   __pyx_v_d = sqrt(((__pyx_v_dx * __pyx_v_dx) + (__pyx_v_dy * __pyx_v_dy)));
 
-  /* "trajectory_distance/c_basic_euclidean.pyx":59
+  /* "traj_dist/c_basic_euclidean.pyx":59
  *     dy=(y1-y2)
  *     d=sqrt(dx*dx+dy*dy)
  *     return d             # <<<<<<<<<<<<<<
@@ -1529,7 +1529,7 @@ static PyObject *__pyx_pf_19trajectory_distance_17c_basic_euclidean_c_eucl_dist(
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "trajectory_distance/c_basic_euclidean.pyx":37
+  /* "traj_dist/c_basic_euclidean.pyx":37
  * 
  * 
  * def c_eucl_dist(double x1,double y1,double x2,double y2):             # <<<<<<<<<<<<<<
@@ -1540,7 +1540,7 @@ static PyObject *__pyx_pf_19trajectory_distance_17c_basic_euclidean_c_eucl_dist(
   /* function exit code */
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_AddTraceback("trajectory_distance.c_basic_euclidean.c_eucl_dist", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("traj_dist.c_basic_euclidean.c_eucl_dist", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
@@ -1548,7 +1548,7 @@ static PyObject *__pyx_pf_19trajectory_distance_17c_basic_euclidean_c_eucl_dist(
   return __pyx_r;
 }
 
-/* "trajectory_distance/c_basic_euclidean.pyx":63
+/* "traj_dist/c_basic_euclidean.pyx":63
  * 
  * 
  * cdef double _point_to_seg(double px, double py, double p1x, double p1y, double p2x, double p2y ):             # <<<<<<<<<<<<<<
@@ -1556,7 +1556,7 @@ static PyObject *__pyx_pf_19trajectory_distance_17c_basic_euclidean_c_eucl_dist(
  *     Usage
  */
 
-static double __pyx_f_19trajectory_distance_17c_basic_euclidean__point_to_seg(double __pyx_v_px, double __pyx_v_py, double __pyx_v_p1x, double __pyx_v_p1y, double __pyx_v_p2x, double __pyx_v_p2y) {
+static double __pyx_f_9traj_dist_17c_basic_euclidean__point_to_seg(double __pyx_v_px, double __pyx_v_py, double __pyx_v_p1x, double __pyx_v_p1y, double __pyx_v_p2x, double __pyx_v_p2y) {
   double __pyx_v_segl;
   double __pyx_v_u1;
   double __pyx_v_u;
@@ -1573,7 +1573,7 @@ static double __pyx_f_19trajectory_distance_17c_basic_euclidean__point_to_seg(do
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("_point_to_seg", 0);
 
-  /* "trajectory_distance/c_basic_euclidean.pyx":86
+  /* "traj_dist/c_basic_euclidean.pyx":86
  * 
  *     cdef double segl,u1,u,ix,iy,dpl
  *     if p1x==p2x and p1y==p2y:             # <<<<<<<<<<<<<<
@@ -1591,28 +1591,28 @@ static double __pyx_f_19trajectory_distance_17c_basic_euclidean__point_to_seg(do
   __pyx_L4_bool_binop_done:;
   if (__pyx_t_1) {
 
-    /* "trajectory_distance/c_basic_euclidean.pyx":87
+    /* "traj_dist/c_basic_euclidean.pyx":87
  *     cdef double segl,u1,u,ix,iy,dpl
  *     if p1x==p2x and p1y==p2y:
  *         dpl=_eucl_dist(px,py,p1x,p1y)             # <<<<<<<<<<<<<<
  *     else:
  *         segl= _eucl_dist(p1x,p1y,p2x,p2y)
  */
-    __pyx_v_dpl = __pyx_f_19trajectory_distance_17c_basic_euclidean__eucl_dist(__pyx_v_px, __pyx_v_py, __pyx_v_p1x, __pyx_v_p1y);
+    __pyx_v_dpl = __pyx_f_9traj_dist_17c_basic_euclidean__eucl_dist(__pyx_v_px, __pyx_v_py, __pyx_v_p1x, __pyx_v_p1y);
     goto __pyx_L3;
   }
   /*else*/ {
 
-    /* "trajectory_distance/c_basic_euclidean.pyx":89
+    /* "traj_dist/c_basic_euclidean.pyx":89
  *         dpl=_eucl_dist(px,py,p1x,p1y)
  *     else:
  *         segl= _eucl_dist(p1x,p1y,p2x,p2y)             # <<<<<<<<<<<<<<
  *         u1 = (((px - p1x) * (p2x - p1x)) + ((py - p1y) * (p2y - p1y)))
  *         u = u1 / (segl * segl)
  */
-    __pyx_v_segl = __pyx_f_19trajectory_distance_17c_basic_euclidean__eucl_dist(__pyx_v_p1x, __pyx_v_p1y, __pyx_v_p2x, __pyx_v_p2y);
+    __pyx_v_segl = __pyx_f_9traj_dist_17c_basic_euclidean__eucl_dist(__pyx_v_p1x, __pyx_v_p1y, __pyx_v_p2x, __pyx_v_p2y);
 
-    /* "trajectory_distance/c_basic_euclidean.pyx":90
+    /* "traj_dist/c_basic_euclidean.pyx":90
  *     else:
  *         segl= _eucl_dist(p1x,p1y,p2x,p2y)
  *         u1 = (((px - p1x) * (p2x - p1x)) + ((py - p1y) * (p2y - p1y)))             # <<<<<<<<<<<<<<
@@ -1621,7 +1621,7 @@ static double __pyx_f_19trajectory_distance_17c_basic_euclidean__point_to_seg(do
  */
     __pyx_v_u1 = (((__pyx_v_px - __pyx_v_p1x) * (__pyx_v_p2x - __pyx_v_p1x)) + ((__pyx_v_py - __pyx_v_p1y) * (__pyx_v_p2y - __pyx_v_p1y)));
 
-    /* "trajectory_distance/c_basic_euclidean.pyx":91
+    /* "traj_dist/c_basic_euclidean.pyx":91
  *         segl= _eucl_dist(p1x,p1y,p2x,p2y)
  *         u1 = (((px - p1x) * (p2x - p1x)) + ((py - p1y) * (p2y - p1y)))
  *         u = u1 / (segl * segl)             # <<<<<<<<<<<<<<
@@ -1641,7 +1641,7 @@ static double __pyx_f_19trajectory_distance_17c_basic_euclidean__point_to_seg(do
     }
     __pyx_v_u = (__pyx_v_u1 / __pyx_t_3);
 
-    /* "trajectory_distance/c_basic_euclidean.pyx":93
+    /* "traj_dist/c_basic_euclidean.pyx":93
  *         u = u1 / (segl * segl)
  * 
  *         if (u < 0.00001) or (u > 1):             # <<<<<<<<<<<<<<
@@ -1659,25 +1659,25 @@ static double __pyx_f_19trajectory_distance_17c_basic_euclidean__point_to_seg(do
     __pyx_L7_bool_binop_done:;
     if (__pyx_t_1) {
 
-      /* "trajectory_distance/c_basic_euclidean.pyx":96
+      /* "traj_dist/c_basic_euclidean.pyx":96
  *             #// closest point does not fall within the line segment, take the shorter distance
  *             #// to an endpoint
  *             ix = _eucl_dist(px,py,p1x,p1y)             # <<<<<<<<<<<<<<
  *             iy = _eucl_dist(px,py,p2x,p2y)
  *             if ix > iy:
  */
-      __pyx_v_ix = __pyx_f_19trajectory_distance_17c_basic_euclidean__eucl_dist(__pyx_v_px, __pyx_v_py, __pyx_v_p1x, __pyx_v_p1y);
+      __pyx_v_ix = __pyx_f_9traj_dist_17c_basic_euclidean__eucl_dist(__pyx_v_px, __pyx_v_py, __pyx_v_p1x, __pyx_v_p1y);
 
-      /* "trajectory_distance/c_basic_euclidean.pyx":97
+      /* "traj_dist/c_basic_euclidean.pyx":97
  *             #// to an endpoint
  *             ix = _eucl_dist(px,py,p1x,p1y)
  *             iy = _eucl_dist(px,py,p2x,p2y)             # <<<<<<<<<<<<<<
  *             if ix > iy:
  *                 dpl = iy
  */
-      __pyx_v_iy = __pyx_f_19trajectory_distance_17c_basic_euclidean__eucl_dist(__pyx_v_px, __pyx_v_py, __pyx_v_p2x, __pyx_v_p2y);
+      __pyx_v_iy = __pyx_f_9traj_dist_17c_basic_euclidean__eucl_dist(__pyx_v_px, __pyx_v_py, __pyx_v_p2x, __pyx_v_p2y);
 
-      /* "trajectory_distance/c_basic_euclidean.pyx":98
+      /* "traj_dist/c_basic_euclidean.pyx":98
  *             ix = _eucl_dist(px,py,p1x,p1y)
  *             iy = _eucl_dist(px,py,p2x,p2y)
  *             if ix > iy:             # <<<<<<<<<<<<<<
@@ -1687,7 +1687,7 @@ static double __pyx_f_19trajectory_distance_17c_basic_euclidean__point_to_seg(do
       __pyx_t_1 = ((__pyx_v_ix > __pyx_v_iy) != 0);
       if (__pyx_t_1) {
 
-        /* "trajectory_distance/c_basic_euclidean.pyx":99
+        /* "traj_dist/c_basic_euclidean.pyx":99
  *             iy = _eucl_dist(px,py,p2x,p2y)
  *             if ix > iy:
  *                 dpl = iy             # <<<<<<<<<<<<<<
@@ -1699,7 +1699,7 @@ static double __pyx_f_19trajectory_distance_17c_basic_euclidean__point_to_seg(do
       }
       /*else*/ {
 
-        /* "trajectory_distance/c_basic_euclidean.pyx":101
+        /* "traj_dist/c_basic_euclidean.pyx":101
  *                 dpl = iy
  *             else:
  *                 dpl = ix             # <<<<<<<<<<<<<<
@@ -1713,7 +1713,7 @@ static double __pyx_f_19trajectory_distance_17c_basic_euclidean__point_to_seg(do
     }
     /*else*/ {
 
-      /* "trajectory_distance/c_basic_euclidean.pyx":104
+      /* "traj_dist/c_basic_euclidean.pyx":104
  *         else:
  *             # Intersecting point is on the line, use the formula
  *             ix = p1x + u * (p2x - p1x)             # <<<<<<<<<<<<<<
@@ -1722,7 +1722,7 @@ static double __pyx_f_19trajectory_distance_17c_basic_euclidean__point_to_seg(do
  */
       __pyx_v_ix = (__pyx_v_p1x + (__pyx_v_u * (__pyx_v_p2x - __pyx_v_p1x)));
 
-      /* "trajectory_distance/c_basic_euclidean.pyx":105
+      /* "traj_dist/c_basic_euclidean.pyx":105
  *             # Intersecting point is on the line, use the formula
  *             ix = p1x + u * (p2x - p1x)
  *             iy = p1y + u * (p2y - p1y)             # <<<<<<<<<<<<<<
@@ -1731,20 +1731,20 @@ static double __pyx_f_19trajectory_distance_17c_basic_euclidean__point_to_seg(do
  */
       __pyx_v_iy = (__pyx_v_p1y + (__pyx_v_u * (__pyx_v_p2y - __pyx_v_p1y)));
 
-      /* "trajectory_distance/c_basic_euclidean.pyx":106
+      /* "traj_dist/c_basic_euclidean.pyx":106
  *             ix = p1x + u * (p2x - p1x)
  *             iy = p1y + u * (p2y - p1y)
  *             dpl = _eucl_dist(px,py,ix,iy)             # <<<<<<<<<<<<<<
  * 
  *     return dpl
  */
-      __pyx_v_dpl = __pyx_f_19trajectory_distance_17c_basic_euclidean__eucl_dist(__pyx_v_px, __pyx_v_py, __pyx_v_ix, __pyx_v_iy);
+      __pyx_v_dpl = __pyx_f_9traj_dist_17c_basic_euclidean__eucl_dist(__pyx_v_px, __pyx_v_py, __pyx_v_ix, __pyx_v_iy);
     }
     __pyx_L6:;
   }
   __pyx_L3:;
 
-  /* "trajectory_distance/c_basic_euclidean.pyx":108
+  /* "traj_dist/c_basic_euclidean.pyx":108
  *             dpl = _eucl_dist(px,py,ix,iy)
  * 
  *     return dpl             # <<<<<<<<<<<<<<
@@ -1754,7 +1754,7 @@ static double __pyx_f_19trajectory_distance_17c_basic_euclidean__point_to_seg(do
   __pyx_r = __pyx_v_dpl;
   goto __pyx_L0;
 
-  /* "trajectory_distance/c_basic_euclidean.pyx":63
+  /* "traj_dist/c_basic_euclidean.pyx":63
  * 
  * 
  * cdef double _point_to_seg(double px, double py, double p1x, double p1y, double p2x, double p2y ):             # <<<<<<<<<<<<<<
@@ -1764,14 +1764,14 @@ static double __pyx_f_19trajectory_distance_17c_basic_euclidean__point_to_seg(do
 
   /* function exit code */
   __pyx_L1_error:;
-  __Pyx_WriteUnraisable("trajectory_distance.c_basic_euclidean._point_to_seg", __pyx_clineno, __pyx_lineno, __pyx_filename, 0);
+  __Pyx_WriteUnraisable("traj_dist.c_basic_euclidean._point_to_seg", __pyx_clineno, __pyx_lineno, __pyx_filename, 0);
   __pyx_r = 0;
   __pyx_L0:;
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-/* "trajectory_distance/c_basic_euclidean.pyx":110
+/* "traj_dist/c_basic_euclidean.pyx":110
  *     return dpl
  * 
  * def c_point_to_seg(double px, double py, double p1x, double p1y, double p2x, double p2y ):             # <<<<<<<<<<<<<<
@@ -1780,10 +1780,10 @@ static double __pyx_f_19trajectory_distance_17c_basic_euclidean__point_to_seg(do
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_19trajectory_distance_17c_basic_euclidean_3c_point_to_seg(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static char __pyx_doc_19trajectory_distance_17c_basic_euclidean_2c_point_to_seg[] = "\n    Usage\n    -----\n    Point to segment distance between point (px, py) and segment delimited by (p1x, p1y) and (p2x, p2y)\n\n    Parameters\n    ----------\n    param px : float, abscissa of the point\n    param py : float, ordinate of the point\n    param p1x : float, abscissa of the first end point of the segment\n    param p1y : float, ordinate of the first end point of the segment\n    param p2x : float, abscissa of the second end point of the segment\n    param p2y : float, ordinate of the second end point of the segment\n\n\n    Returns\n    -------\n    dpl: float\n         Point to segment distance between p and s\n    ";
-static PyMethodDef __pyx_mdef_19trajectory_distance_17c_basic_euclidean_3c_point_to_seg = {"c_point_to_seg", (PyCFunction)__pyx_pw_19trajectory_distance_17c_basic_euclidean_3c_point_to_seg, METH_VARARGS|METH_KEYWORDS, __pyx_doc_19trajectory_distance_17c_basic_euclidean_2c_point_to_seg};
-static PyObject *__pyx_pw_19trajectory_distance_17c_basic_euclidean_3c_point_to_seg(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+static PyObject *__pyx_pw_9traj_dist_17c_basic_euclidean_3c_point_to_seg(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static char __pyx_doc_9traj_dist_17c_basic_euclidean_2c_point_to_seg[] = "\n    Usage\n    -----\n    Point to segment distance between point (px, py) and segment delimited by (p1x, p1y) and (p2x, p2y)\n\n    Parameters\n    ----------\n    param px : float, abscissa of the point\n    param py : float, ordinate of the point\n    param p1x : float, abscissa of the first end point of the segment\n    param p1y : float, ordinate of the first end point of the segment\n    param p2x : float, abscissa of the second end point of the segment\n    param p2y : float, ordinate of the second end point of the segment\n\n\n    Returns\n    -------\n    dpl: float\n         Point to segment distance between p and s\n    ";
+static PyMethodDef __pyx_mdef_9traj_dist_17c_basic_euclidean_3c_point_to_seg = {"c_point_to_seg", (PyCFunction)__pyx_pw_9traj_dist_17c_basic_euclidean_3c_point_to_seg, METH_VARARGS|METH_KEYWORDS, __pyx_doc_9traj_dist_17c_basic_euclidean_2c_point_to_seg};
+static PyObject *__pyx_pw_9traj_dist_17c_basic_euclidean_3c_point_to_seg(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   double __pyx_v_px;
   double __pyx_v_py;
   double __pyx_v_p1x;
@@ -1867,18 +1867,18 @@ static PyObject *__pyx_pw_19trajectory_distance_17c_basic_euclidean_3c_point_to_
   __pyx_L5_argtuple_error:;
   __Pyx_RaiseArgtupleInvalid("c_point_to_seg", 1, 6, 6, PyTuple_GET_SIZE(__pyx_args)); {__pyx_filename = __pyx_f[0]; __pyx_lineno = 110; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
   __pyx_L3_error:;
-  __Pyx_AddTraceback("trajectory_distance.c_basic_euclidean.c_point_to_seg", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("traj_dist.c_basic_euclidean.c_point_to_seg", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_19trajectory_distance_17c_basic_euclidean_2c_point_to_seg(__pyx_self, __pyx_v_px, __pyx_v_py, __pyx_v_p1x, __pyx_v_p1y, __pyx_v_p2x, __pyx_v_p2y);
+  __pyx_r = __pyx_pf_9traj_dist_17c_basic_euclidean_2c_point_to_seg(__pyx_self, __pyx_v_px, __pyx_v_py, __pyx_v_p1x, __pyx_v_p1y, __pyx_v_p2x, __pyx_v_p2y);
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_19trajectory_distance_17c_basic_euclidean_2c_point_to_seg(CYTHON_UNUSED PyObject *__pyx_self, double __pyx_v_px, double __pyx_v_py, double __pyx_v_p1x, double __pyx_v_p1y, double __pyx_v_p2x, double __pyx_v_p2y) {
+static PyObject *__pyx_pf_9traj_dist_17c_basic_euclidean_2c_point_to_seg(CYTHON_UNUSED PyObject *__pyx_self, double __pyx_v_px, double __pyx_v_py, double __pyx_v_p1x, double __pyx_v_p1y, double __pyx_v_p2x, double __pyx_v_p2y) {
   double __pyx_v_segl;
   double __pyx_v_u1;
   double __pyx_v_u;
@@ -1896,7 +1896,7 @@ static PyObject *__pyx_pf_19trajectory_distance_17c_basic_euclidean_2c_point_to_
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("c_point_to_seg", 0);
 
-  /* "trajectory_distance/c_basic_euclidean.pyx":132
+  /* "traj_dist/c_basic_euclidean.pyx":132
  *     """
  *     cdef double segl,u1,u,ix,iy,dpl
  *     if p1x==p2x and p1y==p2y:             # <<<<<<<<<<<<<<
@@ -1914,28 +1914,28 @@ static PyObject *__pyx_pf_19trajectory_distance_17c_basic_euclidean_2c_point_to_
   __pyx_L4_bool_binop_done:;
   if (__pyx_t_1) {
 
-    /* "trajectory_distance/c_basic_euclidean.pyx":133
+    /* "traj_dist/c_basic_euclidean.pyx":133
  *     cdef double segl,u1,u,ix,iy,dpl
  *     if p1x==p2x and p1y==p2y:
  *         dpl=_eucl_dist(px,py,p1x,p1y)             # <<<<<<<<<<<<<<
  *     else:
  *         segl= _eucl_dist(p1x,p1y,p2x,p2y)
  */
-    __pyx_v_dpl = __pyx_f_19trajectory_distance_17c_basic_euclidean__eucl_dist(__pyx_v_px, __pyx_v_py, __pyx_v_p1x, __pyx_v_p1y);
+    __pyx_v_dpl = __pyx_f_9traj_dist_17c_basic_euclidean__eucl_dist(__pyx_v_px, __pyx_v_py, __pyx_v_p1x, __pyx_v_p1y);
     goto __pyx_L3;
   }
   /*else*/ {
 
-    /* "trajectory_distance/c_basic_euclidean.pyx":135
+    /* "traj_dist/c_basic_euclidean.pyx":135
  *         dpl=_eucl_dist(px,py,p1x,p1y)
  *     else:
  *         segl= _eucl_dist(p1x,p1y,p2x,p2y)             # <<<<<<<<<<<<<<
  *         u1 = (((px - p1x) * (p2x - p1x)) + ((py - p1y) * (p2y - p1y)))
  *         u = u1 / (segl * segl)
  */
-    __pyx_v_segl = __pyx_f_19trajectory_distance_17c_basic_euclidean__eucl_dist(__pyx_v_p1x, __pyx_v_p1y, __pyx_v_p2x, __pyx_v_p2y);
+    __pyx_v_segl = __pyx_f_9traj_dist_17c_basic_euclidean__eucl_dist(__pyx_v_p1x, __pyx_v_p1y, __pyx_v_p2x, __pyx_v_p2y);
 
-    /* "trajectory_distance/c_basic_euclidean.pyx":136
+    /* "traj_dist/c_basic_euclidean.pyx":136
  *     else:
  *         segl= _eucl_dist(p1x,p1y,p2x,p2y)
  *         u1 = (((px - p1x) * (p2x - p1x)) + ((py - p1y) * (p2y - p1y)))             # <<<<<<<<<<<<<<
@@ -1944,7 +1944,7 @@ static PyObject *__pyx_pf_19trajectory_distance_17c_basic_euclidean_2c_point_to_
  */
     __pyx_v_u1 = (((__pyx_v_px - __pyx_v_p1x) * (__pyx_v_p2x - __pyx_v_p1x)) + ((__pyx_v_py - __pyx_v_p1y) * (__pyx_v_p2y - __pyx_v_p1y)));
 
-    /* "trajectory_distance/c_basic_euclidean.pyx":137
+    /* "traj_dist/c_basic_euclidean.pyx":137
  *         segl= _eucl_dist(p1x,p1y,p2x,p2y)
  *         u1 = (((px - p1x) * (p2x - p1x)) + ((py - p1y) * (p2y - p1y)))
  *         u = u1 / (segl * segl)             # <<<<<<<<<<<<<<
@@ -1964,7 +1964,7 @@ static PyObject *__pyx_pf_19trajectory_distance_17c_basic_euclidean_2c_point_to_
     }
     __pyx_v_u = (__pyx_v_u1 / __pyx_t_3);
 
-    /* "trajectory_distance/c_basic_euclidean.pyx":139
+    /* "traj_dist/c_basic_euclidean.pyx":139
  *         u = u1 / (segl * segl)
  * 
  *         if (u < 0.00001) or (u > 1):             # <<<<<<<<<<<<<<
@@ -1982,25 +1982,25 @@ static PyObject *__pyx_pf_19trajectory_distance_17c_basic_euclidean_2c_point_to_
     __pyx_L7_bool_binop_done:;
     if (__pyx_t_1) {
 
-      /* "trajectory_distance/c_basic_euclidean.pyx":142
+      /* "traj_dist/c_basic_euclidean.pyx":142
  *             #// closest point does not fall within the line segment, take the shorter distance
  *             #// to an endpoint
  *             ix = _eucl_dist(px,py,p1x,p1y)             # <<<<<<<<<<<<<<
  *             iy = _eucl_dist(px,py,p2x,p2y)
  *             if ix > iy:
  */
-      __pyx_v_ix = __pyx_f_19trajectory_distance_17c_basic_euclidean__eucl_dist(__pyx_v_px, __pyx_v_py, __pyx_v_p1x, __pyx_v_p1y);
+      __pyx_v_ix = __pyx_f_9traj_dist_17c_basic_euclidean__eucl_dist(__pyx_v_px, __pyx_v_py, __pyx_v_p1x, __pyx_v_p1y);
 
-      /* "trajectory_distance/c_basic_euclidean.pyx":143
+      /* "traj_dist/c_basic_euclidean.pyx":143
  *             #// to an endpoint
  *             ix = _eucl_dist(px,py,p1x,p1y)
  *             iy = _eucl_dist(px,py,p2x,p2y)             # <<<<<<<<<<<<<<
  *             if ix > iy:
  *                 dpl = iy
  */
-      __pyx_v_iy = __pyx_f_19trajectory_distance_17c_basic_euclidean__eucl_dist(__pyx_v_px, __pyx_v_py, __pyx_v_p2x, __pyx_v_p2y);
+      __pyx_v_iy = __pyx_f_9traj_dist_17c_basic_euclidean__eucl_dist(__pyx_v_px, __pyx_v_py, __pyx_v_p2x, __pyx_v_p2y);
 
-      /* "trajectory_distance/c_basic_euclidean.pyx":144
+      /* "traj_dist/c_basic_euclidean.pyx":144
  *             ix = _eucl_dist(px,py,p1x,p1y)
  *             iy = _eucl_dist(px,py,p2x,p2y)
  *             if ix > iy:             # <<<<<<<<<<<<<<
@@ -2010,7 +2010,7 @@ static PyObject *__pyx_pf_19trajectory_distance_17c_basic_euclidean_2c_point_to_
       __pyx_t_1 = ((__pyx_v_ix > __pyx_v_iy) != 0);
       if (__pyx_t_1) {
 
-        /* "trajectory_distance/c_basic_euclidean.pyx":145
+        /* "traj_dist/c_basic_euclidean.pyx":145
  *             iy = _eucl_dist(px,py,p2x,p2y)
  *             if ix > iy:
  *                 dpl = iy             # <<<<<<<<<<<<<<
@@ -2022,7 +2022,7 @@ static PyObject *__pyx_pf_19trajectory_distance_17c_basic_euclidean_2c_point_to_
       }
       /*else*/ {
 
-        /* "trajectory_distance/c_basic_euclidean.pyx":147
+        /* "traj_dist/c_basic_euclidean.pyx":147
  *                 dpl = iy
  *             else:
  *                 dpl = ix             # <<<<<<<<<<<<<<
@@ -2036,7 +2036,7 @@ static PyObject *__pyx_pf_19trajectory_distance_17c_basic_euclidean_2c_point_to_
     }
     /*else*/ {
 
-      /* "trajectory_distance/c_basic_euclidean.pyx":150
+      /* "traj_dist/c_basic_euclidean.pyx":150
  *         else:
  *             # Intersecting point is on the line, use the formula
  *             ix = p1x + u * (p2x - p1x)             # <<<<<<<<<<<<<<
@@ -2045,7 +2045,7 @@ static PyObject *__pyx_pf_19trajectory_distance_17c_basic_euclidean_2c_point_to_
  */
       __pyx_v_ix = (__pyx_v_p1x + (__pyx_v_u * (__pyx_v_p2x - __pyx_v_p1x)));
 
-      /* "trajectory_distance/c_basic_euclidean.pyx":151
+      /* "traj_dist/c_basic_euclidean.pyx":151
  *             # Intersecting point is on the line, use the formula
  *             ix = p1x + u * (p2x - p1x)
  *             iy = p1y + u * (p2y - p1y)             # <<<<<<<<<<<<<<
@@ -2054,20 +2054,20 @@ static PyObject *__pyx_pf_19trajectory_distance_17c_basic_euclidean_2c_point_to_
  */
       __pyx_v_iy = (__pyx_v_p1y + (__pyx_v_u * (__pyx_v_p2y - __pyx_v_p1y)));
 
-      /* "trajectory_distance/c_basic_euclidean.pyx":152
+      /* "traj_dist/c_basic_euclidean.pyx":152
  *             ix = p1x + u * (p2x - p1x)
  *             iy = p1y + u * (p2y - p1y)
  *             dpl = _eucl_dist(px,py,ix,iy)             # <<<<<<<<<<<<<<
  * 
  *     return dpl
  */
-      __pyx_v_dpl = __pyx_f_19trajectory_distance_17c_basic_euclidean__eucl_dist(__pyx_v_px, __pyx_v_py, __pyx_v_ix, __pyx_v_iy);
+      __pyx_v_dpl = __pyx_f_9traj_dist_17c_basic_euclidean__eucl_dist(__pyx_v_px, __pyx_v_py, __pyx_v_ix, __pyx_v_iy);
     }
     __pyx_L6:;
   }
   __pyx_L3:;
 
-  /* "trajectory_distance/c_basic_euclidean.pyx":154
+  /* "traj_dist/c_basic_euclidean.pyx":154
  *             dpl = _eucl_dist(px,py,ix,iy)
  * 
  *     return dpl             # <<<<<<<<<<<<<<
@@ -2081,7 +2081,7 @@ static PyObject *__pyx_pf_19trajectory_distance_17c_basic_euclidean_2c_point_to_
   __pyx_t_4 = 0;
   goto __pyx_L0;
 
-  /* "trajectory_distance/c_basic_euclidean.pyx":110
+  /* "traj_dist/c_basic_euclidean.pyx":110
  *     return dpl
  * 
  * def c_point_to_seg(double px, double py, double p1x, double p1y, double p2x, double p2y ):             # <<<<<<<<<<<<<<
@@ -2092,7 +2092,7 @@ static PyObject *__pyx_pf_19trajectory_distance_17c_basic_euclidean_2c_point_to_
   /* function exit code */
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_4);
-  __Pyx_AddTraceback("trajectory_distance.c_basic_euclidean.c_point_to_seg", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("traj_dist.c_basic_euclidean.c_point_to_seg", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
@@ -2100,7 +2100,7 @@ static PyObject *__pyx_pf_19trajectory_distance_17c_basic_euclidean_2c_point_to_
   return __pyx_r;
 }
 
-/* "trajectory_distance/c_basic_euclidean.pyx":156
+/* "traj_dist/c_basic_euclidean.pyx":156
  *     return dpl
  * 
  * cdef double _point_to_trajectory (double px,double py, np.ndarray[np.float64_t,ndim=2] t):             # <<<<<<<<<<<<<<
@@ -2108,7 +2108,7 @@ static PyObject *__pyx_pf_19trajectory_distance_17c_basic_euclidean_2c_point_to_
  *     Usage
  */
 
-static double __pyx_f_19trajectory_distance_17c_basic_euclidean__point_to_trajectory(double __pyx_v_px, double __pyx_v_py, PyArrayObject *__pyx_v_t) {
+static double __pyx_f_9traj_dist_17c_basic_euclidean__point_to_trajectory(double __pyx_v_px, double __pyx_v_py, PyArrayObject *__pyx_v_t) {
   double __pyx_v_dist_j0;
   int __pyx_v_nt;
   int __pyx_v_i;
@@ -2155,7 +2155,7 @@ static double __pyx_f_19trajectory_distance_17c_basic_euclidean__point_to_trajec
   }
   __pyx_pybuffernd_t.diminfo[0].strides = __pyx_pybuffernd_t.rcbuffer->pybuffer.strides[0]; __pyx_pybuffernd_t.diminfo[0].shape = __pyx_pybuffernd_t.rcbuffer->pybuffer.shape[0]; __pyx_pybuffernd_t.diminfo[1].strides = __pyx_pybuffernd_t.rcbuffer->pybuffer.strides[1]; __pyx_pybuffernd_t.diminfo[1].shape = __pyx_pybuffernd_t.rcbuffer->pybuffer.shape[1];
 
-  /* "trajectory_distance/c_basic_euclidean.pyx":178
+  /* "traj_dist/c_basic_euclidean.pyx":178
  *     cdef np.ndarray[np.float64_t,ndim=1] xt,yt
  * 
  *     nt=len(t)             # <<<<<<<<<<<<<<
@@ -2165,7 +2165,7 @@ static double __pyx_f_19trajectory_distance_17c_basic_euclidean__point_to_trajec
   __pyx_t_1 = PyObject_Length(((PyObject *)__pyx_v_t)); if (unlikely(__pyx_t_1 == -1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 178; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __pyx_v_nt = __pyx_t_1;
 
-  /* "trajectory_distance/c_basic_euclidean.pyx":179
+  /* "traj_dist/c_basic_euclidean.pyx":179
  * 
  *     nt=len(t)
  *     xt=t[:,0]             # <<<<<<<<<<<<<<
@@ -2196,7 +2196,7 @@ static double __pyx_f_19trajectory_distance_17c_basic_euclidean__point_to_trajec
   __pyx_v_xt = ((PyArrayObject *)__pyx_t_2);
   __pyx_t_2 = 0;
 
-  /* "trajectory_distance/c_basic_euclidean.pyx":180
+  /* "traj_dist/c_basic_euclidean.pyx":180
  *     nt=len(t)
  *     xt=t[:,0]
  *     yt=t[:,1]             # <<<<<<<<<<<<<<
@@ -2227,7 +2227,7 @@ static double __pyx_f_19trajectory_distance_17c_basic_euclidean__point_to_trajec
   __pyx_v_yt = ((PyArrayObject *)__pyx_t_2);
   __pyx_t_2 = 0;
 
-  /* "trajectory_distance/c_basic_euclidean.pyx":181
+  /* "traj_dist/c_basic_euclidean.pyx":181
  *     xt=t[:,0]
  *     yt=t[:,1]
  *     dist_j0=9e100             # <<<<<<<<<<<<<<
@@ -2236,7 +2236,7 @@ static double __pyx_f_19trajectory_distance_17c_basic_euclidean__point_to_trajec
  */
   __pyx_v_dist_j0 = 9e100;
 
-  /* "trajectory_distance/c_basic_euclidean.pyx":182
+  /* "traj_dist/c_basic_euclidean.pyx":182
  *     yt=t[:,1]
  *     dist_j0=9e100
  *     for i from 0 <= i < (nt-1):             # <<<<<<<<<<<<<<
@@ -2246,7 +2246,7 @@ static double __pyx_f_19trajectory_distance_17c_basic_euclidean__point_to_trajec
   __pyx_t_8 = (__pyx_v_nt - 1);
   for (__pyx_v_i = 0; __pyx_v_i < __pyx_t_8; __pyx_v_i++) {
 
-    /* "trajectory_distance/c_basic_euclidean.pyx":183
+    /* "traj_dist/c_basic_euclidean.pyx":183
  *     dist_j0=9e100
  *     for i from 0 <= i < (nt-1):
  *         dist_j0=fmin(dist_j0,_point_to_seg(px,py,xt[i],yt[i],xt[i+1],yt[i+1]))             # <<<<<<<<<<<<<<
@@ -2257,10 +2257,10 @@ static double __pyx_f_19trajectory_distance_17c_basic_euclidean__point_to_trajec
     __pyx_t_9 = __pyx_v_i;
     __pyx_t_10 = (__pyx_v_i + 1);
     __pyx_t_11 = (__pyx_v_i + 1);
-    __pyx_v_dist_j0 = fmin(__pyx_v_dist_j0, __pyx_f_19trajectory_distance_17c_basic_euclidean__point_to_seg(__pyx_v_px, __pyx_v_py, (*__Pyx_BufPtrStrided1d(__pyx_t_5numpy_float64_t *, __pyx_pybuffernd_xt.rcbuffer->pybuffer.buf, __pyx_t_4, __pyx_pybuffernd_xt.diminfo[0].strides)), (*__Pyx_BufPtrStrided1d(__pyx_t_5numpy_float64_t *, __pyx_pybuffernd_yt.rcbuffer->pybuffer.buf, __pyx_t_9, __pyx_pybuffernd_yt.diminfo[0].strides)), (*__Pyx_BufPtrStrided1d(__pyx_t_5numpy_float64_t *, __pyx_pybuffernd_xt.rcbuffer->pybuffer.buf, __pyx_t_10, __pyx_pybuffernd_xt.diminfo[0].strides)), (*__Pyx_BufPtrStrided1d(__pyx_t_5numpy_float64_t *, __pyx_pybuffernd_yt.rcbuffer->pybuffer.buf, __pyx_t_11, __pyx_pybuffernd_yt.diminfo[0].strides))));
+    __pyx_v_dist_j0 = fmin(__pyx_v_dist_j0, __pyx_f_9traj_dist_17c_basic_euclidean__point_to_seg(__pyx_v_px, __pyx_v_py, (*__Pyx_BufPtrStrided1d(__pyx_t_5numpy_float64_t *, __pyx_pybuffernd_xt.rcbuffer->pybuffer.buf, __pyx_t_4, __pyx_pybuffernd_xt.diminfo[0].strides)), (*__Pyx_BufPtrStrided1d(__pyx_t_5numpy_float64_t *, __pyx_pybuffernd_yt.rcbuffer->pybuffer.buf, __pyx_t_9, __pyx_pybuffernd_yt.diminfo[0].strides)), (*__Pyx_BufPtrStrided1d(__pyx_t_5numpy_float64_t *, __pyx_pybuffernd_xt.rcbuffer->pybuffer.buf, __pyx_t_10, __pyx_pybuffernd_xt.diminfo[0].strides)), (*__Pyx_BufPtrStrided1d(__pyx_t_5numpy_float64_t *, __pyx_pybuffernd_yt.rcbuffer->pybuffer.buf, __pyx_t_11, __pyx_pybuffernd_yt.diminfo[0].strides))));
   }
 
-  /* "trajectory_distance/c_basic_euclidean.pyx":185
+  /* "traj_dist/c_basic_euclidean.pyx":185
  *         dist_j0=fmin(dist_j0,_point_to_seg(px,py,xt[i],yt[i],xt[i+1],yt[i+1]))
  * 
  *     return dist_j0             # <<<<<<<<<<<<<<
@@ -2270,7 +2270,7 @@ static double __pyx_f_19trajectory_distance_17c_basic_euclidean__point_to_trajec
   __pyx_r = __pyx_v_dist_j0;
   goto __pyx_L0;
 
-  /* "trajectory_distance/c_basic_euclidean.pyx":156
+  /* "traj_dist/c_basic_euclidean.pyx":156
  *     return dpl
  * 
  * cdef double _point_to_trajectory (double px,double py, np.ndarray[np.float64_t,ndim=2] t):             # <<<<<<<<<<<<<<
@@ -2287,7 +2287,7 @@ static double __pyx_f_19trajectory_distance_17c_basic_euclidean__point_to_trajec
     __Pyx_SafeReleaseBuffer(&__pyx_pybuffernd_xt.rcbuffer->pybuffer);
     __Pyx_SafeReleaseBuffer(&__pyx_pybuffernd_yt.rcbuffer->pybuffer);
   __Pyx_ErrRestore(__pyx_type, __pyx_value, __pyx_tb);}
-  __Pyx_WriteUnraisable("trajectory_distance.c_basic_euclidean._point_to_trajectory", __pyx_clineno, __pyx_lineno, __pyx_filename, 0);
+  __Pyx_WriteUnraisable("traj_dist.c_basic_euclidean._point_to_trajectory", __pyx_clineno, __pyx_lineno, __pyx_filename, 0);
   __pyx_r = 0;
   goto __pyx_L2;
   __pyx_L0:;
@@ -2301,7 +2301,7 @@ static double __pyx_f_19trajectory_distance_17c_basic_euclidean__point_to_trajec
   return __pyx_r;
 }
 
-/* "trajectory_distance/c_basic_euclidean.pyx":187
+/* "traj_dist/c_basic_euclidean.pyx":187
  *     return dist_j0
  * 
  * def c_point_to_trajectory (double px,double py, np.ndarray[np.float64_t,ndim=2] t):             # <<<<<<<<<<<<<<
@@ -2310,10 +2310,10 @@ static double __pyx_f_19trajectory_distance_17c_basic_euclidean__point_to_trajec
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_19trajectory_distance_17c_basic_euclidean_5c_point_to_trajectory(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static char __pyx_doc_19trajectory_distance_17c_basic_euclidean_4c_point_to_trajectory[] = "\n    Usage\n    -----\n    Point-to-trajectory distance between point (px, py) and the trajectory t.\n    The Point to trajectory distance is the minimum of point-to-segment distance between p and all segment s of t\n\n    Parameters\n    ----------\n    param px : float, abscissa of the point\n    param py : float, ordinate of the point\n    param t : len(t)x2 numpy_array\n\n    Returns\n    -------\n    dpt : float,\n          Point-to-trajectory distance between p and trajectory t\n    ";
-static PyMethodDef __pyx_mdef_19trajectory_distance_17c_basic_euclidean_5c_point_to_trajectory = {"c_point_to_trajectory", (PyCFunction)__pyx_pw_19trajectory_distance_17c_basic_euclidean_5c_point_to_trajectory, METH_VARARGS|METH_KEYWORDS, __pyx_doc_19trajectory_distance_17c_basic_euclidean_4c_point_to_trajectory};
-static PyObject *__pyx_pw_19trajectory_distance_17c_basic_euclidean_5c_point_to_trajectory(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+static PyObject *__pyx_pw_9traj_dist_17c_basic_euclidean_5c_point_to_trajectory(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static char __pyx_doc_9traj_dist_17c_basic_euclidean_4c_point_to_trajectory[] = "\n    Usage\n    -----\n    Point-to-trajectory distance between point (px, py) and the trajectory t.\n    The Point to trajectory distance is the minimum of point-to-segment distance between p and all segment s of t\n\n    Parameters\n    ----------\n    param px : float, abscissa of the point\n    param py : float, ordinate of the point\n    param t : len(t)x2 numpy_array\n\n    Returns\n    -------\n    dpt : float,\n          Point-to-trajectory distance between p and trajectory t\n    ";
+static PyMethodDef __pyx_mdef_9traj_dist_17c_basic_euclidean_5c_point_to_trajectory = {"c_point_to_trajectory", (PyCFunction)__pyx_pw_9traj_dist_17c_basic_euclidean_5c_point_to_trajectory, METH_VARARGS|METH_KEYWORDS, __pyx_doc_9traj_dist_17c_basic_euclidean_4c_point_to_trajectory};
+static PyObject *__pyx_pw_9traj_dist_17c_basic_euclidean_5c_point_to_trajectory(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   double __pyx_v_px;
   double __pyx_v_py;
   PyArrayObject *__pyx_v_t = 0;
@@ -2370,12 +2370,12 @@ static PyObject *__pyx_pw_19trajectory_distance_17c_basic_euclidean_5c_point_to_
   __pyx_L5_argtuple_error:;
   __Pyx_RaiseArgtupleInvalid("c_point_to_trajectory", 1, 3, 3, PyTuple_GET_SIZE(__pyx_args)); {__pyx_filename = __pyx_f[0]; __pyx_lineno = 187; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
   __pyx_L3_error:;
-  __Pyx_AddTraceback("trajectory_distance.c_basic_euclidean.c_point_to_trajectory", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("traj_dist.c_basic_euclidean.c_point_to_trajectory", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
   if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_t), __pyx_ptype_5numpy_ndarray, 1, "t", 0))) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 187; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __pyx_r = __pyx_pf_19trajectory_distance_17c_basic_euclidean_4c_point_to_trajectory(__pyx_self, __pyx_v_px, __pyx_v_py, __pyx_v_t);
+  __pyx_r = __pyx_pf_9traj_dist_17c_basic_euclidean_4c_point_to_trajectory(__pyx_self, __pyx_v_px, __pyx_v_py, __pyx_v_t);
 
   /* function exit code */
   goto __pyx_L0;
@@ -2386,7 +2386,7 @@ static PyObject *__pyx_pw_19trajectory_distance_17c_basic_euclidean_5c_point_to_
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_19trajectory_distance_17c_basic_euclidean_4c_point_to_trajectory(CYTHON_UNUSED PyObject *__pyx_self, double __pyx_v_px, double __pyx_v_py, PyArrayObject *__pyx_v_t) {
+static PyObject *__pyx_pf_9traj_dist_17c_basic_euclidean_4c_point_to_trajectory(CYTHON_UNUSED PyObject *__pyx_self, double __pyx_v_px, double __pyx_v_py, PyArrayObject *__pyx_v_t) {
   double __pyx_v_dist_j0;
   int __pyx_v_nt;
   int __pyx_v_i;
@@ -2433,7 +2433,7 @@ static PyObject *__pyx_pf_19trajectory_distance_17c_basic_euclidean_4c_point_to_
   }
   __pyx_pybuffernd_t.diminfo[0].strides = __pyx_pybuffernd_t.rcbuffer->pybuffer.strides[0]; __pyx_pybuffernd_t.diminfo[0].shape = __pyx_pybuffernd_t.rcbuffer->pybuffer.shape[0]; __pyx_pybuffernd_t.diminfo[1].strides = __pyx_pybuffernd_t.rcbuffer->pybuffer.strides[1]; __pyx_pybuffernd_t.diminfo[1].shape = __pyx_pybuffernd_t.rcbuffer->pybuffer.shape[1];
 
-  /* "trajectory_distance/c_basic_euclidean.pyx":209
+  /* "traj_dist/c_basic_euclidean.pyx":209
  *     cdef np.ndarray[np.float64_t,ndim=1] xt,yt
  * 
  *     nt=len(t)             # <<<<<<<<<<<<<<
@@ -2443,7 +2443,7 @@ static PyObject *__pyx_pf_19trajectory_distance_17c_basic_euclidean_4c_point_to_
   __pyx_t_1 = PyObject_Length(((PyObject *)__pyx_v_t)); if (unlikely(__pyx_t_1 == -1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 209; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __pyx_v_nt = __pyx_t_1;
 
-  /* "trajectory_distance/c_basic_euclidean.pyx":210
+  /* "traj_dist/c_basic_euclidean.pyx":210
  * 
  *     nt=len(t)
  *     xt=t[:,0]             # <<<<<<<<<<<<<<
@@ -2474,7 +2474,7 @@ static PyObject *__pyx_pf_19trajectory_distance_17c_basic_euclidean_4c_point_to_
   __pyx_v_xt = ((PyArrayObject *)__pyx_t_2);
   __pyx_t_2 = 0;
 
-  /* "trajectory_distance/c_basic_euclidean.pyx":211
+  /* "traj_dist/c_basic_euclidean.pyx":211
  *     nt=len(t)
  *     xt=t[:,0]
  *     yt=t[:,1]             # <<<<<<<<<<<<<<
@@ -2505,7 +2505,7 @@ static PyObject *__pyx_pf_19trajectory_distance_17c_basic_euclidean_4c_point_to_
   __pyx_v_yt = ((PyArrayObject *)__pyx_t_2);
   __pyx_t_2 = 0;
 
-  /* "trajectory_distance/c_basic_euclidean.pyx":212
+  /* "traj_dist/c_basic_euclidean.pyx":212
  *     xt=t[:,0]
  *     yt=t[:,1]
  *     dist_j0=9e100             # <<<<<<<<<<<<<<
@@ -2514,7 +2514,7 @@ static PyObject *__pyx_pf_19trajectory_distance_17c_basic_euclidean_4c_point_to_
  */
   __pyx_v_dist_j0 = 9e100;
 
-  /* "trajectory_distance/c_basic_euclidean.pyx":213
+  /* "traj_dist/c_basic_euclidean.pyx":213
  *     yt=t[:,1]
  *     dist_j0=9e100
  *     for i from 0 <= i < (nt-1):             # <<<<<<<<<<<<<<
@@ -2524,7 +2524,7 @@ static PyObject *__pyx_pf_19trajectory_distance_17c_basic_euclidean_4c_point_to_
   __pyx_t_8 = (__pyx_v_nt - 1);
   for (__pyx_v_i = 0; __pyx_v_i < __pyx_t_8; __pyx_v_i++) {
 
-    /* "trajectory_distance/c_basic_euclidean.pyx":214
+    /* "traj_dist/c_basic_euclidean.pyx":214
  *     dist_j0=9e100
  *     for i from 0 <= i < (nt-1):
  *         dist_j0=fmin(dist_j0,_point_to_seg(px,py,xt[i],yt[i],xt[i+1],yt[i+1]))             # <<<<<<<<<<<<<<
@@ -2535,10 +2535,10 @@ static PyObject *__pyx_pf_19trajectory_distance_17c_basic_euclidean_4c_point_to_
     __pyx_t_9 = __pyx_v_i;
     __pyx_t_10 = (__pyx_v_i + 1);
     __pyx_t_11 = (__pyx_v_i + 1);
-    __pyx_v_dist_j0 = fmin(__pyx_v_dist_j0, __pyx_f_19trajectory_distance_17c_basic_euclidean__point_to_seg(__pyx_v_px, __pyx_v_py, (*__Pyx_BufPtrStrided1d(__pyx_t_5numpy_float64_t *, __pyx_pybuffernd_xt.rcbuffer->pybuffer.buf, __pyx_t_4, __pyx_pybuffernd_xt.diminfo[0].strides)), (*__Pyx_BufPtrStrided1d(__pyx_t_5numpy_float64_t *, __pyx_pybuffernd_yt.rcbuffer->pybuffer.buf, __pyx_t_9, __pyx_pybuffernd_yt.diminfo[0].strides)), (*__Pyx_BufPtrStrided1d(__pyx_t_5numpy_float64_t *, __pyx_pybuffernd_xt.rcbuffer->pybuffer.buf, __pyx_t_10, __pyx_pybuffernd_xt.diminfo[0].strides)), (*__Pyx_BufPtrStrided1d(__pyx_t_5numpy_float64_t *, __pyx_pybuffernd_yt.rcbuffer->pybuffer.buf, __pyx_t_11, __pyx_pybuffernd_yt.diminfo[0].strides))));
+    __pyx_v_dist_j0 = fmin(__pyx_v_dist_j0, __pyx_f_9traj_dist_17c_basic_euclidean__point_to_seg(__pyx_v_px, __pyx_v_py, (*__Pyx_BufPtrStrided1d(__pyx_t_5numpy_float64_t *, __pyx_pybuffernd_xt.rcbuffer->pybuffer.buf, __pyx_t_4, __pyx_pybuffernd_xt.diminfo[0].strides)), (*__Pyx_BufPtrStrided1d(__pyx_t_5numpy_float64_t *, __pyx_pybuffernd_yt.rcbuffer->pybuffer.buf, __pyx_t_9, __pyx_pybuffernd_yt.diminfo[0].strides)), (*__Pyx_BufPtrStrided1d(__pyx_t_5numpy_float64_t *, __pyx_pybuffernd_xt.rcbuffer->pybuffer.buf, __pyx_t_10, __pyx_pybuffernd_xt.diminfo[0].strides)), (*__Pyx_BufPtrStrided1d(__pyx_t_5numpy_float64_t *, __pyx_pybuffernd_yt.rcbuffer->pybuffer.buf, __pyx_t_11, __pyx_pybuffernd_yt.diminfo[0].strides))));
   }
 
-  /* "trajectory_distance/c_basic_euclidean.pyx":216
+  /* "traj_dist/c_basic_euclidean.pyx":216
  *         dist_j0=fmin(dist_j0,_point_to_seg(px,py,xt[i],yt[i],xt[i+1],yt[i+1]))
  * 
  *     return dist_j0             # <<<<<<<<<<<<<<
@@ -2552,7 +2552,7 @@ static PyObject *__pyx_pf_19trajectory_distance_17c_basic_euclidean_4c_point_to_
   __pyx_t_2 = 0;
   goto __pyx_L0;
 
-  /* "trajectory_distance/c_basic_euclidean.pyx":187
+  /* "traj_dist/c_basic_euclidean.pyx":187
  *     return dist_j0
  * 
  * def c_point_to_trajectory (double px,double py, np.ndarray[np.float64_t,ndim=2] t):             # <<<<<<<<<<<<<<
@@ -2569,7 +2569,7 @@ static PyObject *__pyx_pf_19trajectory_distance_17c_basic_euclidean_4c_point_to_
     __Pyx_SafeReleaseBuffer(&__pyx_pybuffernd_xt.rcbuffer->pybuffer);
     __Pyx_SafeReleaseBuffer(&__pyx_pybuffernd_yt.rcbuffer->pybuffer);
   __Pyx_ErrRestore(__pyx_type, __pyx_value, __pyx_tb);}
-  __Pyx_AddTraceback("trajectory_distance.c_basic_euclidean.c_point_to_trajectory", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("traj_dist.c_basic_euclidean.c_point_to_trajectory", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   goto __pyx_L2;
   __pyx_L0:;
@@ -2584,7 +2584,7 @@ static PyObject *__pyx_pf_19trajectory_distance_17c_basic_euclidean_4c_point_to_
   return __pyx_r;
 }
 
-/* "trajectory_distance/c_basic_euclidean.pyx":218
+/* "traj_dist/c_basic_euclidean.pyx":218
  *     return dist_j0
  * 
  * cdef np.ndarray[np.float64_t,ndim=2] _circle_line_intersection(double px, double py, double s1x, double s1y,             # <<<<<<<<<<<<<<
@@ -2592,7 +2592,7 @@ static PyObject *__pyx_pf_19trajectory_distance_17c_basic_euclidean_4c_point_to_
  * s2x, double s2y, double eps):
  */
 
-static PyArrayObject *__pyx_f_19trajectory_distance_17c_basic_euclidean__circle_line_intersection(double __pyx_v_px, double __pyx_v_py, double __pyx_v_s1x, double __pyx_v_s1y, double __pyx_v_s2x, double __pyx_v_s2y, double __pyx_v_eps) {
+static PyArrayObject *__pyx_f_9traj_dist_17c_basic_euclidean__circle_line_intersection(double __pyx_v_px, double __pyx_v_py, double __pyx_v_s1x, double __pyx_v_s1y, double __pyx_v_s2x, double __pyx_v_s2y, double __pyx_v_eps) {
   double __pyx_v_rac;
   double __pyx_v_y1;
   double __pyx_v_y2;
@@ -2638,7 +2638,7 @@ static PyArrayObject *__pyx_f_19trajectory_distance_17c_basic_euclidean__circle_
   __pyx_pybuffernd_intersect.data = NULL;
   __pyx_pybuffernd_intersect.rcbuffer = &__pyx_pybuffer_intersect;
 
-  /* "trajectory_distance/c_basic_euclidean.pyx":248
+  /* "traj_dist/c_basic_euclidean.pyx":248
  *     cdef bool delta_strict_inf_0,delta_inf_0,delta_strict_sup_0
  * 
  *     if s2x==s1x :             # <<<<<<<<<<<<<<
@@ -2648,7 +2648,7 @@ static PyArrayObject *__pyx_f_19trajectory_distance_17c_basic_euclidean__circle_
   __pyx_t_1 = ((__pyx_v_s2x == __pyx_v_s1x) != 0);
   if (__pyx_t_1) {
 
-    /* "trajectory_distance/c_basic_euclidean.pyx":249
+    /* "traj_dist/c_basic_euclidean.pyx":249
  * 
  *     if s2x==s1x :
  *         rac=sqrt((eps*eps) - ((s1x-px)*(s1x-px)))             # <<<<<<<<<<<<<<
@@ -2657,7 +2657,7 @@ static PyArrayObject *__pyx_f_19trajectory_distance_17c_basic_euclidean__circle_
  */
     __pyx_v_rac = sqrt(((__pyx_v_eps * __pyx_v_eps) - ((__pyx_v_s1x - __pyx_v_px) * (__pyx_v_s1x - __pyx_v_px))));
 
-    /* "trajectory_distance/c_basic_euclidean.pyx":250
+    /* "traj_dist/c_basic_euclidean.pyx":250
  *     if s2x==s1x :
  *         rac=sqrt((eps*eps) - ((s1x-px)*(s1x-px)))
  *         y1 = py+rac             # <<<<<<<<<<<<<<
@@ -2666,7 +2666,7 @@ static PyArrayObject *__pyx_f_19trajectory_distance_17c_basic_euclidean__circle_
  */
     __pyx_v_y1 = (__pyx_v_py + __pyx_v_rac);
 
-    /* "trajectory_distance/c_basic_euclidean.pyx":251
+    /* "traj_dist/c_basic_euclidean.pyx":251
  *         rac=sqrt((eps*eps) - ((s1x-px)*(s1x-px)))
  *         y1 = py+rac
  *         y2 = py-rac             # <<<<<<<<<<<<<<
@@ -2675,7 +2675,7 @@ static PyArrayObject *__pyx_f_19trajectory_distance_17c_basic_euclidean__circle_
  */
     __pyx_v_y2 = (__pyx_v_py - __pyx_v_rac);
 
-    /* "trajectory_distance/c_basic_euclidean.pyx":252
+    /* "traj_dist/c_basic_euclidean.pyx":252
  *         y1 = py+rac
  *         y2 = py-rac
  *         intersect = np.array([[s1x,y1],[s1x,y2]])             # <<<<<<<<<<<<<<
@@ -2770,7 +2770,7 @@ static PyArrayObject *__pyx_f_19trajectory_distance_17c_basic_euclidean__circle_
   }
   /*else*/ {
 
-    /* "trajectory_distance/c_basic_euclidean.pyx":254
+    /* "traj_dist/c_basic_euclidean.pyx":254
  *         intersect = np.array([[s1x,y1],[s1x,y2]])
  *     else:
  *         m= (s2y-s1y)/(s2x-s1x)             # <<<<<<<<<<<<<<
@@ -2791,7 +2791,7 @@ static PyArrayObject *__pyx_f_19trajectory_distance_17c_basic_euclidean__circle_
     }
     __pyx_v_m = (__pyx_t_13 / __pyx_t_14);
 
-    /* "trajectory_distance/c_basic_euclidean.pyx":255
+    /* "traj_dist/c_basic_euclidean.pyx":255
  *     else:
  *         m= (s2y-s1y)/(s2x-s1x)
  *         c= s2y-m*s2x             # <<<<<<<<<<<<<<
@@ -2800,7 +2800,7 @@ static PyArrayObject *__pyx_f_19trajectory_distance_17c_basic_euclidean__circle_
  */
     __pyx_v_c = (__pyx_v_s2y - (__pyx_v_m * __pyx_v_s2x));
 
-    /* "trajectory_distance/c_basic_euclidean.pyx":256
+    /* "traj_dist/c_basic_euclidean.pyx":256
  *         m= (s2y-s1y)/(s2x-s1x)
  *         c= s2y-m*s2x
  *         A=m*m+1             # <<<<<<<<<<<<<<
@@ -2809,7 +2809,7 @@ static PyArrayObject *__pyx_f_19trajectory_distance_17c_basic_euclidean__circle_
  */
     __pyx_v_A = ((__pyx_v_m * __pyx_v_m) + 1.0);
 
-    /* "trajectory_distance/c_basic_euclidean.pyx":257
+    /* "traj_dist/c_basic_euclidean.pyx":257
  *         c= s2y-m*s2x
  *         A=m*m+1
  *         B=2*(m*c-m*py-px)             # <<<<<<<<<<<<<<
@@ -2818,7 +2818,7 @@ static PyArrayObject *__pyx_f_19trajectory_distance_17c_basic_euclidean__circle_
  */
     __pyx_v_B = (2.0 * (((__pyx_v_m * __pyx_v_c) - (__pyx_v_m * __pyx_v_py)) - __pyx_v_px));
 
-    /* "trajectory_distance/c_basic_euclidean.pyx":258
+    /* "traj_dist/c_basic_euclidean.pyx":258
  *         A=m*m+1
  *         B=2*(m*c-m*py-px)
  *         C=py*py-eps*eps+px*px-2*c*py+c*c             # <<<<<<<<<<<<<<
@@ -2827,7 +2827,7 @@ static PyArrayObject *__pyx_f_19trajectory_distance_17c_basic_euclidean__circle_
  */
     __pyx_v_C = (((((__pyx_v_py * __pyx_v_py) - (__pyx_v_eps * __pyx_v_eps)) + (__pyx_v_px * __pyx_v_px)) - ((2.0 * __pyx_v_c) * __pyx_v_py)) + (__pyx_v_c * __pyx_v_c));
 
-    /* "trajectory_distance/c_basic_euclidean.pyx":259
+    /* "traj_dist/c_basic_euclidean.pyx":259
  *         B=2*(m*c-m*py-px)
  *         C=py*py-eps*eps+px*px-2*c*py+c*c
  *         delta=B*B-4*A*C             # <<<<<<<<<<<<<<
@@ -2836,7 +2836,7 @@ static PyArrayObject *__pyx_f_19trajectory_distance_17c_basic_euclidean__circle_
  */
     __pyx_v_delta = ((__pyx_v_B * __pyx_v_B) - ((4.0 * __pyx_v_A) * __pyx_v_C));
 
-    /* "trajectory_distance/c_basic_euclidean.pyx":260
+    /* "traj_dist/c_basic_euclidean.pyx":260
  *         C=py*py-eps*eps+px*px-2*c*py+c*c
  *         delta=B*B-4*A*C
  *         delta_inf_0 = delta <= 0             # <<<<<<<<<<<<<<
@@ -2849,7 +2849,7 @@ static PyArrayObject *__pyx_f_19trajectory_distance_17c_basic_euclidean__circle_
     __pyx_v_delta_inf_0 = ((PyBoolObject *)__pyx_t_2);
     __pyx_t_2 = 0;
 
-    /* "trajectory_distance/c_basic_euclidean.pyx":261
+    /* "traj_dist/c_basic_euclidean.pyx":261
  *         delta=B*B-4*A*C
  *         delta_inf_0 = delta <= 0
  *         delta_strict_sup_0 = delta > 0             # <<<<<<<<<<<<<<
@@ -2862,7 +2862,7 @@ static PyArrayObject *__pyx_f_19trajectory_distance_17c_basic_euclidean__circle_
     __pyx_v_delta_strict_sup_0 = ((PyBoolObject *)__pyx_t_2);
     __pyx_t_2 = 0;
 
-    /* "trajectory_distance/c_basic_euclidean.pyx":262
+    /* "traj_dist/c_basic_euclidean.pyx":262
  *         delta_inf_0 = delta <= 0
  *         delta_strict_sup_0 = delta > 0
  *         if delta_inf_0 :             # <<<<<<<<<<<<<<
@@ -2872,7 +2872,7 @@ static PyArrayObject *__pyx_f_19trajectory_distance_17c_basic_euclidean__circle_
     __pyx_t_1 = __Pyx_PyObject_IsTrue(((PyObject *)__pyx_v_delta_inf_0)); if (unlikely(__pyx_t_1 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 262; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     if (__pyx_t_1) {
 
-      /* "trajectory_distance/c_basic_euclidean.pyx":263
+      /* "traj_dist/c_basic_euclidean.pyx":263
  *         delta_strict_sup_0 = delta > 0
  *         if delta_inf_0 :
  *             delta_strict_inf_0 = delta <0             # <<<<<<<<<<<<<<
@@ -2885,7 +2885,7 @@ static PyArrayObject *__pyx_f_19trajectory_distance_17c_basic_euclidean__circle_
       __pyx_v_delta_strict_inf_0 = ((PyBoolObject *)__pyx_t_2);
       __pyx_t_2 = 0;
 
-      /* "trajectory_distance/c_basic_euclidean.pyx":264
+      /* "traj_dist/c_basic_euclidean.pyx":264
  *         if delta_inf_0 :
  *             delta_strict_inf_0 = delta <0
  *             x = -B/(2*A)             # <<<<<<<<<<<<<<
@@ -2906,7 +2906,7 @@ static PyArrayObject *__pyx_f_19trajectory_distance_17c_basic_euclidean__circle_
       }
       __pyx_v_x = (__pyx_t_14 / __pyx_t_13);
 
-      /* "trajectory_distance/c_basic_euclidean.pyx":265
+      /* "traj_dist/c_basic_euclidean.pyx":265
  *             delta_strict_inf_0 = delta <0
  *             x = -B/(2*A)
  *             y = m*x+c             # <<<<<<<<<<<<<<
@@ -2915,7 +2915,7 @@ static PyArrayObject *__pyx_f_19trajectory_distance_17c_basic_euclidean__circle_
  */
       __pyx_v_y = ((__pyx_v_m * __pyx_v_x) + __pyx_v_c);
 
-      /* "trajectory_distance/c_basic_euclidean.pyx":266
+      /* "traj_dist/c_basic_euclidean.pyx":266
  *             x = -B/(2*A)
  *             y = m*x+c
  *             intersect = np.array([[x,y],[x,y]])             # <<<<<<<<<<<<<<
@@ -3009,7 +3009,7 @@ static PyArrayObject *__pyx_f_19trajectory_distance_17c_basic_euclidean__circle_
       goto __pyx_L4;
     }
 
-    /* "trajectory_distance/c_basic_euclidean.pyx":267
+    /* "traj_dist/c_basic_euclidean.pyx":267
  *             y = m*x+c
  *             intersect = np.array([[x,y],[x,y]])
  *         elif delta_strict_sup_0 > 0 :             # <<<<<<<<<<<<<<
@@ -3021,7 +3021,7 @@ static PyArrayObject *__pyx_f_19trajectory_distance_17c_basic_euclidean__circle_
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
     if (__pyx_t_1) {
 
-      /* "trajectory_distance/c_basic_euclidean.pyx":268
+      /* "traj_dist/c_basic_euclidean.pyx":268
  *             intersect = np.array([[x,y],[x,y]])
  *         elif delta_strict_sup_0 > 0 :
  *             sdelta = sqrt(delta)             # <<<<<<<<<<<<<<
@@ -3030,7 +3030,7 @@ static PyArrayObject *__pyx_f_19trajectory_distance_17c_basic_euclidean__circle_
  */
       __pyx_v_sdelta = sqrt(__pyx_v_delta);
 
-      /* "trajectory_distance/c_basic_euclidean.pyx":269
+      /* "traj_dist/c_basic_euclidean.pyx":269
  *         elif delta_strict_sup_0 > 0 :
  *             sdelta = sqrt(delta)
  *             x1= (-B+sdelta)/(2*A)             # <<<<<<<<<<<<<<
@@ -3051,7 +3051,7 @@ static PyArrayObject *__pyx_f_19trajectory_distance_17c_basic_euclidean__circle_
       }
       __pyx_v_x1 = (__pyx_t_13 / __pyx_t_14);
 
-      /* "trajectory_distance/c_basic_euclidean.pyx":270
+      /* "traj_dist/c_basic_euclidean.pyx":270
  *             sdelta = sqrt(delta)
  *             x1= (-B+sdelta)/(2*A)
  *             y1=m*x1+c             # <<<<<<<<<<<<<<
@@ -3060,7 +3060,7 @@ static PyArrayObject *__pyx_f_19trajectory_distance_17c_basic_euclidean__circle_
  */
       __pyx_v_y1 = ((__pyx_v_m * __pyx_v_x1) + __pyx_v_c);
 
-      /* "trajectory_distance/c_basic_euclidean.pyx":271
+      /* "traj_dist/c_basic_euclidean.pyx":271
  *             x1= (-B+sdelta)/(2*A)
  *             y1=m*x1+c
  *             x2= (-B-sdelta)/(2*A)             # <<<<<<<<<<<<<<
@@ -3081,7 +3081,7 @@ static PyArrayObject *__pyx_f_19trajectory_distance_17c_basic_euclidean__circle_
       }
       __pyx_v_x2 = (__pyx_t_14 / __pyx_t_13);
 
-      /* "trajectory_distance/c_basic_euclidean.pyx":272
+      /* "traj_dist/c_basic_euclidean.pyx":272
  *             y1=m*x1+c
  *             x2= (-B-sdelta)/(2*A)
  *             y2=m*x2+c             # <<<<<<<<<<<<<<
@@ -3090,7 +3090,7 @@ static PyArrayObject *__pyx_f_19trajectory_distance_17c_basic_euclidean__circle_
  */
       __pyx_v_y2 = ((__pyx_v_m * __pyx_v_x2) + __pyx_v_c);
 
-      /* "trajectory_distance/c_basic_euclidean.pyx":273
+      /* "traj_dist/c_basic_euclidean.pyx":273
  *             x2= (-B-sdelta)/(2*A)
  *             y2=m*x2+c
  *             intersect = np.array([[x1,y1],[x2,y2]])             # <<<<<<<<<<<<<<
@@ -3185,7 +3185,7 @@ static PyArrayObject *__pyx_f_19trajectory_distance_17c_basic_euclidean__circle_
     }
     /*else*/ {
 
-      /* "trajectory_distance/c_basic_euclidean.pyx":275
+      /* "traj_dist/c_basic_euclidean.pyx":275
  *             intersect = np.array([[x1,y1],[x2,y2]])
  *         else :
  *             raise ValueError("The intersection between circle and line is supposed to exist")             # <<<<<<<<<<<<<<
@@ -3202,7 +3202,7 @@ static PyArrayObject *__pyx_f_19trajectory_distance_17c_basic_euclidean__circle_
   }
   __pyx_L3:;
 
-  /* "trajectory_distance/c_basic_euclidean.pyx":276
+  /* "traj_dist/c_basic_euclidean.pyx":276
  *         else :
  *             raise ValueError("The intersection between circle and line is supposed to exist")
  *     return intersect             # <<<<<<<<<<<<<<
@@ -3214,7 +3214,7 @@ static PyArrayObject *__pyx_f_19trajectory_distance_17c_basic_euclidean__circle_
   __pyx_r = ((PyArrayObject *)__pyx_v_intersect);
   goto __pyx_L0;
 
-  /* "trajectory_distance/c_basic_euclidean.pyx":218
+  /* "traj_dist/c_basic_euclidean.pyx":218
  *     return dist_j0
  * 
  * cdef np.ndarray[np.float64_t,ndim=2] _circle_line_intersection(double px, double py, double s1x, double s1y,             # <<<<<<<<<<<<<<
@@ -3234,7 +3234,7 @@ static PyArrayObject *__pyx_f_19trajectory_distance_17c_basic_euclidean__circle_
     __Pyx_ErrFetch(&__pyx_type, &__pyx_value, &__pyx_tb);
     __Pyx_SafeReleaseBuffer(&__pyx_pybuffernd_intersect.rcbuffer->pybuffer);
   __Pyx_ErrRestore(__pyx_type, __pyx_value, __pyx_tb);}
-  __Pyx_AddTraceback("trajectory_distance.c_basic_euclidean._circle_line_intersection", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("traj_dist.c_basic_euclidean._circle_line_intersection", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = 0;
   goto __pyx_L2;
   __pyx_L0:;
@@ -3249,7 +3249,7 @@ static PyArrayObject *__pyx_f_19trajectory_distance_17c_basic_euclidean__circle_
   return __pyx_r;
 }
 
-/* "trajectory_distance/c_basic_euclidean.pyx":278
+/* "traj_dist/c_basic_euclidean.pyx":278
  *     return intersect
  * 
  * def c_circle_line_intersection(double px, double py, double s1x, double s1y, double             # <<<<<<<<<<<<<<
@@ -3258,10 +3258,10 @@ static PyArrayObject *__pyx_f_19trajectory_distance_17c_basic_euclidean__circle_
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_19trajectory_distance_17c_basic_euclidean_7c_circle_line_intersection(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static char __pyx_doc_19trajectory_distance_17c_basic_euclidean_6c_circle_line_intersection[] = "\n    Usage\n    -----\n    Find the intersections between the circle of radius eps and center (px, py) and the line delimited by points\n    (s1x, s1y) and (s2x, s2y).\n    It is supposed here that the intersection between them exists. If no, raise error\n\n    Parameters\n    ----------\n    param px : float, centre's abscissa of the circle\n    param py : float, centre's ordinate of the circle\n    param eps : float, radius of the circle\n    param s1x : abscissa of the first point of the line\n    param s1y : ordinate of the first point of the line\n    param s2x : abscissa of the second point of the line\n    param s2y : ordinate of the second point of the line\n\n    Returns\n    -------\n    intersect : 2x2 numpy_array\n                Coordinate of the two intersections.\n                If the two intersections are the same, that's means that the line is a tangent of the circle.\n    ";
-static PyMethodDef __pyx_mdef_19trajectory_distance_17c_basic_euclidean_7c_circle_line_intersection = {"c_circle_line_intersection", (PyCFunction)__pyx_pw_19trajectory_distance_17c_basic_euclidean_7c_circle_line_intersection, METH_VARARGS|METH_KEYWORDS, __pyx_doc_19trajectory_distance_17c_basic_euclidean_6c_circle_line_intersection};
-static PyObject *__pyx_pw_19trajectory_distance_17c_basic_euclidean_7c_circle_line_intersection(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+static PyObject *__pyx_pw_9traj_dist_17c_basic_euclidean_7c_circle_line_intersection(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static char __pyx_doc_9traj_dist_17c_basic_euclidean_6c_circle_line_intersection[] = "\n    Usage\n    -----\n    Find the intersections between the circle of radius eps and center (px, py) and the line delimited by points\n    (s1x, s1y) and (s2x, s2y).\n    It is supposed here that the intersection between them exists. If no, raise error\n\n    Parameters\n    ----------\n    param px : float, centre's abscissa of the circle\n    param py : float, centre's ordinate of the circle\n    param eps : float, radius of the circle\n    param s1x : abscissa of the first point of the line\n    param s1y : ordinate of the first point of the line\n    param s2x : abscissa of the second point of the line\n    param s2y : ordinate of the second point of the line\n\n    Returns\n    -------\n    intersect : 2x2 numpy_array\n                Coordinate of the two intersections.\n                If the two intersections are the same, that's means that the line is a tangent of the circle.\n    ";
+static PyMethodDef __pyx_mdef_9traj_dist_17c_basic_euclidean_7c_circle_line_intersection = {"c_circle_line_intersection", (PyCFunction)__pyx_pw_9traj_dist_17c_basic_euclidean_7c_circle_line_intersection, METH_VARARGS|METH_KEYWORDS, __pyx_doc_9traj_dist_17c_basic_euclidean_6c_circle_line_intersection};
+static PyObject *__pyx_pw_9traj_dist_17c_basic_euclidean_7c_circle_line_intersection(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   double __pyx_v_px;
   double __pyx_v_py;
   double __pyx_v_s1x;
@@ -3354,18 +3354,18 @@ static PyObject *__pyx_pw_19trajectory_distance_17c_basic_euclidean_7c_circle_li
   __pyx_L5_argtuple_error:;
   __Pyx_RaiseArgtupleInvalid("c_circle_line_intersection", 1, 7, 7, PyTuple_GET_SIZE(__pyx_args)); {__pyx_filename = __pyx_f[0]; __pyx_lineno = 278; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
   __pyx_L3_error:;
-  __Pyx_AddTraceback("trajectory_distance.c_basic_euclidean.c_circle_line_intersection", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("traj_dist.c_basic_euclidean.c_circle_line_intersection", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_19trajectory_distance_17c_basic_euclidean_6c_circle_line_intersection(__pyx_self, __pyx_v_px, __pyx_v_py, __pyx_v_s1x, __pyx_v_s1y, __pyx_v_s2x, __pyx_v_s2y, __pyx_v_eps);
+  __pyx_r = __pyx_pf_9traj_dist_17c_basic_euclidean_6c_circle_line_intersection(__pyx_self, __pyx_v_px, __pyx_v_py, __pyx_v_s1x, __pyx_v_s1y, __pyx_v_s2x, __pyx_v_s2y, __pyx_v_eps);
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_19trajectory_distance_17c_basic_euclidean_6c_circle_line_intersection(CYTHON_UNUSED PyObject *__pyx_self, double __pyx_v_px, double __pyx_v_py, double __pyx_v_s1x, double __pyx_v_s1y, double __pyx_v_s2x, double __pyx_v_s2y, double __pyx_v_eps) {
+static PyObject *__pyx_pf_9traj_dist_17c_basic_euclidean_6c_circle_line_intersection(CYTHON_UNUSED PyObject *__pyx_self, double __pyx_v_px, double __pyx_v_py, double __pyx_v_s1x, double __pyx_v_s1y, double __pyx_v_s2x, double __pyx_v_s2y, double __pyx_v_eps) {
   double __pyx_v_rac;
   double __pyx_v_y1;
   double __pyx_v_y2;
@@ -3411,7 +3411,7 @@ static PyObject *__pyx_pf_19trajectory_distance_17c_basic_euclidean_6c_circle_li
   __pyx_pybuffernd_intersect.data = NULL;
   __pyx_pybuffernd_intersect.rcbuffer = &__pyx_pybuffer_intersect;
 
-  /* "trajectory_distance/c_basic_euclidean.pyx":307
+  /* "traj_dist/c_basic_euclidean.pyx":307
  *     cdef bool delta_strict_inf_0,delta_inf_0,delta_strict_sup_0
  * 
  *     if s2x==s1x :             # <<<<<<<<<<<<<<
@@ -3421,7 +3421,7 @@ static PyObject *__pyx_pf_19trajectory_distance_17c_basic_euclidean_6c_circle_li
   __pyx_t_1 = ((__pyx_v_s2x == __pyx_v_s1x) != 0);
   if (__pyx_t_1) {
 
-    /* "trajectory_distance/c_basic_euclidean.pyx":308
+    /* "traj_dist/c_basic_euclidean.pyx":308
  * 
  *     if s2x==s1x :
  *         rac=sqrt((eps*eps) - ((s1x-px)*(s1x-px)))             # <<<<<<<<<<<<<<
@@ -3430,7 +3430,7 @@ static PyObject *__pyx_pf_19trajectory_distance_17c_basic_euclidean_6c_circle_li
  */
     __pyx_v_rac = sqrt(((__pyx_v_eps * __pyx_v_eps) - ((__pyx_v_s1x - __pyx_v_px) * (__pyx_v_s1x - __pyx_v_px))));
 
-    /* "trajectory_distance/c_basic_euclidean.pyx":309
+    /* "traj_dist/c_basic_euclidean.pyx":309
  *     if s2x==s1x :
  *         rac=sqrt((eps*eps) - ((s1x-px)*(s1x-px)))
  *         y1 = py+rac             # <<<<<<<<<<<<<<
@@ -3439,7 +3439,7 @@ static PyObject *__pyx_pf_19trajectory_distance_17c_basic_euclidean_6c_circle_li
  */
     __pyx_v_y1 = (__pyx_v_py + __pyx_v_rac);
 
-    /* "trajectory_distance/c_basic_euclidean.pyx":310
+    /* "traj_dist/c_basic_euclidean.pyx":310
  *         rac=sqrt((eps*eps) - ((s1x-px)*(s1x-px)))
  *         y1 = py+rac
  *         y2 = py-rac             # <<<<<<<<<<<<<<
@@ -3448,7 +3448,7 @@ static PyObject *__pyx_pf_19trajectory_distance_17c_basic_euclidean_6c_circle_li
  */
     __pyx_v_y2 = (__pyx_v_py - __pyx_v_rac);
 
-    /* "trajectory_distance/c_basic_euclidean.pyx":311
+    /* "traj_dist/c_basic_euclidean.pyx":311
  *         y1 = py+rac
  *         y2 = py-rac
  *         intersect = np.array([[s1x,y1],[s1x,y2]])             # <<<<<<<<<<<<<<
@@ -3543,7 +3543,7 @@ static PyObject *__pyx_pf_19trajectory_distance_17c_basic_euclidean_6c_circle_li
   }
   /*else*/ {
 
-    /* "trajectory_distance/c_basic_euclidean.pyx":313
+    /* "traj_dist/c_basic_euclidean.pyx":313
  *         intersect = np.array([[s1x,y1],[s1x,y2]])
  *     else:
  *         m= (s2y-s1y)/(s2x-s1x)             # <<<<<<<<<<<<<<
@@ -3564,7 +3564,7 @@ static PyObject *__pyx_pf_19trajectory_distance_17c_basic_euclidean_6c_circle_li
     }
     __pyx_v_m = (__pyx_t_13 / __pyx_t_14);
 
-    /* "trajectory_distance/c_basic_euclidean.pyx":314
+    /* "traj_dist/c_basic_euclidean.pyx":314
  *     else:
  *         m= (s2y-s1y)/(s2x-s1x)
  *         c= s2y-m*s2x             # <<<<<<<<<<<<<<
@@ -3573,7 +3573,7 @@ static PyObject *__pyx_pf_19trajectory_distance_17c_basic_euclidean_6c_circle_li
  */
     __pyx_v_c = (__pyx_v_s2y - (__pyx_v_m * __pyx_v_s2x));
 
-    /* "trajectory_distance/c_basic_euclidean.pyx":315
+    /* "traj_dist/c_basic_euclidean.pyx":315
  *         m= (s2y-s1y)/(s2x-s1x)
  *         c= s2y-m*s2x
  *         A=m*m+1             # <<<<<<<<<<<<<<
@@ -3582,7 +3582,7 @@ static PyObject *__pyx_pf_19trajectory_distance_17c_basic_euclidean_6c_circle_li
  */
     __pyx_v_A = ((__pyx_v_m * __pyx_v_m) + 1.0);
 
-    /* "trajectory_distance/c_basic_euclidean.pyx":316
+    /* "traj_dist/c_basic_euclidean.pyx":316
  *         c= s2y-m*s2x
  *         A=m*m+1
  *         B=2*(m*c-m*py-px)             # <<<<<<<<<<<<<<
@@ -3591,7 +3591,7 @@ static PyObject *__pyx_pf_19trajectory_distance_17c_basic_euclidean_6c_circle_li
  */
     __pyx_v_B = (2.0 * (((__pyx_v_m * __pyx_v_c) - (__pyx_v_m * __pyx_v_py)) - __pyx_v_px));
 
-    /* "trajectory_distance/c_basic_euclidean.pyx":317
+    /* "traj_dist/c_basic_euclidean.pyx":317
  *         A=m*m+1
  *         B=2*(m*c-m*py-px)
  *         C=py*py-eps*eps+px*px-2*c*py+c*c             # <<<<<<<<<<<<<<
@@ -3600,7 +3600,7 @@ static PyObject *__pyx_pf_19trajectory_distance_17c_basic_euclidean_6c_circle_li
  */
     __pyx_v_C = (((((__pyx_v_py * __pyx_v_py) - (__pyx_v_eps * __pyx_v_eps)) + (__pyx_v_px * __pyx_v_px)) - ((2.0 * __pyx_v_c) * __pyx_v_py)) + (__pyx_v_c * __pyx_v_c));
 
-    /* "trajectory_distance/c_basic_euclidean.pyx":318
+    /* "traj_dist/c_basic_euclidean.pyx":318
  *         B=2*(m*c-m*py-px)
  *         C=py*py-eps*eps+px*px-2*c*py+c*c
  *         delta=B*B-4*A*C             # <<<<<<<<<<<<<<
@@ -3609,7 +3609,7 @@ static PyObject *__pyx_pf_19trajectory_distance_17c_basic_euclidean_6c_circle_li
  */
     __pyx_v_delta = ((__pyx_v_B * __pyx_v_B) - ((4.0 * __pyx_v_A) * __pyx_v_C));
 
-    /* "trajectory_distance/c_basic_euclidean.pyx":319
+    /* "traj_dist/c_basic_euclidean.pyx":319
  *         C=py*py-eps*eps+px*px-2*c*py+c*c
  *         delta=B*B-4*A*C
  *         delta_inf_0 = delta <= 0             # <<<<<<<<<<<<<<
@@ -3622,7 +3622,7 @@ static PyObject *__pyx_pf_19trajectory_distance_17c_basic_euclidean_6c_circle_li
     __pyx_v_delta_inf_0 = ((PyBoolObject *)__pyx_t_2);
     __pyx_t_2 = 0;
 
-    /* "trajectory_distance/c_basic_euclidean.pyx":320
+    /* "traj_dist/c_basic_euclidean.pyx":320
  *         delta=B*B-4*A*C
  *         delta_inf_0 = delta <= 0
  *         delta_strict_sup_0 = delta > 0             # <<<<<<<<<<<<<<
@@ -3635,7 +3635,7 @@ static PyObject *__pyx_pf_19trajectory_distance_17c_basic_euclidean_6c_circle_li
     __pyx_v_delta_strict_sup_0 = ((PyBoolObject *)__pyx_t_2);
     __pyx_t_2 = 0;
 
-    /* "trajectory_distance/c_basic_euclidean.pyx":321
+    /* "traj_dist/c_basic_euclidean.pyx":321
  *         delta_inf_0 = delta <= 0
  *         delta_strict_sup_0 = delta > 0
  *         if delta_inf_0 :             # <<<<<<<<<<<<<<
@@ -3645,7 +3645,7 @@ static PyObject *__pyx_pf_19trajectory_distance_17c_basic_euclidean_6c_circle_li
     __pyx_t_1 = __Pyx_PyObject_IsTrue(((PyObject *)__pyx_v_delta_inf_0)); if (unlikely(__pyx_t_1 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 321; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     if (__pyx_t_1) {
 
-      /* "trajectory_distance/c_basic_euclidean.pyx":322
+      /* "traj_dist/c_basic_euclidean.pyx":322
  *         delta_strict_sup_0 = delta > 0
  *         if delta_inf_0 :
  *             delta_strict_inf_0 = delta <0             # <<<<<<<<<<<<<<
@@ -3658,7 +3658,7 @@ static PyObject *__pyx_pf_19trajectory_distance_17c_basic_euclidean_6c_circle_li
       __pyx_v_delta_strict_inf_0 = ((PyBoolObject *)__pyx_t_2);
       __pyx_t_2 = 0;
 
-      /* "trajectory_distance/c_basic_euclidean.pyx":323
+      /* "traj_dist/c_basic_euclidean.pyx":323
  *         if delta_inf_0 :
  *             delta_strict_inf_0 = delta <0
  *             x = -B/(2*A)             # <<<<<<<<<<<<<<
@@ -3679,7 +3679,7 @@ static PyObject *__pyx_pf_19trajectory_distance_17c_basic_euclidean_6c_circle_li
       }
       __pyx_v_x = (__pyx_t_14 / __pyx_t_13);
 
-      /* "trajectory_distance/c_basic_euclidean.pyx":324
+      /* "traj_dist/c_basic_euclidean.pyx":324
  *             delta_strict_inf_0 = delta <0
  *             x = -B/(2*A)
  *             y = m*x+c             # <<<<<<<<<<<<<<
@@ -3688,7 +3688,7 @@ static PyObject *__pyx_pf_19trajectory_distance_17c_basic_euclidean_6c_circle_li
  */
       __pyx_v_y = ((__pyx_v_m * __pyx_v_x) + __pyx_v_c);
 
-      /* "trajectory_distance/c_basic_euclidean.pyx":325
+      /* "traj_dist/c_basic_euclidean.pyx":325
  *             x = -B/(2*A)
  *             y = m*x+c
  *             intersect = np.array([[x,y],[x,y]])             # <<<<<<<<<<<<<<
@@ -3782,7 +3782,7 @@ static PyObject *__pyx_pf_19trajectory_distance_17c_basic_euclidean_6c_circle_li
       goto __pyx_L4;
     }
 
-    /* "trajectory_distance/c_basic_euclidean.pyx":326
+    /* "traj_dist/c_basic_euclidean.pyx":326
  *             y = m*x+c
  *             intersect = np.array([[x,y],[x,y]])
  *         elif delta_strict_sup_0 > 0 :             # <<<<<<<<<<<<<<
@@ -3794,7 +3794,7 @@ static PyObject *__pyx_pf_19trajectory_distance_17c_basic_euclidean_6c_circle_li
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
     if (__pyx_t_1) {
 
-      /* "trajectory_distance/c_basic_euclidean.pyx":327
+      /* "traj_dist/c_basic_euclidean.pyx":327
  *             intersect = np.array([[x,y],[x,y]])
  *         elif delta_strict_sup_0 > 0 :
  *             sdelta = sqrt(delta)             # <<<<<<<<<<<<<<
@@ -3803,7 +3803,7 @@ static PyObject *__pyx_pf_19trajectory_distance_17c_basic_euclidean_6c_circle_li
  */
       __pyx_v_sdelta = sqrt(__pyx_v_delta);
 
-      /* "trajectory_distance/c_basic_euclidean.pyx":328
+      /* "traj_dist/c_basic_euclidean.pyx":328
  *         elif delta_strict_sup_0 > 0 :
  *             sdelta = sqrt(delta)
  *             x1= (-B+sdelta)/(2*A)             # <<<<<<<<<<<<<<
@@ -3824,7 +3824,7 @@ static PyObject *__pyx_pf_19trajectory_distance_17c_basic_euclidean_6c_circle_li
       }
       __pyx_v_x1 = (__pyx_t_13 / __pyx_t_14);
 
-      /* "trajectory_distance/c_basic_euclidean.pyx":329
+      /* "traj_dist/c_basic_euclidean.pyx":329
  *             sdelta = sqrt(delta)
  *             x1= (-B+sdelta)/(2*A)
  *             y1=m*x1+c             # <<<<<<<<<<<<<<
@@ -3833,7 +3833,7 @@ static PyObject *__pyx_pf_19trajectory_distance_17c_basic_euclidean_6c_circle_li
  */
       __pyx_v_y1 = ((__pyx_v_m * __pyx_v_x1) + __pyx_v_c);
 
-      /* "trajectory_distance/c_basic_euclidean.pyx":330
+      /* "traj_dist/c_basic_euclidean.pyx":330
  *             x1= (-B+sdelta)/(2*A)
  *             y1=m*x1+c
  *             x2= (-B-sdelta)/(2*A)             # <<<<<<<<<<<<<<
@@ -3854,7 +3854,7 @@ static PyObject *__pyx_pf_19trajectory_distance_17c_basic_euclidean_6c_circle_li
       }
       __pyx_v_x2 = (__pyx_t_14 / __pyx_t_13);
 
-      /* "trajectory_distance/c_basic_euclidean.pyx":331
+      /* "traj_dist/c_basic_euclidean.pyx":331
  *             y1=m*x1+c
  *             x2= (-B-sdelta)/(2*A)
  *             y2=m*x2+c             # <<<<<<<<<<<<<<
@@ -3863,7 +3863,7 @@ static PyObject *__pyx_pf_19trajectory_distance_17c_basic_euclidean_6c_circle_li
  */
       __pyx_v_y2 = ((__pyx_v_m * __pyx_v_x2) + __pyx_v_c);
 
-      /* "trajectory_distance/c_basic_euclidean.pyx":332
+      /* "traj_dist/c_basic_euclidean.pyx":332
  *             x2= (-B-sdelta)/(2*A)
  *             y2=m*x2+c
  *             intersect = np.array([[x1,y1],[x2,y2]])             # <<<<<<<<<<<<<<
@@ -3958,7 +3958,7 @@ static PyObject *__pyx_pf_19trajectory_distance_17c_basic_euclidean_6c_circle_li
     }
     /*else*/ {
 
-      /* "trajectory_distance/c_basic_euclidean.pyx":334
+      /* "traj_dist/c_basic_euclidean.pyx":334
  *             intersect = np.array([[x1,y1],[x2,y2]])
  *         else :
  *             raise ValueError("The intersection between circle and line is supposed to exist")             # <<<<<<<<<<<<<<
@@ -3974,7 +3974,7 @@ static PyObject *__pyx_pf_19trajectory_distance_17c_basic_euclidean_6c_circle_li
   }
   __pyx_L3:;
 
-  /* "trajectory_distance/c_basic_euclidean.pyx":335
+  /* "traj_dist/c_basic_euclidean.pyx":335
  *         else :
  *             raise ValueError("The intersection between circle and line is supposed to exist")
  *     return intersect             # <<<<<<<<<<<<<<
@@ -3984,7 +3984,7 @@ static PyObject *__pyx_pf_19trajectory_distance_17c_basic_euclidean_6c_circle_li
   __pyx_r = ((PyObject *)__pyx_v_intersect);
   goto __pyx_L0;
 
-  /* "trajectory_distance/c_basic_euclidean.pyx":278
+  /* "traj_dist/c_basic_euclidean.pyx":278
  *     return intersect
  * 
  * def c_circle_line_intersection(double px, double py, double s1x, double s1y, double             # <<<<<<<<<<<<<<
@@ -4004,7 +4004,7 @@ static PyObject *__pyx_pf_19trajectory_distance_17c_basic_euclidean_6c_circle_li
     __Pyx_ErrFetch(&__pyx_type, &__pyx_value, &__pyx_tb);
     __Pyx_SafeReleaseBuffer(&__pyx_pybuffernd_intersect.rcbuffer->pybuffer);
   __Pyx_ErrRestore(__pyx_type, __pyx_value, __pyx_tb);}
-  __Pyx_AddTraceback("trajectory_distance.c_basic_euclidean.c_circle_line_intersection", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("traj_dist.c_basic_euclidean.c_circle_line_intersection", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   goto __pyx_L2;
   __pyx_L0:;
@@ -4019,7 +4019,7 @@ static PyObject *__pyx_pf_19trajectory_distance_17c_basic_euclidean_6c_circle_li
   return __pyx_r;
 }
 
-/* "../../lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":194
+/* "../trajectory_review/dev/src/python/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":194
  *         # experimental exception made for __getbuffer__ and __releasebuffer__
  *         # -- the details of this may change.
  *         def __getbuffer__(ndarray self, Py_buffer* info, int flags):             # <<<<<<<<<<<<<<
@@ -4069,7 +4069,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
     __Pyx_GIVEREF(__pyx_v_info->obj);
   }
 
-  /* "../../lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":200
+  /* "../trajectory_review/dev/src/python/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":200
  *             # of flags
  * 
  *             if info == NULL: return             # <<<<<<<<<<<<<<
@@ -4082,7 +4082,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
     goto __pyx_L0;
   }
 
-  /* "../../lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":203
+  /* "../trajectory_review/dev/src/python/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":203
  * 
  *             cdef int copy_shape, i, ndim
  *             cdef int endian_detector = 1             # <<<<<<<<<<<<<<
@@ -4091,7 +4091,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
  */
   __pyx_v_endian_detector = 1;
 
-  /* "../../lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":204
+  /* "../trajectory_review/dev/src/python/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":204
  *             cdef int copy_shape, i, ndim
  *             cdef int endian_detector = 1
  *             cdef bint little_endian = ((<char*>&endian_detector)[0] != 0)             # <<<<<<<<<<<<<<
@@ -4100,7 +4100,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
  */
   __pyx_v_little_endian = ((((char *)(&__pyx_v_endian_detector))[0]) != 0);
 
-  /* "../../lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":206
+  /* "../trajectory_review/dev/src/python/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":206
  *             cdef bint little_endian = ((<char*>&endian_detector)[0] != 0)
  * 
  *             ndim = PyArray_NDIM(self)             # <<<<<<<<<<<<<<
@@ -4109,7 +4109,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
  */
   __pyx_v_ndim = PyArray_NDIM(__pyx_v_self);
 
-  /* "../../lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":208
+  /* "../trajectory_review/dev/src/python/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":208
  *             ndim = PyArray_NDIM(self)
  * 
  *             if sizeof(npy_intp) != sizeof(Py_ssize_t):             # <<<<<<<<<<<<<<
@@ -4119,7 +4119,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
   __pyx_t_1 = (((sizeof(npy_intp)) != (sizeof(Py_ssize_t))) != 0);
   if (__pyx_t_1) {
 
-    /* "../../lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":209
+    /* "../trajectory_review/dev/src/python/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":209
  * 
  *             if sizeof(npy_intp) != sizeof(Py_ssize_t):
  *                 copy_shape = 1             # <<<<<<<<<<<<<<
@@ -4131,7 +4131,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
   }
   /*else*/ {
 
-    /* "../../lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":211
+    /* "../trajectory_review/dev/src/python/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":211
  *                 copy_shape = 1
  *             else:
  *                 copy_shape = 0             # <<<<<<<<<<<<<<
@@ -4142,7 +4142,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
   }
   __pyx_L4:;
 
-  /* "../../lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":213
+  /* "../trajectory_review/dev/src/python/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":213
  *                 copy_shape = 0
  * 
  *             if ((flags & pybuf.PyBUF_C_CONTIGUOUS == pybuf.PyBUF_C_CONTIGUOUS)             # <<<<<<<<<<<<<<
@@ -4156,7 +4156,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
     goto __pyx_L6_bool_binop_done;
   }
 
-  /* "../../lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":214
+  /* "../trajectory_review/dev/src/python/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":214
  * 
  *             if ((flags & pybuf.PyBUF_C_CONTIGUOUS == pybuf.PyBUF_C_CONTIGUOUS)
  *                 and not PyArray_CHKFLAGS(self, NPY_C_CONTIGUOUS)):             # <<<<<<<<<<<<<<
@@ -4168,7 +4168,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
   __pyx_L6_bool_binop_done:;
   if (__pyx_t_1) {
 
-    /* "../../lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":215
+    /* "../trajectory_review/dev/src/python/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":215
  *             if ((flags & pybuf.PyBUF_C_CONTIGUOUS == pybuf.PyBUF_C_CONTIGUOUS)
  *                 and not PyArray_CHKFLAGS(self, NPY_C_CONTIGUOUS)):
  *                 raise ValueError(u"ndarray is not C contiguous")             # <<<<<<<<<<<<<<
@@ -4182,7 +4182,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
     {__pyx_filename = __pyx_f[1]; __pyx_lineno = 215; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   }
 
-  /* "../../lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":217
+  /* "../trajectory_review/dev/src/python/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":217
  *                 raise ValueError(u"ndarray is not C contiguous")
  * 
  *             if ((flags & pybuf.PyBUF_F_CONTIGUOUS == pybuf.PyBUF_F_CONTIGUOUS)             # <<<<<<<<<<<<<<
@@ -4196,7 +4196,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
     goto __pyx_L9_bool_binop_done;
   }
 
-  /* "../../lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":218
+  /* "../trajectory_review/dev/src/python/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":218
  * 
  *             if ((flags & pybuf.PyBUF_F_CONTIGUOUS == pybuf.PyBUF_F_CONTIGUOUS)
  *                 and not PyArray_CHKFLAGS(self, NPY_F_CONTIGUOUS)):             # <<<<<<<<<<<<<<
@@ -4208,7 +4208,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
   __pyx_L9_bool_binop_done:;
   if (__pyx_t_1) {
 
-    /* "../../lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":219
+    /* "../trajectory_review/dev/src/python/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":219
  *             if ((flags & pybuf.PyBUF_F_CONTIGUOUS == pybuf.PyBUF_F_CONTIGUOUS)
  *                 and not PyArray_CHKFLAGS(self, NPY_F_CONTIGUOUS)):
  *                 raise ValueError(u"ndarray is not Fortran contiguous")             # <<<<<<<<<<<<<<
@@ -4222,7 +4222,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
     {__pyx_filename = __pyx_f[1]; __pyx_lineno = 219; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   }
 
-  /* "../../lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":221
+  /* "../trajectory_review/dev/src/python/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":221
  *                 raise ValueError(u"ndarray is not Fortran contiguous")
  * 
  *             info.buf = PyArray_DATA(self)             # <<<<<<<<<<<<<<
@@ -4231,7 +4231,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
  */
   __pyx_v_info->buf = PyArray_DATA(__pyx_v_self);
 
-  /* "../../lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":222
+  /* "../trajectory_review/dev/src/python/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":222
  * 
  *             info.buf = PyArray_DATA(self)
  *             info.ndim = ndim             # <<<<<<<<<<<<<<
@@ -4240,7 +4240,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
  */
   __pyx_v_info->ndim = __pyx_v_ndim;
 
-  /* "../../lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":223
+  /* "../trajectory_review/dev/src/python/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":223
  *             info.buf = PyArray_DATA(self)
  *             info.ndim = ndim
  *             if copy_shape:             # <<<<<<<<<<<<<<
@@ -4250,7 +4250,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
   __pyx_t_1 = (__pyx_v_copy_shape != 0);
   if (__pyx_t_1) {
 
-    /* "../../lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":226
+    /* "../trajectory_review/dev/src/python/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":226
  *                 # Allocate new buffer for strides and shape info.
  *                 # This is allocated as one block, strides first.
  *                 info.strides = <Py_ssize_t*>stdlib.malloc(sizeof(Py_ssize_t) * <size_t>ndim * 2)             # <<<<<<<<<<<<<<
@@ -4259,7 +4259,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
  */
     __pyx_v_info->strides = ((Py_ssize_t *)malloc((((sizeof(Py_ssize_t)) * ((size_t)__pyx_v_ndim)) * 2)));
 
-    /* "../../lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":227
+    /* "../trajectory_review/dev/src/python/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":227
  *                 # This is allocated as one block, strides first.
  *                 info.strides = <Py_ssize_t*>stdlib.malloc(sizeof(Py_ssize_t) * <size_t>ndim * 2)
  *                 info.shape = info.strides + ndim             # <<<<<<<<<<<<<<
@@ -4268,7 +4268,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
  */
     __pyx_v_info->shape = (__pyx_v_info->strides + __pyx_v_ndim);
 
-    /* "../../lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":228
+    /* "../trajectory_review/dev/src/python/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":228
  *                 info.strides = <Py_ssize_t*>stdlib.malloc(sizeof(Py_ssize_t) * <size_t>ndim * 2)
  *                 info.shape = info.strides + ndim
  *                 for i in range(ndim):             # <<<<<<<<<<<<<<
@@ -4279,7 +4279,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
     for (__pyx_t_5 = 0; __pyx_t_5 < __pyx_t_4; __pyx_t_5+=1) {
       __pyx_v_i = __pyx_t_5;
 
-      /* "../../lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":229
+      /* "../trajectory_review/dev/src/python/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":229
  *                 info.shape = info.strides + ndim
  *                 for i in range(ndim):
  *                     info.strides[i] = PyArray_STRIDES(self)[i]             # <<<<<<<<<<<<<<
@@ -4288,7 +4288,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
  */
       (__pyx_v_info->strides[__pyx_v_i]) = (PyArray_STRIDES(__pyx_v_self)[__pyx_v_i]);
 
-      /* "../../lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":230
+      /* "../trajectory_review/dev/src/python/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":230
  *                 for i in range(ndim):
  *                     info.strides[i] = PyArray_STRIDES(self)[i]
  *                     info.shape[i] = PyArray_DIMS(self)[i]             # <<<<<<<<<<<<<<
@@ -4301,7 +4301,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
   }
   /*else*/ {
 
-    /* "../../lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":232
+    /* "../trajectory_review/dev/src/python/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":232
  *                     info.shape[i] = PyArray_DIMS(self)[i]
  *             else:
  *                 info.strides = <Py_ssize_t*>PyArray_STRIDES(self)             # <<<<<<<<<<<<<<
@@ -4310,7 +4310,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
  */
     __pyx_v_info->strides = ((Py_ssize_t *)PyArray_STRIDES(__pyx_v_self));
 
-    /* "../../lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":233
+    /* "../trajectory_review/dev/src/python/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":233
  *             else:
  *                 info.strides = <Py_ssize_t*>PyArray_STRIDES(self)
  *                 info.shape = <Py_ssize_t*>PyArray_DIMS(self)             # <<<<<<<<<<<<<<
@@ -4321,7 +4321,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
   }
   __pyx_L11:;
 
-  /* "../../lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":234
+  /* "../trajectory_review/dev/src/python/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":234
  *                 info.strides = <Py_ssize_t*>PyArray_STRIDES(self)
  *                 info.shape = <Py_ssize_t*>PyArray_DIMS(self)
  *             info.suboffsets = NULL             # <<<<<<<<<<<<<<
@@ -4330,7 +4330,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
  */
   __pyx_v_info->suboffsets = NULL;
 
-  /* "../../lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":235
+  /* "../trajectory_review/dev/src/python/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":235
  *                 info.shape = <Py_ssize_t*>PyArray_DIMS(self)
  *             info.suboffsets = NULL
  *             info.itemsize = PyArray_ITEMSIZE(self)             # <<<<<<<<<<<<<<
@@ -4339,7 +4339,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
  */
   __pyx_v_info->itemsize = PyArray_ITEMSIZE(__pyx_v_self);
 
-  /* "../../lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":236
+  /* "../trajectory_review/dev/src/python/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":236
  *             info.suboffsets = NULL
  *             info.itemsize = PyArray_ITEMSIZE(self)
  *             info.readonly = not PyArray_ISWRITEABLE(self)             # <<<<<<<<<<<<<<
@@ -4348,7 +4348,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
  */
   __pyx_v_info->readonly = (!(PyArray_ISWRITEABLE(__pyx_v_self) != 0));
 
-  /* "../../lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":239
+  /* "../trajectory_review/dev/src/python/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":239
  * 
  *             cdef int t
  *             cdef char* f = NULL             # <<<<<<<<<<<<<<
@@ -4357,7 +4357,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
  */
   __pyx_v_f = NULL;
 
-  /* "../../lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":240
+  /* "../trajectory_review/dev/src/python/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":240
  *             cdef int t
  *             cdef char* f = NULL
  *             cdef dtype descr = self.descr             # <<<<<<<<<<<<<<
@@ -4369,7 +4369,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
   __pyx_v_descr = ((PyArray_Descr *)__pyx_t_3);
   __pyx_t_3 = 0;
 
-  /* "../../lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":244
+  /* "../trajectory_review/dev/src/python/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":244
  *             cdef int offset
  * 
  *             cdef bint hasfields = PyDataType_HASFIELDS(descr)             # <<<<<<<<<<<<<<
@@ -4378,7 +4378,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
  */
   __pyx_v_hasfields = PyDataType_HASFIELDS(__pyx_v_descr);
 
-  /* "../../lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":246
+  /* "../trajectory_review/dev/src/python/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":246
  *             cdef bint hasfields = PyDataType_HASFIELDS(descr)
  * 
  *             if not hasfields and not copy_shape:             # <<<<<<<<<<<<<<
@@ -4396,7 +4396,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
   __pyx_L15_bool_binop_done:;
   if (__pyx_t_1) {
 
-    /* "../../lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":248
+    /* "../trajectory_review/dev/src/python/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":248
  *             if not hasfields and not copy_shape:
  *                 # do not call releasebuffer
  *                 info.obj = None             # <<<<<<<<<<<<<<
@@ -4412,7 +4412,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
   }
   /*else*/ {
 
-    /* "../../lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":251
+    /* "../trajectory_review/dev/src/python/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":251
  *             else:
  *                 # need to call releasebuffer
  *                 info.obj = self             # <<<<<<<<<<<<<<
@@ -4427,7 +4427,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
   }
   __pyx_L14:;
 
-  /* "../../lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":253
+  /* "../trajectory_review/dev/src/python/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":253
  *                 info.obj = self
  * 
  *             if not hasfields:             # <<<<<<<<<<<<<<
@@ -4437,7 +4437,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
   __pyx_t_1 = ((!(__pyx_v_hasfields != 0)) != 0);
   if (__pyx_t_1) {
 
-    /* "../../lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":254
+    /* "../trajectory_review/dev/src/python/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":254
  * 
  *             if not hasfields:
  *                 t = descr.type_num             # <<<<<<<<<<<<<<
@@ -4447,7 +4447,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
     __pyx_t_4 = __pyx_v_descr->type_num;
     __pyx_v_t = __pyx_t_4;
 
-    /* "../../lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":255
+    /* "../trajectory_review/dev/src/python/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":255
  *             if not hasfields:
  *                 t = descr.type_num
  *                 if ((descr.byteorder == c'>' and little_endian) or             # <<<<<<<<<<<<<<
@@ -4467,7 +4467,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
     }
     __pyx_L20_next_or:;
 
-    /* "../../lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":256
+    /* "../trajectory_review/dev/src/python/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":256
  *                 t = descr.type_num
  *                 if ((descr.byteorder == c'>' and little_endian) or
  *                     (descr.byteorder == c'<' and not little_endian)):             # <<<<<<<<<<<<<<
@@ -4485,7 +4485,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
     __pyx_L19_bool_binop_done:;
     if (__pyx_t_1) {
 
-      /* "../../lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":257
+      /* "../trajectory_review/dev/src/python/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":257
  *                 if ((descr.byteorder == c'>' and little_endian) or
  *                     (descr.byteorder == c'<' and not little_endian)):
  *                     raise ValueError(u"Non-native byte order not supported")             # <<<<<<<<<<<<<<
@@ -4499,7 +4499,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
       {__pyx_filename = __pyx_f[1]; __pyx_lineno = 257; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     }
 
-    /* "../../lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":274
+    /* "../trajectory_review/dev/src/python/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":274
  *                 elif t == NPY_CDOUBLE:     f = "Zd"
  *                 elif t == NPY_CLONGDOUBLE: f = "Zg"
  *                 elif t == NPY_OBJECT:      f = "O"             # <<<<<<<<<<<<<<
@@ -4508,7 +4508,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
  */
     switch (__pyx_v_t) {
 
-      /* "../../lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":258
+      /* "../trajectory_review/dev/src/python/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":258
  *                     (descr.byteorder == c'<' and not little_endian)):
  *                     raise ValueError(u"Non-native byte order not supported")
  *                 if   t == NPY_BYTE:        f = "b"             # <<<<<<<<<<<<<<
@@ -4519,7 +4519,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
       __pyx_v_f = __pyx_k_b;
       break;
 
-      /* "../../lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":259
+      /* "../trajectory_review/dev/src/python/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":259
  *                     raise ValueError(u"Non-native byte order not supported")
  *                 if   t == NPY_BYTE:        f = "b"
  *                 elif t == NPY_UBYTE:       f = "B"             # <<<<<<<<<<<<<<
@@ -4530,7 +4530,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
       __pyx_v_f = __pyx_k_B;
       break;
 
-      /* "../../lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":260
+      /* "../trajectory_review/dev/src/python/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":260
  *                 if   t == NPY_BYTE:        f = "b"
  *                 elif t == NPY_UBYTE:       f = "B"
  *                 elif t == NPY_SHORT:       f = "h"             # <<<<<<<<<<<<<<
@@ -4541,7 +4541,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
       __pyx_v_f = __pyx_k_h;
       break;
 
-      /* "../../lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":261
+      /* "../trajectory_review/dev/src/python/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":261
  *                 elif t == NPY_UBYTE:       f = "B"
  *                 elif t == NPY_SHORT:       f = "h"
  *                 elif t == NPY_USHORT:      f = "H"             # <<<<<<<<<<<<<<
@@ -4552,7 +4552,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
       __pyx_v_f = __pyx_k_H;
       break;
 
-      /* "../../lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":262
+      /* "../trajectory_review/dev/src/python/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":262
  *                 elif t == NPY_SHORT:       f = "h"
  *                 elif t == NPY_USHORT:      f = "H"
  *                 elif t == NPY_INT:         f = "i"             # <<<<<<<<<<<<<<
@@ -4563,7 +4563,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
       __pyx_v_f = __pyx_k_i;
       break;
 
-      /* "../../lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":263
+      /* "../trajectory_review/dev/src/python/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":263
  *                 elif t == NPY_USHORT:      f = "H"
  *                 elif t == NPY_INT:         f = "i"
  *                 elif t == NPY_UINT:        f = "I"             # <<<<<<<<<<<<<<
@@ -4574,7 +4574,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
       __pyx_v_f = __pyx_k_I;
       break;
 
-      /* "../../lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":264
+      /* "../trajectory_review/dev/src/python/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":264
  *                 elif t == NPY_INT:         f = "i"
  *                 elif t == NPY_UINT:        f = "I"
  *                 elif t == NPY_LONG:        f = "l"             # <<<<<<<<<<<<<<
@@ -4585,7 +4585,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
       __pyx_v_f = __pyx_k_l;
       break;
 
-      /* "../../lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":265
+      /* "../trajectory_review/dev/src/python/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":265
  *                 elif t == NPY_UINT:        f = "I"
  *                 elif t == NPY_LONG:        f = "l"
  *                 elif t == NPY_ULONG:       f = "L"             # <<<<<<<<<<<<<<
@@ -4596,7 +4596,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
       __pyx_v_f = __pyx_k_L;
       break;
 
-      /* "../../lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":266
+      /* "../trajectory_review/dev/src/python/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":266
  *                 elif t == NPY_LONG:        f = "l"
  *                 elif t == NPY_ULONG:       f = "L"
  *                 elif t == NPY_LONGLONG:    f = "q"             # <<<<<<<<<<<<<<
@@ -4607,7 +4607,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
       __pyx_v_f = __pyx_k_q;
       break;
 
-      /* "../../lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":267
+      /* "../trajectory_review/dev/src/python/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":267
  *                 elif t == NPY_ULONG:       f = "L"
  *                 elif t == NPY_LONGLONG:    f = "q"
  *                 elif t == NPY_ULONGLONG:   f = "Q"             # <<<<<<<<<<<<<<
@@ -4618,7 +4618,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
       __pyx_v_f = __pyx_k_Q;
       break;
 
-      /* "../../lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":268
+      /* "../trajectory_review/dev/src/python/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":268
  *                 elif t == NPY_LONGLONG:    f = "q"
  *                 elif t == NPY_ULONGLONG:   f = "Q"
  *                 elif t == NPY_FLOAT:       f = "f"             # <<<<<<<<<<<<<<
@@ -4629,7 +4629,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
       __pyx_v_f = __pyx_k_f;
       break;
 
-      /* "../../lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":269
+      /* "../trajectory_review/dev/src/python/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":269
  *                 elif t == NPY_ULONGLONG:   f = "Q"
  *                 elif t == NPY_FLOAT:       f = "f"
  *                 elif t == NPY_DOUBLE:      f = "d"             # <<<<<<<<<<<<<<
@@ -4640,7 +4640,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
       __pyx_v_f = __pyx_k_d;
       break;
 
-      /* "../../lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":270
+      /* "../trajectory_review/dev/src/python/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":270
  *                 elif t == NPY_FLOAT:       f = "f"
  *                 elif t == NPY_DOUBLE:      f = "d"
  *                 elif t == NPY_LONGDOUBLE:  f = "g"             # <<<<<<<<<<<<<<
@@ -4651,7 +4651,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
       __pyx_v_f = __pyx_k_g;
       break;
 
-      /* "../../lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":271
+      /* "../trajectory_review/dev/src/python/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":271
  *                 elif t == NPY_DOUBLE:      f = "d"
  *                 elif t == NPY_LONGDOUBLE:  f = "g"
  *                 elif t == NPY_CFLOAT:      f = "Zf"             # <<<<<<<<<<<<<<
@@ -4662,7 +4662,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
       __pyx_v_f = __pyx_k_Zf;
       break;
 
-      /* "../../lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":272
+      /* "../trajectory_review/dev/src/python/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":272
  *                 elif t == NPY_LONGDOUBLE:  f = "g"
  *                 elif t == NPY_CFLOAT:      f = "Zf"
  *                 elif t == NPY_CDOUBLE:     f = "Zd"             # <<<<<<<<<<<<<<
@@ -4673,7 +4673,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
       __pyx_v_f = __pyx_k_Zd;
       break;
 
-      /* "../../lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":273
+      /* "../trajectory_review/dev/src/python/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":273
  *                 elif t == NPY_CFLOAT:      f = "Zf"
  *                 elif t == NPY_CDOUBLE:     f = "Zd"
  *                 elif t == NPY_CLONGDOUBLE: f = "Zg"             # <<<<<<<<<<<<<<
@@ -4684,7 +4684,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
       __pyx_v_f = __pyx_k_Zg;
       break;
 
-      /* "../../lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":274
+      /* "../trajectory_review/dev/src/python/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":274
  *                 elif t == NPY_CDOUBLE:     f = "Zd"
  *                 elif t == NPY_CLONGDOUBLE: f = "Zg"
  *                 elif t == NPY_OBJECT:      f = "O"             # <<<<<<<<<<<<<<
@@ -4696,7 +4696,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
       break;
       default:
 
-      /* "../../lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":276
+      /* "../trajectory_review/dev/src/python/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":276
  *                 elif t == NPY_OBJECT:      f = "O"
  *                 else:
  *                     raise ValueError(u"unknown dtype code in numpy.pxd (%d)" % t)             # <<<<<<<<<<<<<<
@@ -4722,7 +4722,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
       break;
     }
 
-    /* "../../lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":277
+    /* "../trajectory_review/dev/src/python/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":277
  *                 else:
  *                     raise ValueError(u"unknown dtype code in numpy.pxd (%d)" % t)
  *                 info.format = f             # <<<<<<<<<<<<<<
@@ -4731,7 +4731,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
  */
     __pyx_v_info->format = __pyx_v_f;
 
-    /* "../../lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":278
+    /* "../trajectory_review/dev/src/python/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":278
  *                     raise ValueError(u"unknown dtype code in numpy.pxd (%d)" % t)
  *                 info.format = f
  *                 return             # <<<<<<<<<<<<<<
@@ -4743,7 +4743,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
   }
   /*else*/ {
 
-    /* "../../lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":280
+    /* "../trajectory_review/dev/src/python/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":280
  *                 return
  *             else:
  *                 info.format = <char*>stdlib.malloc(_buffer_format_string_len)             # <<<<<<<<<<<<<<
@@ -4752,7 +4752,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
  */
     __pyx_v_info->format = ((char *)malloc(255));
 
-    /* "../../lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":281
+    /* "../trajectory_review/dev/src/python/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":281
  *             else:
  *                 info.format = <char*>stdlib.malloc(_buffer_format_string_len)
  *                 info.format[0] = c'^' # Native data types, manual alignment             # <<<<<<<<<<<<<<
@@ -4761,7 +4761,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
  */
     (__pyx_v_info->format[0]) = '^';
 
-    /* "../../lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":282
+    /* "../trajectory_review/dev/src/python/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":282
  *                 info.format = <char*>stdlib.malloc(_buffer_format_string_len)
  *                 info.format[0] = c'^' # Native data types, manual alignment
  *                 offset = 0             # <<<<<<<<<<<<<<
@@ -4770,7 +4770,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
  */
     __pyx_v_offset = 0;
 
-    /* "../../lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":283
+    /* "../trajectory_review/dev/src/python/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":283
  *                 info.format[0] = c'^' # Native data types, manual alignment
  *                 offset = 0
  *                 f = _util_dtypestring(descr, info.format + 1,             # <<<<<<<<<<<<<<
@@ -4780,7 +4780,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
     __pyx_t_7 = __pyx_f_5numpy__util_dtypestring(__pyx_v_descr, (__pyx_v_info->format + 1), (__pyx_v_info->format + 255), (&__pyx_v_offset)); if (unlikely(__pyx_t_7 == NULL)) {__pyx_filename = __pyx_f[1]; __pyx_lineno = 283; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __pyx_v_f = __pyx_t_7;
 
-    /* "../../lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":286
+    /* "../trajectory_review/dev/src/python/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":286
  *                                       info.format + _buffer_format_string_len,
  *                                       &offset)
  *                 f[0] = c'\0' # Terminate format string             # <<<<<<<<<<<<<<
@@ -4790,7 +4790,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
     (__pyx_v_f[0]) = '\x00';
   }
 
-  /* "../../lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":194
+  /* "../trajectory_review/dev/src/python/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":194
  *         # experimental exception made for __getbuffer__ and __releasebuffer__
  *         # -- the details of this may change.
  *         def __getbuffer__(ndarray self, Py_buffer* info, int flags):             # <<<<<<<<<<<<<<
@@ -4822,7 +4822,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
   return __pyx_r;
 }
 
-/* "../../lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":288
+/* "../trajectory_review/dev/src/python/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":288
  *                 f[0] = c'\0' # Terminate format string
  * 
  *         def __releasebuffer__(ndarray self, Py_buffer* info):             # <<<<<<<<<<<<<<
@@ -4846,7 +4846,7 @@ static void __pyx_pf_5numpy_7ndarray_2__releasebuffer__(PyArrayObject *__pyx_v_s
   int __pyx_t_1;
   __Pyx_RefNannySetupContext("__releasebuffer__", 0);
 
-  /* "../../lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":289
+  /* "../trajectory_review/dev/src/python/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":289
  * 
  *         def __releasebuffer__(ndarray self, Py_buffer* info):
  *             if PyArray_HASFIELDS(self):             # <<<<<<<<<<<<<<
@@ -4856,7 +4856,7 @@ static void __pyx_pf_5numpy_7ndarray_2__releasebuffer__(PyArrayObject *__pyx_v_s
   __pyx_t_1 = (PyArray_HASFIELDS(__pyx_v_self) != 0);
   if (__pyx_t_1) {
 
-    /* "../../lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":290
+    /* "../trajectory_review/dev/src/python/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":290
  *         def __releasebuffer__(ndarray self, Py_buffer* info):
  *             if PyArray_HASFIELDS(self):
  *                 stdlib.free(info.format)             # <<<<<<<<<<<<<<
@@ -4868,7 +4868,7 @@ static void __pyx_pf_5numpy_7ndarray_2__releasebuffer__(PyArrayObject *__pyx_v_s
   }
   __pyx_L3:;
 
-  /* "../../lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":291
+  /* "../trajectory_review/dev/src/python/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":291
  *             if PyArray_HASFIELDS(self):
  *                 stdlib.free(info.format)
  *             if sizeof(npy_intp) != sizeof(Py_ssize_t):             # <<<<<<<<<<<<<<
@@ -4878,7 +4878,7 @@ static void __pyx_pf_5numpy_7ndarray_2__releasebuffer__(PyArrayObject *__pyx_v_s
   __pyx_t_1 = (((sizeof(npy_intp)) != (sizeof(Py_ssize_t))) != 0);
   if (__pyx_t_1) {
 
-    /* "../../lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":292
+    /* "../trajectory_review/dev/src/python/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":292
  *                 stdlib.free(info.format)
  *             if sizeof(npy_intp) != sizeof(Py_ssize_t):
  *                 stdlib.free(info.strides)             # <<<<<<<<<<<<<<
@@ -4890,7 +4890,7 @@ static void __pyx_pf_5numpy_7ndarray_2__releasebuffer__(PyArrayObject *__pyx_v_s
   }
   __pyx_L4:;
 
-  /* "../../lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":288
+  /* "../trajectory_review/dev/src/python/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":288
  *                 f[0] = c'\0' # Terminate format string
  * 
  *         def __releasebuffer__(ndarray self, Py_buffer* info):             # <<<<<<<<<<<<<<
@@ -4902,7 +4902,7 @@ static void __pyx_pf_5numpy_7ndarray_2__releasebuffer__(PyArrayObject *__pyx_v_s
   __Pyx_RefNannyFinishContext();
 }
 
-/* "../../lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":768
+/* "../trajectory_review/dev/src/python/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":768
  * ctypedef npy_cdouble     complex_t
  * 
  * cdef inline object PyArray_MultiIterNew1(a):             # <<<<<<<<<<<<<<
@@ -4919,7 +4919,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_PyArray_MultiIterNew1(PyObject *__
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("PyArray_MultiIterNew1", 0);
 
-  /* "../../lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":769
+  /* "../trajectory_review/dev/src/python/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":769
  * 
  * cdef inline object PyArray_MultiIterNew1(a):
  *     return PyArray_MultiIterNew(1, <void*>a)             # <<<<<<<<<<<<<<
@@ -4933,7 +4933,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_PyArray_MultiIterNew1(PyObject *__
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "../../lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":768
+  /* "../trajectory_review/dev/src/python/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":768
  * ctypedef npy_cdouble     complex_t
  * 
  * cdef inline object PyArray_MultiIterNew1(a):             # <<<<<<<<<<<<<<
@@ -4952,7 +4952,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_PyArray_MultiIterNew1(PyObject *__
   return __pyx_r;
 }
 
-/* "../../lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":771
+/* "../trajectory_review/dev/src/python/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":771
  *     return PyArray_MultiIterNew(1, <void*>a)
  * 
  * cdef inline object PyArray_MultiIterNew2(a, b):             # <<<<<<<<<<<<<<
@@ -4969,7 +4969,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_PyArray_MultiIterNew2(PyObject *__
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("PyArray_MultiIterNew2", 0);
 
-  /* "../../lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":772
+  /* "../trajectory_review/dev/src/python/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":772
  * 
  * cdef inline object PyArray_MultiIterNew2(a, b):
  *     return PyArray_MultiIterNew(2, <void*>a, <void*>b)             # <<<<<<<<<<<<<<
@@ -4983,7 +4983,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_PyArray_MultiIterNew2(PyObject *__
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "../../lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":771
+  /* "../trajectory_review/dev/src/python/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":771
  *     return PyArray_MultiIterNew(1, <void*>a)
  * 
  * cdef inline object PyArray_MultiIterNew2(a, b):             # <<<<<<<<<<<<<<
@@ -5002,7 +5002,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_PyArray_MultiIterNew2(PyObject *__
   return __pyx_r;
 }
 
-/* "../../lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":774
+/* "../trajectory_review/dev/src/python/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":774
  *     return PyArray_MultiIterNew(2, <void*>a, <void*>b)
  * 
  * cdef inline object PyArray_MultiIterNew3(a, b, c):             # <<<<<<<<<<<<<<
@@ -5019,7 +5019,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_PyArray_MultiIterNew3(PyObject *__
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("PyArray_MultiIterNew3", 0);
 
-  /* "../../lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":775
+  /* "../trajectory_review/dev/src/python/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":775
  * 
  * cdef inline object PyArray_MultiIterNew3(a, b, c):
  *     return PyArray_MultiIterNew(3, <void*>a, <void*>b, <void*> c)             # <<<<<<<<<<<<<<
@@ -5033,7 +5033,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_PyArray_MultiIterNew3(PyObject *__
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "../../lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":774
+  /* "../trajectory_review/dev/src/python/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":774
  *     return PyArray_MultiIterNew(2, <void*>a, <void*>b)
  * 
  * cdef inline object PyArray_MultiIterNew3(a, b, c):             # <<<<<<<<<<<<<<
@@ -5052,7 +5052,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_PyArray_MultiIterNew3(PyObject *__
   return __pyx_r;
 }
 
-/* "../../lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":777
+/* "../trajectory_review/dev/src/python/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":777
  *     return PyArray_MultiIterNew(3, <void*>a, <void*>b, <void*> c)
  * 
  * cdef inline object PyArray_MultiIterNew4(a, b, c, d):             # <<<<<<<<<<<<<<
@@ -5069,7 +5069,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_PyArray_MultiIterNew4(PyObject *__
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("PyArray_MultiIterNew4", 0);
 
-  /* "../../lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":778
+  /* "../trajectory_review/dev/src/python/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":778
  * 
  * cdef inline object PyArray_MultiIterNew4(a, b, c, d):
  *     return PyArray_MultiIterNew(4, <void*>a, <void*>b, <void*>c, <void*> d)             # <<<<<<<<<<<<<<
@@ -5083,7 +5083,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_PyArray_MultiIterNew4(PyObject *__
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "../../lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":777
+  /* "../trajectory_review/dev/src/python/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":777
  *     return PyArray_MultiIterNew(3, <void*>a, <void*>b, <void*> c)
  * 
  * cdef inline object PyArray_MultiIterNew4(a, b, c, d):             # <<<<<<<<<<<<<<
@@ -5102,7 +5102,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_PyArray_MultiIterNew4(PyObject *__
   return __pyx_r;
 }
 
-/* "../../lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":780
+/* "../trajectory_review/dev/src/python/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":780
  *     return PyArray_MultiIterNew(4, <void*>a, <void*>b, <void*>c, <void*> d)
  * 
  * cdef inline object PyArray_MultiIterNew5(a, b, c, d, e):             # <<<<<<<<<<<<<<
@@ -5119,7 +5119,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_PyArray_MultiIterNew5(PyObject *__
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("PyArray_MultiIterNew5", 0);
 
-  /* "../../lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":781
+  /* "../trajectory_review/dev/src/python/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":781
  * 
  * cdef inline object PyArray_MultiIterNew5(a, b, c, d, e):
  *     return PyArray_MultiIterNew(5, <void*>a, <void*>b, <void*>c, <void*> d, <void*> e)             # <<<<<<<<<<<<<<
@@ -5133,7 +5133,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_PyArray_MultiIterNew5(PyObject *__
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "../../lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":780
+  /* "../trajectory_review/dev/src/python/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":780
  *     return PyArray_MultiIterNew(4, <void*>a, <void*>b, <void*>c, <void*> d)
  * 
  * cdef inline object PyArray_MultiIterNew5(a, b, c, d, e):             # <<<<<<<<<<<<<<
@@ -5152,7 +5152,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_PyArray_MultiIterNew5(PyObject *__
   return __pyx_r;
 }
 
-/* "../../lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":783
+/* "../trajectory_review/dev/src/python/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":783
  *     return PyArray_MultiIterNew(5, <void*>a, <void*>b, <void*>c, <void*> d, <void*> e)
  * 
  * cdef inline char* _util_dtypestring(dtype descr, char* f, char* end, int* offset) except NULL:             # <<<<<<<<<<<<<<
@@ -5184,7 +5184,7 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("_util_dtypestring", 0);
 
-  /* "../../lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":790
+  /* "../trajectory_review/dev/src/python/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":790
  *     cdef int delta_offset
  *     cdef tuple i
  *     cdef int endian_detector = 1             # <<<<<<<<<<<<<<
@@ -5193,7 +5193,7 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
  */
   __pyx_v_endian_detector = 1;
 
-  /* "../../lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":791
+  /* "../trajectory_review/dev/src/python/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":791
  *     cdef tuple i
  *     cdef int endian_detector = 1
  *     cdef bint little_endian = ((<char*>&endian_detector)[0] != 0)             # <<<<<<<<<<<<<<
@@ -5202,7 +5202,7 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
  */
   __pyx_v_little_endian = ((((char *)(&__pyx_v_endian_detector))[0]) != 0);
 
-  /* "../../lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":794
+  /* "../trajectory_review/dev/src/python/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":794
  *     cdef tuple fields
  * 
  *     for childname in descr.names:             # <<<<<<<<<<<<<<
@@ -5224,7 +5224,7 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
     __Pyx_XDECREF_SET(__pyx_v_childname, __pyx_t_3);
     __pyx_t_3 = 0;
 
-    /* "../../lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":795
+    /* "../trajectory_review/dev/src/python/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":795
  * 
  *     for childname in descr.names:
  *         fields = descr.fields[childname]             # <<<<<<<<<<<<<<
@@ -5237,7 +5237,7 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
     __Pyx_XDECREF_SET(__pyx_v_fields, ((PyObject*)__pyx_t_3));
     __pyx_t_3 = 0;
 
-    /* "../../lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":796
+    /* "../trajectory_review/dev/src/python/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":796
  *     for childname in descr.names:
  *         fields = descr.fields[childname]
  *         child, new_offset = fields             # <<<<<<<<<<<<<<
@@ -5276,7 +5276,7 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
     __Pyx_XDECREF_SET(__pyx_v_new_offset, __pyx_t_4);
     __pyx_t_4 = 0;
 
-    /* "../../lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":798
+    /* "../trajectory_review/dev/src/python/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":798
  *         child, new_offset = fields
  * 
  *         if (end - f) - <int>(new_offset - offset[0]) < 15:             # <<<<<<<<<<<<<<
@@ -5293,7 +5293,7 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
     __pyx_t_6 = ((((__pyx_v_end - __pyx_v_f) - ((int)__pyx_t_5)) < 15) != 0);
     if (__pyx_t_6) {
 
-      /* "../../lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":799
+      /* "../trajectory_review/dev/src/python/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":799
  * 
  *         if (end - f) - <int>(new_offset - offset[0]) < 15:
  *             raise RuntimeError(u"Format string allocated too short, see comment in numpy.pxd")             # <<<<<<<<<<<<<<
@@ -5307,7 +5307,7 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
       {__pyx_filename = __pyx_f[1]; __pyx_lineno = 799; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     }
 
-    /* "../../lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":801
+    /* "../trajectory_review/dev/src/python/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":801
  *             raise RuntimeError(u"Format string allocated too short, see comment in numpy.pxd")
  * 
  *         if ((child.byteorder == c'>' and little_endian) or             # <<<<<<<<<<<<<<
@@ -5327,7 +5327,7 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
     }
     __pyx_L8_next_or:;
 
-    /* "../../lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":802
+    /* "../trajectory_review/dev/src/python/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":802
  * 
  *         if ((child.byteorder == c'>' and little_endian) or
  *             (child.byteorder == c'<' and not little_endian)):             # <<<<<<<<<<<<<<
@@ -5345,7 +5345,7 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
     __pyx_L7_bool_binop_done:;
     if (__pyx_t_6) {
 
-      /* "../../lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":803
+      /* "../trajectory_review/dev/src/python/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":803
  *         if ((child.byteorder == c'>' and little_endian) or
  *             (child.byteorder == c'<' and not little_endian)):
  *             raise ValueError(u"Non-native byte order not supported")             # <<<<<<<<<<<<<<
@@ -5359,7 +5359,7 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
       {__pyx_filename = __pyx_f[1]; __pyx_lineno = 803; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     }
 
-    /* "../../lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":813
+    /* "../trajectory_review/dev/src/python/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":813
  * 
  *         # Output padding bytes
  *         while offset[0] < new_offset:             # <<<<<<<<<<<<<<
@@ -5375,7 +5375,7 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
       if (!__pyx_t_6) break;
 
-      /* "../../lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":814
+      /* "../trajectory_review/dev/src/python/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":814
  *         # Output padding bytes
  *         while offset[0] < new_offset:
  *             f[0] = 120 # "x"; pad byte             # <<<<<<<<<<<<<<
@@ -5384,7 +5384,7 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
  */
       (__pyx_v_f[0]) = 120;
 
-      /* "../../lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":815
+      /* "../trajectory_review/dev/src/python/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":815
  *         while offset[0] < new_offset:
  *             f[0] = 120 # "x"; pad byte
  *             f += 1             # <<<<<<<<<<<<<<
@@ -5393,7 +5393,7 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
  */
       __pyx_v_f = (__pyx_v_f + 1);
 
-      /* "../../lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":816
+      /* "../trajectory_review/dev/src/python/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":816
  *             f[0] = 120 # "x"; pad byte
  *             f += 1
  *             offset[0] += 1             # <<<<<<<<<<<<<<
@@ -5404,7 +5404,7 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
       (__pyx_v_offset[__pyx_t_8]) = ((__pyx_v_offset[__pyx_t_8]) + 1);
     }
 
-    /* "../../lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":818
+    /* "../trajectory_review/dev/src/python/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":818
  *             offset[0] += 1
  * 
  *         offset[0] += child.itemsize             # <<<<<<<<<<<<<<
@@ -5414,7 +5414,7 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
     __pyx_t_8 = 0;
     (__pyx_v_offset[__pyx_t_8]) = ((__pyx_v_offset[__pyx_t_8]) + __pyx_v_child->elsize);
 
-    /* "../../lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":820
+    /* "../trajectory_review/dev/src/python/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":820
  *         offset[0] += child.itemsize
  * 
  *         if not PyDataType_HASFIELDS(child):             # <<<<<<<<<<<<<<
@@ -5424,7 +5424,7 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
     __pyx_t_6 = ((!(PyDataType_HASFIELDS(__pyx_v_child) != 0)) != 0);
     if (__pyx_t_6) {
 
-      /* "../../lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":821
+      /* "../trajectory_review/dev/src/python/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":821
  * 
  *         if not PyDataType_HASFIELDS(child):
  *             t = child.type_num             # <<<<<<<<<<<<<<
@@ -5436,7 +5436,7 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
       __Pyx_XDECREF_SET(__pyx_v_t, __pyx_t_4);
       __pyx_t_4 = 0;
 
-      /* "../../lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":822
+      /* "../trajectory_review/dev/src/python/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":822
  *         if not PyDataType_HASFIELDS(child):
  *             t = child.type_num
  *             if end - f < 5:             # <<<<<<<<<<<<<<
@@ -5446,7 +5446,7 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
       __pyx_t_6 = (((__pyx_v_end - __pyx_v_f) < 5) != 0);
       if (__pyx_t_6) {
 
-        /* "../../lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":823
+        /* "../trajectory_review/dev/src/python/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":823
  *             t = child.type_num
  *             if end - f < 5:
  *                 raise RuntimeError(u"Format string allocated too short.")             # <<<<<<<<<<<<<<
@@ -5460,7 +5460,7 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
         {__pyx_filename = __pyx_f[1]; __pyx_lineno = 823; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       }
 
-      /* "../../lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":826
+      /* "../trajectory_review/dev/src/python/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":826
  * 
  *             # Until ticket #99 is fixed, use integers to avoid warnings
  *             if   t == NPY_BYTE:        f[0] =  98 #"b"             # <<<<<<<<<<<<<<
@@ -5478,7 +5478,7 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
         goto __pyx_L15;
       }
 
-      /* "../../lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":827
+      /* "../trajectory_review/dev/src/python/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":827
  *             # Until ticket #99 is fixed, use integers to avoid warnings
  *             if   t == NPY_BYTE:        f[0] =  98 #"b"
  *             elif t == NPY_UBYTE:       f[0] =  66 #"B"             # <<<<<<<<<<<<<<
@@ -5496,7 +5496,7 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
         goto __pyx_L15;
       }
 
-      /* "../../lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":828
+      /* "../trajectory_review/dev/src/python/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":828
  *             if   t == NPY_BYTE:        f[0] =  98 #"b"
  *             elif t == NPY_UBYTE:       f[0] =  66 #"B"
  *             elif t == NPY_SHORT:       f[0] = 104 #"h"             # <<<<<<<<<<<<<<
@@ -5514,7 +5514,7 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
         goto __pyx_L15;
       }
 
-      /* "../../lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":829
+      /* "../trajectory_review/dev/src/python/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":829
  *             elif t == NPY_UBYTE:       f[0] =  66 #"B"
  *             elif t == NPY_SHORT:       f[0] = 104 #"h"
  *             elif t == NPY_USHORT:      f[0] =  72 #"H"             # <<<<<<<<<<<<<<
@@ -5532,7 +5532,7 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
         goto __pyx_L15;
       }
 
-      /* "../../lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":830
+      /* "../trajectory_review/dev/src/python/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":830
  *             elif t == NPY_SHORT:       f[0] = 104 #"h"
  *             elif t == NPY_USHORT:      f[0] =  72 #"H"
  *             elif t == NPY_INT:         f[0] = 105 #"i"             # <<<<<<<<<<<<<<
@@ -5550,7 +5550,7 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
         goto __pyx_L15;
       }
 
-      /* "../../lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":831
+      /* "../trajectory_review/dev/src/python/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":831
  *             elif t == NPY_USHORT:      f[0] =  72 #"H"
  *             elif t == NPY_INT:         f[0] = 105 #"i"
  *             elif t == NPY_UINT:        f[0] =  73 #"I"             # <<<<<<<<<<<<<<
@@ -5568,7 +5568,7 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
         goto __pyx_L15;
       }
 
-      /* "../../lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":832
+      /* "../trajectory_review/dev/src/python/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":832
  *             elif t == NPY_INT:         f[0] = 105 #"i"
  *             elif t == NPY_UINT:        f[0] =  73 #"I"
  *             elif t == NPY_LONG:        f[0] = 108 #"l"             # <<<<<<<<<<<<<<
@@ -5586,7 +5586,7 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
         goto __pyx_L15;
       }
 
-      /* "../../lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":833
+      /* "../trajectory_review/dev/src/python/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":833
  *             elif t == NPY_UINT:        f[0] =  73 #"I"
  *             elif t == NPY_LONG:        f[0] = 108 #"l"
  *             elif t == NPY_ULONG:       f[0] = 76  #"L"             # <<<<<<<<<<<<<<
@@ -5604,7 +5604,7 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
         goto __pyx_L15;
       }
 
-      /* "../../lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":834
+      /* "../trajectory_review/dev/src/python/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":834
  *             elif t == NPY_LONG:        f[0] = 108 #"l"
  *             elif t == NPY_ULONG:       f[0] = 76  #"L"
  *             elif t == NPY_LONGLONG:    f[0] = 113 #"q"             # <<<<<<<<<<<<<<
@@ -5622,7 +5622,7 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
         goto __pyx_L15;
       }
 
-      /* "../../lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":835
+      /* "../trajectory_review/dev/src/python/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":835
  *             elif t == NPY_ULONG:       f[0] = 76  #"L"
  *             elif t == NPY_LONGLONG:    f[0] = 113 #"q"
  *             elif t == NPY_ULONGLONG:   f[0] = 81  #"Q"             # <<<<<<<<<<<<<<
@@ -5640,7 +5640,7 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
         goto __pyx_L15;
       }
 
-      /* "../../lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":836
+      /* "../trajectory_review/dev/src/python/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":836
  *             elif t == NPY_LONGLONG:    f[0] = 113 #"q"
  *             elif t == NPY_ULONGLONG:   f[0] = 81  #"Q"
  *             elif t == NPY_FLOAT:       f[0] = 102 #"f"             # <<<<<<<<<<<<<<
@@ -5658,7 +5658,7 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
         goto __pyx_L15;
       }
 
-      /* "../../lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":837
+      /* "../trajectory_review/dev/src/python/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":837
  *             elif t == NPY_ULONGLONG:   f[0] = 81  #"Q"
  *             elif t == NPY_FLOAT:       f[0] = 102 #"f"
  *             elif t == NPY_DOUBLE:      f[0] = 100 #"d"             # <<<<<<<<<<<<<<
@@ -5676,7 +5676,7 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
         goto __pyx_L15;
       }
 
-      /* "../../lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":838
+      /* "../trajectory_review/dev/src/python/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":838
  *             elif t == NPY_FLOAT:       f[0] = 102 #"f"
  *             elif t == NPY_DOUBLE:      f[0] = 100 #"d"
  *             elif t == NPY_LONGDOUBLE:  f[0] = 103 #"g"             # <<<<<<<<<<<<<<
@@ -5694,7 +5694,7 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
         goto __pyx_L15;
       }
 
-      /* "../../lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":839
+      /* "../trajectory_review/dev/src/python/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":839
  *             elif t == NPY_DOUBLE:      f[0] = 100 #"d"
  *             elif t == NPY_LONGDOUBLE:  f[0] = 103 #"g"
  *             elif t == NPY_CFLOAT:      f[0] = 90; f[1] = 102; f += 1 # Zf             # <<<<<<<<<<<<<<
@@ -5714,7 +5714,7 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
         goto __pyx_L15;
       }
 
-      /* "../../lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":840
+      /* "../trajectory_review/dev/src/python/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":840
  *             elif t == NPY_LONGDOUBLE:  f[0] = 103 #"g"
  *             elif t == NPY_CFLOAT:      f[0] = 90; f[1] = 102; f += 1 # Zf
  *             elif t == NPY_CDOUBLE:     f[0] = 90; f[1] = 100; f += 1 # Zd             # <<<<<<<<<<<<<<
@@ -5734,7 +5734,7 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
         goto __pyx_L15;
       }
 
-      /* "../../lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":841
+      /* "../trajectory_review/dev/src/python/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":841
  *             elif t == NPY_CFLOAT:      f[0] = 90; f[1] = 102; f += 1 # Zf
  *             elif t == NPY_CDOUBLE:     f[0] = 90; f[1] = 100; f += 1 # Zd
  *             elif t == NPY_CLONGDOUBLE: f[0] = 90; f[1] = 103; f += 1 # Zg             # <<<<<<<<<<<<<<
@@ -5754,7 +5754,7 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
         goto __pyx_L15;
       }
 
-      /* "../../lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":842
+      /* "../trajectory_review/dev/src/python/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":842
  *             elif t == NPY_CDOUBLE:     f[0] = 90; f[1] = 100; f += 1 # Zd
  *             elif t == NPY_CLONGDOUBLE: f[0] = 90; f[1] = 103; f += 1 # Zg
  *             elif t == NPY_OBJECT:      f[0] = 79 #"O"             # <<<<<<<<<<<<<<
@@ -5773,7 +5773,7 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
       }
       /*else*/ {
 
-        /* "../../lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":844
+        /* "../trajectory_review/dev/src/python/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":844
  *             elif t == NPY_OBJECT:      f[0] = 79 #"O"
  *             else:
  *                 raise ValueError(u"unknown dtype code in numpy.pxd (%d)" % t)             # <<<<<<<<<<<<<<
@@ -5796,7 +5796,7 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
       }
       __pyx_L15:;
 
-      /* "../../lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":845
+      /* "../trajectory_review/dev/src/python/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":845
  *             else:
  *                 raise ValueError(u"unknown dtype code in numpy.pxd (%d)" % t)
  *             f += 1             # <<<<<<<<<<<<<<
@@ -5808,7 +5808,7 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
     }
     /*else*/ {
 
-      /* "../../lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":849
+      /* "../trajectory_review/dev/src/python/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":849
  *             # Cython ignores struct boundary information ("T{...}"),
  *             # so don't output it
  *             f = _util_dtypestring(child, f, end, offset)             # <<<<<<<<<<<<<<
@@ -5820,7 +5820,7 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
     }
     __pyx_L13:;
 
-    /* "../../lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":794
+    /* "../trajectory_review/dev/src/python/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":794
  *     cdef tuple fields
  * 
  *     for childname in descr.names:             # <<<<<<<<<<<<<<
@@ -5830,7 +5830,7 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "../../lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":850
+  /* "../trajectory_review/dev/src/python/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":850
  *             # so don't output it
  *             f = _util_dtypestring(child, f, end, offset)
  *     return f             # <<<<<<<<<<<<<<
@@ -5840,7 +5840,7 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
   __pyx_r = __pyx_v_f;
   goto __pyx_L0;
 
-  /* "../../lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":783
+  /* "../trajectory_review/dev/src/python/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":783
  *     return PyArray_MultiIterNew(5, <void*>a, <void*>b, <void*>c, <void*> d, <void*> e)
  * 
  * cdef inline char* _util_dtypestring(dtype descr, char* f, char* end, int* offset) except NULL:             # <<<<<<<<<<<<<<
@@ -5865,7 +5865,7 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
   return __pyx_r;
 }
 
-/* "../../lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":966
+/* "../trajectory_review/dev/src/python/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":966
  * 
  * 
  * cdef inline void set_array_base(ndarray arr, object base):             # <<<<<<<<<<<<<<
@@ -5880,7 +5880,7 @@ static CYTHON_INLINE void __pyx_f_5numpy_set_array_base(PyArrayObject *__pyx_v_a
   int __pyx_t_2;
   __Pyx_RefNannySetupContext("set_array_base", 0);
 
-  /* "../../lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":968
+  /* "../trajectory_review/dev/src/python/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":968
  * cdef inline void set_array_base(ndarray arr, object base):
  *      cdef PyObject* baseptr
  *      if base is None:             # <<<<<<<<<<<<<<
@@ -5891,7 +5891,7 @@ static CYTHON_INLINE void __pyx_f_5numpy_set_array_base(PyArrayObject *__pyx_v_a
   __pyx_t_2 = (__pyx_t_1 != 0);
   if (__pyx_t_2) {
 
-    /* "../../lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":969
+    /* "../trajectory_review/dev/src/python/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":969
  *      cdef PyObject* baseptr
  *      if base is None:
  *          baseptr = NULL             # <<<<<<<<<<<<<<
@@ -5903,7 +5903,7 @@ static CYTHON_INLINE void __pyx_f_5numpy_set_array_base(PyArrayObject *__pyx_v_a
   }
   /*else*/ {
 
-    /* "../../lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":971
+    /* "../trajectory_review/dev/src/python/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":971
  *          baseptr = NULL
  *      else:
  *          Py_INCREF(base) # important to do this before decref below!             # <<<<<<<<<<<<<<
@@ -5912,7 +5912,7 @@ static CYTHON_INLINE void __pyx_f_5numpy_set_array_base(PyArrayObject *__pyx_v_a
  */
     Py_INCREF(__pyx_v_base);
 
-    /* "../../lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":972
+    /* "../trajectory_review/dev/src/python/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":972
  *      else:
  *          Py_INCREF(base) # important to do this before decref below!
  *          baseptr = <PyObject*>base             # <<<<<<<<<<<<<<
@@ -5923,7 +5923,7 @@ static CYTHON_INLINE void __pyx_f_5numpy_set_array_base(PyArrayObject *__pyx_v_a
   }
   __pyx_L3:;
 
-  /* "../../lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":973
+  /* "../trajectory_review/dev/src/python/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":973
  *          Py_INCREF(base) # important to do this before decref below!
  *          baseptr = <PyObject*>base
  *      Py_XDECREF(arr.base)             # <<<<<<<<<<<<<<
@@ -5932,7 +5932,7 @@ static CYTHON_INLINE void __pyx_f_5numpy_set_array_base(PyArrayObject *__pyx_v_a
  */
   Py_XDECREF(__pyx_v_arr->base);
 
-  /* "../../lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":974
+  /* "../trajectory_review/dev/src/python/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":974
  *          baseptr = <PyObject*>base
  *      Py_XDECREF(arr.base)
  *      arr.base = baseptr             # <<<<<<<<<<<<<<
@@ -5941,7 +5941,7 @@ static CYTHON_INLINE void __pyx_f_5numpy_set_array_base(PyArrayObject *__pyx_v_a
  */
   __pyx_v_arr->base = __pyx_v_baseptr;
 
-  /* "../../lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":966
+  /* "../trajectory_review/dev/src/python/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":966
  * 
  * 
  * cdef inline void set_array_base(ndarray arr, object base):             # <<<<<<<<<<<<<<
@@ -5953,7 +5953,7 @@ static CYTHON_INLINE void __pyx_f_5numpy_set_array_base(PyArrayObject *__pyx_v_a
   __Pyx_RefNannyFinishContext();
 }
 
-/* "../../lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":976
+/* "../trajectory_review/dev/src/python/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":976
  *      arr.base = baseptr
  * 
  * cdef inline object get_array_base(ndarray arr):             # <<<<<<<<<<<<<<
@@ -5967,7 +5967,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_get_array_base(PyArrayObject *__py
   int __pyx_t_1;
   __Pyx_RefNannySetupContext("get_array_base", 0);
 
-  /* "../../lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":977
+  /* "../trajectory_review/dev/src/python/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":977
  * 
  * cdef inline object get_array_base(ndarray arr):
  *     if arr.base is NULL:             # <<<<<<<<<<<<<<
@@ -5977,7 +5977,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_get_array_base(PyArrayObject *__py
   __pyx_t_1 = ((__pyx_v_arr->base == NULL) != 0);
   if (__pyx_t_1) {
 
-    /* "../../lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":978
+    /* "../trajectory_review/dev/src/python/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":978
  * cdef inline object get_array_base(ndarray arr):
  *     if arr.base is NULL:
  *         return None             # <<<<<<<<<<<<<<
@@ -5991,7 +5991,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_get_array_base(PyArrayObject *__py
   }
   /*else*/ {
 
-    /* "../../lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":980
+    /* "../trajectory_review/dev/src/python/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":980
  *         return None
  *     else:
  *         return <object>arr.base             # <<<<<<<<<<<<<<
@@ -6002,7 +6002,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_get_array_base(PyArrayObject *__py
     goto __pyx_L0;
   }
 
-  /* "../../lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":976
+  /* "../trajectory_review/dev/src/python/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":976
  *      arr.base = baseptr
  * 
  * cdef inline object get_array_base(ndarray arr):             # <<<<<<<<<<<<<<
@@ -6095,7 +6095,7 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_n_s_segl, __pyx_k_segl, sizeof(__pyx_k_segl), 0, 0, 1, 1},
   {&__pyx_n_s_t, __pyx_k_t, sizeof(__pyx_k_t), 0, 0, 1, 1},
   {&__pyx_n_s_test, __pyx_k_test, sizeof(__pyx_k_test), 0, 0, 1, 1},
-  {&__pyx_n_s_trajectory_distance_c_basic_eucl, __pyx_k_trajectory_distance_c_basic_eucl, sizeof(__pyx_k_trajectory_distance_c_basic_eucl), 0, 0, 1, 1},
+  {&__pyx_n_s_traj_dist_c_basic_euclidean, __pyx_k_traj_dist_c_basic_euclidean, sizeof(__pyx_k_traj_dist_c_basic_euclidean), 0, 0, 1, 1},
   {&__pyx_n_s_u, __pyx_k_u, sizeof(__pyx_k_u), 0, 0, 1, 1},
   {&__pyx_n_s_u1, __pyx_k_u1, sizeof(__pyx_k_u1), 0, 0, 1, 1},
   {&__pyx_kp_u_unknown_dtype_code_in_numpy_pxd, __pyx_k_unknown_dtype_code_in_numpy_pxd, sizeof(__pyx_k_unknown_dtype_code_in_numpy_pxd), 0, 1, 0, 0},
@@ -6122,7 +6122,7 @@ static int __Pyx_InitCachedConstants(void) {
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__Pyx_InitCachedConstants", 0);
 
-  /* "trajectory_distance/c_basic_euclidean.pyx":179
+  /* "traj_dist/c_basic_euclidean.pyx":179
  * 
  *     nt=len(t)
  *     xt=t[:,0]             # <<<<<<<<<<<<<<
@@ -6136,7 +6136,7 @@ static int __Pyx_InitCachedConstants(void) {
   __Pyx_GOTREF(__pyx_tuple__2);
   __Pyx_GIVEREF(__pyx_tuple__2);
 
-  /* "trajectory_distance/c_basic_euclidean.pyx":180
+  /* "traj_dist/c_basic_euclidean.pyx":180
  *     nt=len(t)
  *     xt=t[:,0]
  *     yt=t[:,1]             # <<<<<<<<<<<<<<
@@ -6150,7 +6150,7 @@ static int __Pyx_InitCachedConstants(void) {
   __Pyx_GOTREF(__pyx_tuple__4);
   __Pyx_GIVEREF(__pyx_tuple__4);
 
-  /* "trajectory_distance/c_basic_euclidean.pyx":210
+  /* "traj_dist/c_basic_euclidean.pyx":210
  * 
  *     nt=len(t)
  *     xt=t[:,0]             # <<<<<<<<<<<<<<
@@ -6164,7 +6164,7 @@ static int __Pyx_InitCachedConstants(void) {
   __Pyx_GOTREF(__pyx_tuple__6);
   __Pyx_GIVEREF(__pyx_tuple__6);
 
-  /* "trajectory_distance/c_basic_euclidean.pyx":211
+  /* "traj_dist/c_basic_euclidean.pyx":211
  *     nt=len(t)
  *     xt=t[:,0]
  *     yt=t[:,1]             # <<<<<<<<<<<<<<
@@ -6178,7 +6178,7 @@ static int __Pyx_InitCachedConstants(void) {
   __Pyx_GOTREF(__pyx_tuple__8);
   __Pyx_GIVEREF(__pyx_tuple__8);
 
-  /* "trajectory_distance/c_basic_euclidean.pyx":275
+  /* "traj_dist/c_basic_euclidean.pyx":275
  *             intersect = np.array([[x1,y1],[x2,y2]])
  *         else :
  *             raise ValueError("The intersection between circle and line is supposed to exist")             # <<<<<<<<<<<<<<
@@ -6189,7 +6189,7 @@ static int __Pyx_InitCachedConstants(void) {
   __Pyx_GOTREF(__pyx_tuple__9);
   __Pyx_GIVEREF(__pyx_tuple__9);
 
-  /* "trajectory_distance/c_basic_euclidean.pyx":334
+  /* "traj_dist/c_basic_euclidean.pyx":334
  *             intersect = np.array([[x1,y1],[x2,y2]])
  *         else :
  *             raise ValueError("The intersection between circle and line is supposed to exist")             # <<<<<<<<<<<<<<
@@ -6199,7 +6199,7 @@ static int __Pyx_InitCachedConstants(void) {
   __Pyx_GOTREF(__pyx_tuple__10);
   __Pyx_GIVEREF(__pyx_tuple__10);
 
-  /* "../../lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":215
+  /* "../trajectory_review/dev/src/python/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":215
  *             if ((flags & pybuf.PyBUF_C_CONTIGUOUS == pybuf.PyBUF_C_CONTIGUOUS)
  *                 and not PyArray_CHKFLAGS(self, NPY_C_CONTIGUOUS)):
  *                 raise ValueError(u"ndarray is not C contiguous")             # <<<<<<<<<<<<<<
@@ -6210,7 +6210,7 @@ static int __Pyx_InitCachedConstants(void) {
   __Pyx_GOTREF(__pyx_tuple__11);
   __Pyx_GIVEREF(__pyx_tuple__11);
 
-  /* "../../lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":219
+  /* "../trajectory_review/dev/src/python/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":219
  *             if ((flags & pybuf.PyBUF_F_CONTIGUOUS == pybuf.PyBUF_F_CONTIGUOUS)
  *                 and not PyArray_CHKFLAGS(self, NPY_F_CONTIGUOUS)):
  *                 raise ValueError(u"ndarray is not Fortran contiguous")             # <<<<<<<<<<<<<<
@@ -6221,7 +6221,7 @@ static int __Pyx_InitCachedConstants(void) {
   __Pyx_GOTREF(__pyx_tuple__12);
   __Pyx_GIVEREF(__pyx_tuple__12);
 
-  /* "../../lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":257
+  /* "../trajectory_review/dev/src/python/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":257
  *                 if ((descr.byteorder == c'>' and little_endian) or
  *                     (descr.byteorder == c'<' and not little_endian)):
  *                     raise ValueError(u"Non-native byte order not supported")             # <<<<<<<<<<<<<<
@@ -6232,7 +6232,7 @@ static int __Pyx_InitCachedConstants(void) {
   __Pyx_GOTREF(__pyx_tuple__13);
   __Pyx_GIVEREF(__pyx_tuple__13);
 
-  /* "../../lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":799
+  /* "../trajectory_review/dev/src/python/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":799
  * 
  *         if (end - f) - <int>(new_offset - offset[0]) < 15:
  *             raise RuntimeError(u"Format string allocated too short, see comment in numpy.pxd")             # <<<<<<<<<<<<<<
@@ -6243,7 +6243,7 @@ static int __Pyx_InitCachedConstants(void) {
   __Pyx_GOTREF(__pyx_tuple__14);
   __Pyx_GIVEREF(__pyx_tuple__14);
 
-  /* "../../lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":803
+  /* "../trajectory_review/dev/src/python/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":803
  *         if ((child.byteorder == c'>' and little_endian) or
  *             (child.byteorder == c'<' and not little_endian)):
  *             raise ValueError(u"Non-native byte order not supported")             # <<<<<<<<<<<<<<
@@ -6254,7 +6254,7 @@ static int __Pyx_InitCachedConstants(void) {
   __Pyx_GOTREF(__pyx_tuple__15);
   __Pyx_GIVEREF(__pyx_tuple__15);
 
-  /* "../../lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":823
+  /* "../trajectory_review/dev/src/python/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":823
  *             t = child.type_num
  *             if end - f < 5:
  *                 raise RuntimeError(u"Format string allocated too short.")             # <<<<<<<<<<<<<<
@@ -6265,7 +6265,7 @@ static int __Pyx_InitCachedConstants(void) {
   __Pyx_GOTREF(__pyx_tuple__16);
   __Pyx_GIVEREF(__pyx_tuple__16);
 
-  /* "trajectory_distance/c_basic_euclidean.pyx":37
+  /* "traj_dist/c_basic_euclidean.pyx":37
  * 
  * 
  * def c_eucl_dist(double x1,double y1,double x2,double y2):             # <<<<<<<<<<<<<<
@@ -6277,7 +6277,7 @@ static int __Pyx_InitCachedConstants(void) {
   __Pyx_GIVEREF(__pyx_tuple__17);
   __pyx_codeobj__18 = (PyObject*)__Pyx_PyCode_New(4, 0, 7, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__17, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_Users_bguillouet_These_trajecto, __pyx_n_s_c_eucl_dist, 37, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__18)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 37; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
 
-  /* "trajectory_distance/c_basic_euclidean.pyx":110
+  /* "traj_dist/c_basic_euclidean.pyx":110
  *     return dpl
  * 
  * def c_point_to_seg(double px, double py, double p1x, double p1y, double p2x, double p2y ):             # <<<<<<<<<<<<<<
@@ -6289,7 +6289,7 @@ static int __Pyx_InitCachedConstants(void) {
   __Pyx_GIVEREF(__pyx_tuple__19);
   __pyx_codeobj__20 = (PyObject*)__Pyx_PyCode_New(6, 0, 12, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__19, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_Users_bguillouet_These_trajecto, __pyx_n_s_c_point_to_seg, 110, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__20)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 110; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
 
-  /* "trajectory_distance/c_basic_euclidean.pyx":187
+  /* "traj_dist/c_basic_euclidean.pyx":187
  *     return dist_j0
  * 
  * def c_point_to_trajectory (double px,double py, np.ndarray[np.float64_t,ndim=2] t):             # <<<<<<<<<<<<<<
@@ -6301,7 +6301,7 @@ static int __Pyx_InitCachedConstants(void) {
   __Pyx_GIVEREF(__pyx_tuple__21);
   __pyx_codeobj__22 = (PyObject*)__Pyx_PyCode_New(3, 0, 9, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__21, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_Users_bguillouet_These_trajecto, __pyx_n_s_c_point_to_trajectory, 187, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__22)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 187; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
 
-  /* "trajectory_distance/c_basic_euclidean.pyx":278
+  /* "traj_dist/c_basic_euclidean.pyx":278
  *     return intersect
  * 
  * def c_circle_line_intersection(double px, double py, double s1x, double s1y, double             # <<<<<<<<<<<<<<
@@ -6389,14 +6389,14 @@ PyMODINIT_FUNC PyInit_c_basic_euclidean(void)
   #if PY_MAJOR_VERSION < 3 && (__PYX_DEFAULT_STRING_ENCODING_IS_ASCII || __PYX_DEFAULT_STRING_ENCODING_IS_DEFAULT)
   if (__Pyx_init_sys_getdefaultencoding_params() < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 1; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   #endif
-  if (__pyx_module_is_main_trajectory_distance__c_basic_euclidean) {
+  if (__pyx_module_is_main_traj_dist__c_basic_euclidean) {
     if (PyObject_SetAttrString(__pyx_m, "__name__", __pyx_n_s_main) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 1; __pyx_clineno = __LINE__; goto __pyx_L1_error;};
   }
   #if PY_MAJOR_VERSION >= 3
   {
     PyObject *modules = PyImport_GetModuleDict(); if (unlikely(!modules)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 1; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    if (!PyDict_GetItemString(modules, "trajectory_distance.c_basic_euclidean")) {
-      if (unlikely(PyDict_SetItemString(modules, "trajectory_distance.c_basic_euclidean", __pyx_m) < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 1; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    if (!PyDict_GetItemString(modules, "traj_dist.c_basic_euclidean")) {
+      if (unlikely(PyDict_SetItemString(modules, "traj_dist.c_basic_euclidean", __pyx_m) < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 1; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     }
   }
   #endif
@@ -6427,7 +6427,7 @@ PyMODINIT_FUNC PyInit_c_basic_euclidean(void)
   /*--- Function import code ---*/
   /*--- Execution code ---*/
 
-  /* "trajectory_distance/c_basic_euclidean.pyx":7
+  /* "traj_dist/c_basic_euclidean.pyx":7
  * from libc.math cimport fmin
  * cimport numpy as np
  * import numpy as np             # <<<<<<<<<<<<<<
@@ -6439,55 +6439,55 @@ PyMODINIT_FUNC PyInit_c_basic_euclidean(void)
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_np, __pyx_t_1) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 7; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "trajectory_distance/c_basic_euclidean.pyx":37
+  /* "traj_dist/c_basic_euclidean.pyx":37
  * 
  * 
  * def c_eucl_dist(double x1,double y1,double x2,double y2):             # <<<<<<<<<<<<<<
  *     """
  *     Usage
  */
-  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_19trajectory_distance_17c_basic_euclidean_1c_eucl_dist, NULL, __pyx_n_s_trajectory_distance_c_basic_eucl); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 37; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_9traj_dist_17c_basic_euclidean_1c_eucl_dist, NULL, __pyx_n_s_traj_dist_c_basic_euclidean); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 37; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_1);
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_c_eucl_dist, __pyx_t_1) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 37; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "trajectory_distance/c_basic_euclidean.pyx":110
+  /* "traj_dist/c_basic_euclidean.pyx":110
  *     return dpl
  * 
  * def c_point_to_seg(double px, double py, double p1x, double p1y, double p2x, double p2y ):             # <<<<<<<<<<<<<<
  *     """
  *     Usage
  */
-  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_19trajectory_distance_17c_basic_euclidean_3c_point_to_seg, NULL, __pyx_n_s_trajectory_distance_c_basic_eucl); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 110; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_9traj_dist_17c_basic_euclidean_3c_point_to_seg, NULL, __pyx_n_s_traj_dist_c_basic_euclidean); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 110; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_1);
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_c_point_to_seg, __pyx_t_1) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 110; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "trajectory_distance/c_basic_euclidean.pyx":187
+  /* "traj_dist/c_basic_euclidean.pyx":187
  *     return dist_j0
  * 
  * def c_point_to_trajectory (double px,double py, np.ndarray[np.float64_t,ndim=2] t):             # <<<<<<<<<<<<<<
  *     """
  *     Usage
  */
-  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_19trajectory_distance_17c_basic_euclidean_5c_point_to_trajectory, NULL, __pyx_n_s_trajectory_distance_c_basic_eucl); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 187; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_9traj_dist_17c_basic_euclidean_5c_point_to_trajectory, NULL, __pyx_n_s_traj_dist_c_basic_euclidean); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 187; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_1);
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_c_point_to_trajectory, __pyx_t_1) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 187; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "trajectory_distance/c_basic_euclidean.pyx":278
+  /* "traj_dist/c_basic_euclidean.pyx":278
  *     return intersect
  * 
  * def c_circle_line_intersection(double px, double py, double s1x, double s1y, double             # <<<<<<<<<<<<<<
  * s2x, double s2y, double eps):
  *     """
  */
-  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_19trajectory_distance_17c_basic_euclidean_7c_circle_line_intersection, NULL, __pyx_n_s_trajectory_distance_c_basic_eucl); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 278; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_9traj_dist_17c_basic_euclidean_7c_circle_line_intersection, NULL, __pyx_n_s_traj_dist_c_basic_euclidean); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 278; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_1);
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_c_circle_line_intersection, __pyx_t_1) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 278; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "trajectory_distance/c_basic_euclidean.pyx":1
+  /* "traj_dist/c_basic_euclidean.pyx":1
  * #cython: boundscheck=False             # <<<<<<<<<<<<<<
  * #cython: wraparound=False
  * 
@@ -6497,7 +6497,7 @@ PyMODINIT_FUNC PyInit_c_basic_euclidean(void)
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_test, __pyx_t_1) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 1; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "../../lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":976
+  /* "../trajectory_review/dev/src/python/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":976
  *      arr.base = baseptr
  * 
  * cdef inline object get_array_base(ndarray arr):             # <<<<<<<<<<<<<<
@@ -6512,11 +6512,11 @@ PyMODINIT_FUNC PyInit_c_basic_euclidean(void)
   __Pyx_XDECREF(__pyx_t_1);
   if (__pyx_m) {
     if (__pyx_d) {
-      __Pyx_AddTraceback("init trajectory_distance.c_basic_euclidean", __pyx_clineno, __pyx_lineno, __pyx_filename);
+      __Pyx_AddTraceback("init traj_dist.c_basic_euclidean", __pyx_clineno, __pyx_lineno, __pyx_filename);
     }
     Py_DECREF(__pyx_m); __pyx_m = 0;
   } else if (!PyErr_Occurred()) {
-    PyErr_SetString(PyExc_ImportError, "init trajectory_distance.c_basic_euclidean");
+    PyErr_SetString(PyExc_ImportError, "init traj_dist.c_basic_euclidean");
   }
   __pyx_L0:;
   __Pyx_RefNannyFinishContext();

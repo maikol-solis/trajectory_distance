@@ -39,24 +39,24 @@ def c_e_erp(np.ndarray[np.float64_t,ndim=2] t0, np.ndarray[np.float64_t,ndim=2] 
     C=np.zeros((n0,n1))
     edgei=0
     for i from 1 <= i < n0:
-        x0=t0[i-1][0]
-        y0=t0[i-1][1]
+        x0=t0[i-1,0]
+        y0=t0[i-1,1]
         edgei += fabs(c_eucl_dist(x0,y0,gx,gy))
     C[1:,0]=edgei
 
     edgej=0
     for j from 1 <= j < n1:
-        x1=t1[j-1][0]
-        y1=t1[j-1][1]
+        x1=t1[j-1,0]
+        y1=t1[j-1,1]
         edgej += fabs(c_eucl_dist(x1,y1,gx,gy))
     C[0,1:]=edgej
 
     for i from 1 <= i < n0:
         for j from 1 <= j < n1:
-            x0=t0[i-1][0]
-            y0=t0[i-1][1]
-            x1=t1[j-1][0]
-            y1=t1[j-1][1]
+            x0=t0[i-1,0]
+            y0=t0[i-1,1]
+            x1=t1[j-1,0]
+            y1=t1[j-1,1]
             derp0 = C[i-1,j] + c_eucl_dist(x0,y0,gx,gy)
             derp1 = C[i,j-1] + c_eucl_dist(gx,gy,x1,y1)
             derp01 = C[i-1,j-1] + c_eucl_dist(x0,y0,x1,y1)
@@ -94,23 +94,23 @@ def c_g_erp(np.ndarray[np.float64_t,ndim=2] t0, np.ndarray[np.float64_t,ndim=2] 
 
     edgei=0.0
     for i from 1 <= i < n0:
-        x0=t0[i-1][0]
-        y0=t0[i-1][1]
+        x0=t0[i-1,0]
+        y0=t0[i-1,1]
         edgei += fabs(c_great_circle_distance(x0,y0,gx,gy))
     C[1:,0]=edgei
 
     edgej=0.0
     for j from 1 <= j < n1:
-        x1=t1[j-1][0]
-        y1=t1[j-1][1]
+        x1=t1[j-1,0]
+        y1=t1[j-1,1]
         edgej += fabs(c_great_circle_distance(x1,y1,gx,gy))
     C[0,1:]=edgej
     for i from 1 <= i < n0:
         for j from 1 <= j < n1:
-            x0=t0[i-1][0]
-            y0=t0[i-1][1]
-            x1=t1[j-1][0]
-            y1=t1[j-1][1]
+            x0=t0[i-1,0]
+            y0=t0[i-1,1]
+            x1=t1[j-1,0]
+            y1=t1[j-1,1]
             derp0 = C[i-1,j] + c_great_circle_distance(x0,y0,gx,gy)
             derp1 = C[i,j-1] + c_great_circle_distance(gx,gy,x1,y1)
             derp01 = C[i-1,j-1] + c_great_circle_distance(x0,y0,x1,y1)

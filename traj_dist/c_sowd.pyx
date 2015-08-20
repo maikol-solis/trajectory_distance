@@ -3,6 +3,7 @@
 
 cimport numpy as np
 import numpy as np
+from libc.stdlib cimport malloc, free
 
 from libc.math cimport fmin
 from c_basic_euclidean import c_eucl_dist
@@ -83,13 +84,15 @@ cdef np.ndarray[long,ndim=1] _find_first_min_points( np.ndarray[np.float64_t,ndi
     cdef double pti,ptip,ptim
     cdef bool m_p,ciip,cimi
 
+    min_points = np.empty([n],dtype=bool)
+
     if n == 1:
-        min_points =np.array([True])
+        min_points[0] = True
     else:
         pti=pt[0]
         ptip=pt[1]
         ciip=  pti < ptip
-        min_points = np.array([ciip])
+        min_points[0] = ciip
         for i from 1 <= i < n-1:
             pti = pt[i]
             ptip = pt[i+1]
@@ -97,11 +100,11 @@ cdef np.ndarray[long,ndim=1] _find_first_min_points( np.ndarray[np.float64_t,ndi
             ciip = pti < ptip
             cimi = pti < ptim
             m_p =  (ciip and cimi)
-            min_points = np.append(min_points,m_p)
+            min_points [i] = m_p
         ptim = pt[n - 2]
         pti = pt[n - 1]
         cimi =  pti < ptim
-        min_points= np.append(min_points,[cimi])
+        min_points[n-1] = cimi
 
     min_points_index = np.where(np.array(min_points))[0]
     return min_points_index
@@ -114,25 +117,27 @@ def c_find_first_min_points( np.ndarray[np.float64_t,ndim=1] pt, int n):
     cdef double pti,ptip,ptim
     cdef bool m_p,ciip,cimi
 
+    min_points = np.empty([n],dtype=bool)
+
     if n == 1:
-        min_points =np.array([True])
+        min_points[0] = True
     else:
         pti=pt[0]
         ptip=pt[1]
-        ciip= pti < ptip
-        min_points = np.array([ciip])
+        ciip=  pti < ptip
+        min_points[0] = ciip
         for i from 1 <= i < n-1:
             pti = pt[i]
             ptip = pt[i+1]
             ptim = pt[i-1]
             ciip = pti < ptip
             cimi = pti < ptim
-            m_p = ciip and cimi
-            min_points = np.append(min_points,[m_p])
+            m_p =  (ciip and cimi)
+            min_points [i] = m_p
         ptim = pt[n - 2]
         pti = pt[n - 1]
         cimi =  pti < ptim
-        min_points= np.append(min_points,[cimi])
+        min_points[n-1] = cimi
 
     min_points_index = np.where(np.array(min_points))[0]
     return min_points_index
@@ -142,7 +147,7 @@ def c_owd_grid( np.ndarray[long,ndim=2] traj_cell_1,np.ndarray[long,ndim=2] traj
 
     cdef int n1,n2,px,py,p_precx,p_precy,p2x,p2y,i,j,n_S_old,ig,pgx,pgy,rmin,rmax,pgpx,pgpy,pgpmx,pgpmy,pgppx,pgppy
     cdef double dpp2,D,d,dist,dist_back,dist_forw
-    cdef np.ndarray[long,ndim=1] p,p_prec,pg,p2,S_old,S,pgp,pgpp,pgpm
+    cdef np.ndarray[long,ndim=1] p,p_prec,pg,p2,S_old,pgp,pgpp,pgpm,S_ind
     cdef np.ndarray[np.float64_t,ndim=1] p_t2
 
     n1 = len(traj_cell_1)
@@ -155,15 +160,17 @@ def c_owd_grid( np.ndarray[long,ndim=2] traj_cell_1,np.ndarray[long,ndim=2] traj
     p2 = traj_cell_2[0]
     p2x=p2[0]
     p2y=p2[1]
+
+    p_t2 = np.empty([n2],dtype=float)
     dpp2=c_eucl_dist(px,py,p2x,p2y)
-    p_t2 = np.array([dpp2])
+    p_t2[0] = dpp2
     for i from 1 <= i < n2:
         p2 = traj_cell_2[i]
         p2x=p2[0]
         p2y=p2[1]
         dpp2_=c_eucl_dist(px,py,p2x,p2y)
         dpp2=fmin(dpp2,dpp2_)
-        p_t2 = np.append(p_t2,[dpp2_])
+        p_t2[i] = dpp2_
 
     S_old = _find_first_min_points(p_t2, n2)
     D = dpp2
@@ -174,7 +181,7 @@ def c_owd_grid( np.ndarray[long,ndim=2] traj_cell_1,np.ndarray[long,ndim=2] traj
         p = traj_cell_1[i]
         px=p[0]
         py=p[1]
-        S = np.array([],dtype=int)
+        S_ind = np.zeros([n2],dtype=int)
         d = INFINITY
         n_S_old=len(S_old)
         for j from 0 <= j < n_S_old:
@@ -183,7 +190,7 @@ def c_owd_grid( np.ndarray[long,ndim=2] traj_cell_1,np.ndarray[long,ndim=2] traj
             pgx=pg[0]
             pgy=pg[1]
             if (p_precy == py and pgx != p_precx) or (p_precx == px and pgy != p_precy):
-                S=np.append(S,[ig])
+                S_ind[ig] = 1
                 dppg=c_eucl_dist(px,py,pgx,pgy)
                 d=fmin(d,dppg)
             else:
@@ -221,20 +228,20 @@ def c_owd_grid( np.ndarray[long,ndim=2] traj_cell_1,np.ndarray[long,ndim=2] traj
                             dist_forw = INFINITY
                         dist = c_eucl_dist(pgpx,pgpy,px,py)
                         if dist < dist_back and dist < dist_forw:
-                            if not (igp in S):
-                                S=np.append(S,[igp])
+                            if not S_ind[igp]:
+                                S_ind[igp] = 1
                                 d=fmin(d,dist)
-        S_old=S
+
+        S_old=np.where(S_ind)[0]
         D += d
     return D/n1
 
 
 cdef double _owd_grid( np.ndarray[long,ndim=2] traj_cell_1,np.ndarray[long,ndim=2] traj_cell_2):
 
-
     cdef int n1,n2,px,py,p_precx,p_precy,p2x,p2y,i,j,n_S_old,ig,pgx,pgy,rmin,rmax,pgpx,pgpy,pgpmx,pgpmy,pgppx,pgppy
     cdef double dpp2,D,d,dist,dist_back,dist_forw
-    cdef np.ndarray[long,ndim=1] p,p_prec,pg,p2,S_old,S,pgp,pgpp,pgpm
+    cdef np.ndarray[long,ndim=1] p,p_prec,pg,p2,S_old,pgp,pgpp,pgpm,S_ind
     cdef np.ndarray[np.float64_t,ndim=1] p_t2
 
     n1 = len(traj_cell_1)
@@ -247,15 +254,17 @@ cdef double _owd_grid( np.ndarray[long,ndim=2] traj_cell_1,np.ndarray[long,ndim=
     p2 = traj_cell_2[0]
     p2x=p2[0]
     p2y=p2[1]
+
+    p_t2 = np.empty([n2],dtype=float)
     dpp2=c_eucl_dist(px,py,p2x,p2y)
-    p_t2 = np.array([dpp2])
+    p_t2[0] = dpp2
     for i from 1 <= i < n2:
         p2 = traj_cell_2[i]
         p2x=p2[0]
         p2y=p2[1]
         dpp2_=c_eucl_dist(px,py,p2x,p2y)
         dpp2=fmin(dpp2,dpp2_)
-        p_t2 = np.append(p_t2,[dpp2_])
+        p_t2[i] = dpp2_
 
     S_old = _find_first_min_points(p_t2, n2)
     D = dpp2
@@ -266,7 +275,7 @@ cdef double _owd_grid( np.ndarray[long,ndim=2] traj_cell_1,np.ndarray[long,ndim=
         p = traj_cell_1[i]
         px=p[0]
         py=p[1]
-        S = np.array([],dtype=int)
+        S_ind = np.zeros([n2],dtype=int)
         d = INFINITY
         n_S_old=len(S_old)
         for j from 0 <= j < n_S_old:
@@ -275,7 +284,7 @@ cdef double _owd_grid( np.ndarray[long,ndim=2] traj_cell_1,np.ndarray[long,ndim=
             pgx=pg[0]
             pgy=pg[1]
             if (p_precy == py and pgx != p_precx) or (p_precx == px and pgy != p_precy):
-                S=np.append(S,[ig])
+                S_ind[ig] = 1
                 dppg=c_eucl_dist(px,py,pgx,pgy)
                 d=fmin(d,dppg)
             else:
@@ -313,12 +322,14 @@ cdef double _owd_grid( np.ndarray[long,ndim=2] traj_cell_1,np.ndarray[long,ndim=
                             dist_forw = INFINITY
                         dist = c_eucl_dist(pgpx,pgpy,px,py)
                         if dist < dist_back and dist < dist_forw:
-                            if not (igp in S):
-                                S=np.append(S,[igp])
+                            if not S_ind[igp]:
+                                S_ind[igp] = 1
                                 d=fmin(d,dist)
-        S_old=S
+
+        S_old=np.where(S_ind)[0]
         D += d
     return D/n1
+
 
 
 cdef double _sowd_grid(np.ndarray[long,ndim=2] traj_cell_1,np.ndarray[long,ndim=2] traj_cell_2):

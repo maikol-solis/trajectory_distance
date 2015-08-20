@@ -38,15 +38,15 @@ def c_e_lcss(np.ndarray[np.float64_t,ndim=2] t0, np.ndarray[np.float64_t,ndim=2]
 
     for i from 1 <= i < n0:
         for j from 1 <= j < n1:
-            x0=t0[i-1][0]
-            y0=t0[i-1][1]
-            x1=t1[j-1][0]
-            y1=t1[j-1][1]
+            x0=t0[i-1,0]
+            y0=t0[i-1,1]
+            x1=t1[j-1,0]
+            y1=t1[j-1,1]
             if c_eucl_dist(x0,y0,x1,y1)<eps:
-                C[i][j] = C[i-1][j-1] + 1
+                C[i,j] = C[i-1,j-1] + 1
             else:
-                C[i][j] = fmax(C[i][j-1], C[i-1][j])
-    lcss = 1-float(C[n0-1][n1-1])/fmin(n0-1,n1-1)
+                C[i,j] = fmax(C[i,j-1], C[i-1,j])
+    lcss = 1-float(C[n0-1,n1-1])/fmin(n0-1,n1-1)
     return lcss
 
 
@@ -80,13 +80,13 @@ def c_g_lcss(np.ndarray[np.float64_t,ndim=2] t0, np.ndarray[np.float64_t,ndim=2]
 
     for i from 1 <= i < n0:
         for j from 1 <= j < n1:
-            x0=t0[i-1][0]
-            y0=t0[i-1][1]
-            x1=t1[j-1][0]
-            y1=t1[j-1][1]
+            x0=t0[i-1,0]
+            y0=t0[i-1,1]
+            x1=t1[j-1,0]
+            y1=t1[j-1,1]
             if c_great_circle_distance(x0,y0,x1,y1)<eps:
-                C[i][j] = C[i-1][j-1] + 1
+                C[i,j] = C[i-1,j-1] + 1
             else:
-                C[i][j] = fmax(C[i][j-1], C[i-1][j])
-    lcss = 1-float(C[n0-1][n1-1])/fmin(n0-1,n1-1)
+                C[i,j] = fmax(C[i,j-1], C[i-1,j])
+    lcss = 1-float(C[n0-1,n1-1])/fmin(n0-1,n1-1)
     return lcss

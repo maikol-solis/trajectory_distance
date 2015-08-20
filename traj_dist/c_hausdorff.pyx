@@ -31,7 +31,7 @@ cdef double _e_directed_hausdorff ( np.ndarray[np.float64_t,ndim=2] t1,np.ndarra
     dh=0.0
     n1 = len(t1)
     for i from 0 <= i < n1:
-        dh=fmax(c_point_to_trajectory(t1[i][0],t1[i][1],t2),dh)
+        dh=fmax(c_point_to_trajectory(t1[i,0],t1[i,1],t2),dh)
     return dh
 
 def c_e_directed_hausdorff ( np.ndarray[np.float64_t,ndim=2] t1,np.ndarray[np.float64_t,ndim=2] t2):
@@ -55,7 +55,7 @@ def c_e_directed_hausdorff ( np.ndarray[np.float64_t,ndim=2] t1,np.ndarray[np.fl
     dh=0.0
     n1 = len(t1)
     for i from 0 <= i < n1:
-        dh=fmax(c_point_to_trajectory(t1[i][0],t1[i][1],t2),dh)
+        dh=fmax(c_point_to_trajectory(t1[i,0],t1[i,1],t2),dh)
     return dh
 
 

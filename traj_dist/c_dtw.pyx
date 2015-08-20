@@ -39,10 +39,10 @@ def c_e_dtw(np.ndarray[np.float64_t,ndim=2] t0, np.ndarray[np.float64_t,ndim=2] 
     C[0,1:]=INFINITY
     for i from 1 <= i < n0:
         for j from 1 <= j < n1:
-            x0=t0[i-1][0]
-            y0=t0[i-1][1]
-            x1=t1[j-1][0]
-            y1=t1[j-1][1]
+            x0=t0[i-1,0]
+            y0=t0[i-1,1]
+            x1=t1[j-1,0]
+            y1=t1[j-1,1]
             C[i,j]=c_eucl_dist(x0,y0,x1,y1) + fmin(fmin(C[i,j-1],C[i-1,j-1]),C[i-1,j])
     dtw = C[n0-1,n1-1]
     return dtw
@@ -76,10 +76,10 @@ def c_g_dtw(np.ndarray[np.float64_t,ndim=2] t0, np.ndarray[np.float64_t,ndim=2] 
     C[0,1:]=INFINITY
     for i from 1 <= i < n0:
         for j from 1 <= j < n1:
-            x0=t0[i-1][0]
-            y0=t0[i-1][1]
-            x1=t1[j-1][0]
-            y1=t1[j-1][1]
+            x0=t0[i-1,0]
+            y0=t0[i-1,1]
+            x1=t1[j-1,0]
+            y1=t1[j-1,1]
             C[i,j]=c_great_circle_distance(x0,y0,x1,y1) + fmin(fmin(C[i,j-1],C[i-1,j-1]),C[i-1,j])
     dtw = C[n0-1,n1-1]
     return dtw

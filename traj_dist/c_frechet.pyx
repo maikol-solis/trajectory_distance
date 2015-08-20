@@ -54,10 +54,10 @@ s2x, double s2y):
             segl=c_eucl_dist(s1x,s1y,s2x,s2y)
             segl2=segl*segl
             intersect = c_circle_line_intersection(px,py,s1x,s1y,s2x,s2y,eps)
-            i1x = intersect[0][0]
-            i2x = intersect[1][0]
-            i1y = intersect[0][1]
-            i2y = intersect[1][1]
+            i1x = intersect[0,0]
+            i2x = intersect[1,0]
+            i1y = intersect[0,1]
+            i2y = intersect[1,1]
             i1x_dif_i2x = i1x!=i2x
             i1y_dif_i2y = i1y!=i2y
             if i1x_dif_i2x or i1y_dif_i2y:
@@ -122,10 +122,10 @@ def c_free_line(double px, double py, double eps, double s1x, double s1y, double
             segl=c_eucl_dist(s1x,s1y,s2x,s2y)
             segl2=segl*segl
             intersect = c_circle_line_intersection(px,py,s1x,s1y,s2x,s2y,eps)
-            i1x = intersect[0][0]
-            i2x = intersect[1][0]
-            i1y = intersect[0][1]
-            i2y = intersect[1][1]
+            i1x = intersect[0,0]
+            i2x = intersect[1,0]
+            i1y = intersect[0,1]
+            i2y = intersect[1,1]
             i1x_dif_i2x = i1x!=i2x
             i1y_dif_i2y = i1y!=i2y
             if i1x_dif_i2x or i1y_dif_i2y:
@@ -173,23 +173,23 @@ double eps):
     LF={}
     for j from 0 <= j < q:
         for i from 0 <= i < p-1 :
-            Q_j0=Q[j][0]
-            Q_j1=Q[j][1]
-            P_i0=P[i][0]
-            P_i1=P[i][1]
-            P_i10=P[i+1][0]
-            P_i11=P[i+1][1]
+            Q_j0=Q[j,0]
+            Q_j1=Q[j,1]
+            P_i0=P[i,0]
+            P_i1=P[i,1]
+            P_i10=P[i+1,0]
+            P_i11=P[i+1,1]
 
             LF.update({(i,j):_free_line(Q_j0,Q_j1,eps,P_i0,P_i1,P_i10,P_i11)})
     BF={}
     for j from 0 <= j < q-1:
         for i from 0 <= i < p :
-            Q_j0=Q[j][0]
-            Q_j1=Q[j][1]
-            Q_j10=Q[j+1][0]
-            Q_j11=Q[j+1][1]
-            P_i0=P[i][0]
-            P_i1=P[i][1]
+            Q_j0=Q[j,0]
+            Q_j1=Q[j,1]
+            Q_j10=Q[j+1,0]
+            Q_j11=Q[j+1,1]
+            P_i0=P[i,0]
+            P_i1=P[i,1]
 
             BF.update({(i,j):_free_line(P_i0,P_i1,eps,Q_j0,Q_j1,Q_j10,Q_j11)})
     return LF,BF
@@ -224,23 +224,23 @@ double eps):
     LF={}
     for j from 0 <= j < q:
         for i from 0 <= i < p-1 :
-            Q_j0=Q[j][0]
-            Q_j1=Q[j][1]
-            P_i0=P[i][0]
-            P_i1=P[i][1]
-            P_i10=P[i+1][0]
-            P_i11=P[i+1][1]
+            Q_j0=Q[j,0]
+            Q_j1=Q[j,1]
+            P_i0=P[i,0]
+            P_i1=P[i,1]
+            P_i10=P[i+1,0]
+            P_i11=P[i+1,1]
 
             LF.update({(i,j):_free_line(Q_j0,Q_j1,eps,P_i0,P_i1,P_i10,P_i11)})
     BF={}
     for j from 0 <= j < q-1:
         for i from 0 <= i < p:
-            Q_j0=Q[j][0]
-            Q_j1=Q[j][1]
-            Q_j10=Q[j+1][0]
-            Q_j11=Q[j+1][1]
-            P_i0=P[i][0]
-            P_i1=P[i][1]
+            Q_j0=Q[j,0]
+            Q_j1=Q[j,1]
+            Q_j10=Q[j+1,0]
+            Q_j11=Q[j+1,1]
+            P_i0=P[i,0]
+            P_i1=P[i,1]
 
             BF.update({(i,j):_free_line(P_i0,P_i1,eps,Q_j0,Q_j1,Q_j10,Q_j11)})
     return LF,BF
@@ -444,16 +444,16 @@ cdef list _compute_critical_values(np.ndarray[np.float64_t,ndim=2] P, np.ndarray
     cdef set cc
     cdef int i,j
 
-    origin = c_eucl_dist(P[0][0],P[0][1],Q[0][0],Q[0][1])
-    end = c_eucl_dist(P[p-1][0],P[p-1][1],Q[q-1][0],Q[q-1][1])
+    origin = c_eucl_dist(P[0,0],P[0,1],Q[0,0],Q[0,1])
+    end = c_eucl_dist(P[p-1,0],P[p-1,1],Q[q-1,0],Q[q-1,1])
     end_point=fmax(origin,end)
     cc=set([end_point])
     for i from 0 <= i < p-1:
         for j from 0 <= j < q-1:
-            Lij=c_point_to_seg(Q[j][0],Q[j][1],P[i][0],P[i][1],P[i+1][0],P[i+1][1])
+            Lij=c_point_to_seg(Q[j,0],Q[j,1],P[i,0],P[i,1],P[i+1,0],P[i+1,1])
             if Lij>end_point:
                 cc.add(Lij)
-            Bij=c_point_to_seg(P[i][0],P[i][1],Q[j][0],Q[j][1],Q[j+1][0],Q[j+1][1])
+            Bij=c_point_to_seg(P[i,0],P[i,1],Q[j,0],Q[j,1],Q[j+1,0],Q[j+1,1])
             if Bij>end_point:
                 cc.add(Bij)
     return sorted(list(cc))
@@ -480,16 +480,16 @@ def c_compute_critical_values(np.ndarray[np.float64_t,ndim=2] P, np.ndarray[np.f
     cdef set cc
     cdef int i,j
 
-    origin = c_eucl_dist(P[0][0],P[0][1],Q[0][0],Q[0][1])
-    end = c_eucl_dist(P[p-1][0],P[p-1][1],Q[q-1][0],Q[q-1][1])
+    origin = c_eucl_dist(P[0,0],P[0,1],Q[0,0],Q[0,1])
+    end = c_eucl_dist(P[p-1,0],P[p-1,1],Q[q-1,0],Q[q-1,1])
     end_point=fmax(origin,end)
     cc=set([end_point])
     for i from 0 <= i < p-1:
         for j from 0 <= j < q-1:
-            Lij=c_point_to_seg(Q[j][0],Q[j][1],P[i][0],P[i][1],P[i+1][0],P[i+1][1])
+            Lij=c_point_to_seg(Q[j,0],Q[j,1],P[i,0],P[i,1],P[i+1,0],P[i+1,1])
             if Lij>end_point:
                 cc.add(Lij)
-            Bij=c_point_to_seg(P[i][0],P[i][1],Q[j][0],Q[j][1],Q[j+1][0],Q[j+1][1])
+            Bij=c_point_to_seg(P[i,0],P[i,1],Q[j,0],Q[j,1],Q[j+1,0],Q[j+1,1])
             if Bij>end_point:
                 cc.add(Bij)
     return sorted(list(cc))
