@@ -76,6 +76,22 @@ def pdist(traj_list, metric="sspd", type_d="euclidean", implementation="auto", c
 
         Computes the distances using the Discrete Frechet distance.
 
+    7. 'sowd_grid'
+
+        Computes the distances using the Symmetrized One Way Distance.
+
+    8. 'sowd_grid_brut'
+
+        Computes the distances using the Symmetrized Owe Way Distance, brut implementation.
+
+    9. 'erp'
+
+        Computes the distances using the Edit Distance with real Penalty.
+
+    10. 'edr'
+
+        Computes the distances using the Edit Distance on Real sequence.
+
     type_d available are "euclidean" or "geographical". Some distance can be computing according to geographical space
     instead of euclidean. If so, traj_0 and traj_1 have to be 2-dimensional. First column is longitude, second one
     is latitude.
@@ -83,13 +99,29 @@ def pdist(traj_list, metric="sspd", type_d="euclidean", implementation="auto", c
     If the distance traj_0 and traj_1 are 2-dimensional, the cython implementation is used else the python one is used.
     unless "python" implementation is specified
 
+    'sowd_grid' and sowd_grid_brut', compute distance between trajectory in grid representation. If the coordinate
+    are geographical, this conversion can be made according to the geohash encoding. If so, the geohash 'precision'
+    is needed.
+
+    'edr' and 'lcss' require 'eps' parameter. These distance assume that two locations are similar, or not, according
+    to a given threshold, eps.
+
+    'erp' require g parameter. This distance require a gap parameter. Which must have same dimension that the
+    trajectory.
+
     Parameters
     ----------
 
-    param traj_list: a list of nT numpy array trajectory
-    param metric : string, distance used
-    param type_d : string, distance type_d used
-    param extra_arg : dict, extra argument needeed to some distance
+    param traj_list:       a list of nT numpy array trajectory
+    param metric :         string, distance used
+    param type_d :         string, distance type_d used (geographical or euclidean)
+    param implementation : string, implementation used (python, cython, auto)
+    param converted :      boolean, specified if the data are converted in cell format (sowd_grid and sowd_grid_brut
+                           metric)
+    param precision :      int, precision of geohash (sowd_grid and sowd_grid_brut)
+    param eps :            float, threshold distance (edr and lcss)
+    param g :              numpy arrays, gaps (erp distance)
+
 
     Returns
     -------
@@ -159,6 +191,10 @@ def pdist(traj_list, metric="sspd", type_d="euclidean", implementation="auto", c
             g = np.zeros(dim,dtype=float)
             warnings.warn("g parameter should be specified for metric erp. Default is ")
             print(g)
+        else:
+            if g.shape[0]!= dim :
+                raise ValueError("g and trajectories in list should have same dimension")
+
         for i in range(nb_traj):
             traj_list_i = traj_list[i]
             for j in range(i + 1, nb_traj):
