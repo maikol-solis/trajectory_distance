@@ -22,6 +22,8 @@ from c_sowd import c_sowd_grid_brut,c_sowd_grid
 
 import numpy as np
 
+import warnings
+
 __all__ = ['distance']
 
 METRIC_DIC = {"geographical": {"cython": {"sspd": c_g_sspd, "dtw": c_g_dtw, "lcss": c_g_lcss, "hausdorff":
@@ -41,7 +43,8 @@ METRIC_DIC = {"geographical": {"cython": {"sspd": c_g_sspd, "dtw": c_g_dtw, "lcs
 # Pairwise Distance #
 # ####################
 
-def pdist(traj_list, metric="sspd", type_d="euclidean", extra_arg=None, implementation="auto"):
+def pdist(traj_list, metric="sspd", type_d="euclidean", implementation="auto", converted = None, precision = None,
+          eps= None, g = None ):
     """
     Usage
     -----
@@ -94,7 +97,8 @@ def pdist(traj_list, metric="sspd", type_d="euclidean", extra_arg=None, implemen
     M : a nT x nT numpy array. Where the i,j entry is the distance between traj_list[i] and traj_list[j]
     """
 
-    list_dim = map(lambda x: x.shape[1], traj_list)
+
+    list_dim = map(lambda x: x.shape[1] if len(x.shape)>1 else 1, traj_list)
     nb_traj = len(traj_list)
     if not (len(set(list_dim)) == 1):
         raise ValueError("All trajectories must have same dimesion !")
@@ -115,6 +119,10 @@ def pdist(traj_list, metric="sspd", type_d="euclidean", extra_arg=None, implemen
     if type_d == "geographical" and (metric in ["frechet", "discret_frechet"]):
         raise ValueError("Geographical implementation for distance "+metric+" is not "
                          "disponible")
+    if type_d == "euclidean" and (metric in ["sowd","sowd_grid"]):
+        if not(converted):
+            raise ValueError("Euclidean implementation for distance "+metric+" is not "
+                             "disponible if your data is not already converted in cell format")
     if dim!=2 and implementation == "cython":
         raise ValueError("Implementation with cython is disponible only with 2-dimension trajectories, "
                          "not %d-dimension" %dim)
@@ -124,15 +132,21 @@ def pdist(traj_list, metric="sspd", type_d="euclidean", extra_arg=None, implemen
             implementation = "cython"
         else:
             implementation = "python"
+
     print("Computing " + type_d + " distance " + metric + " with implementation " + implementation + " for %d trajectories" % nb_traj)
     M = np.zeros((nb_traj, nb_traj))
     dist = METRIC_DIC[type_d][implementation][metric]
     if metric.startswith("sowd_grid"):
-        converted = extra_arg["converted"]
+        if converted is None:
+            warnings.warn("converted parameter should be specified for metric sowd_grid and sowd_grid_brut. Default "
+                          "is True")
+            converted = True
         if converted:
             cells_list=traj_list
         else:
-            precision = extra_arg["precision"]
+            if precision is None:
+                warnings.warn("precision parameter should be specified for metric sowd_grid and sowd_grid_brut if converted "
+                      "is False. Default is 7")
             cells_list, _, _ =trajectory_set_grid(traj_list,precision)
         for i in range(nb_traj):
             cells_list_i=cells_list[i]
@@ -141,7 +155,10 @@ def pdist(traj_list, metric="sspd", type_d="euclidean", extra_arg=None, implemen
                 M[i, j] = dist(cells_list_i, cells_list_j)
                 M[j, i] = M[i, j]
     elif metric == "erp":
-        g = extra_arg["g"]
+        if g is None:
+            g = np.zeros(dim,dtype=float)
+            warnings.warn("g parameter should be specified for metric erp. Default is ")
+            print(g)
         for i in range(nb_traj):
             traj_list_i = traj_list[i]
             for j in range(i + 1, nb_traj):
@@ -149,7 +166,9 @@ def pdist(traj_list, metric="sspd", type_d="euclidean", extra_arg=None, implemen
                 M[i, j] = dist(traj_list_i, traj_list_j,g)
                 M[j, i] = M[i, j]
     elif metric == "lcss" or metric == "edr":
-        eps = extra_arg["eps"]
+        if eps is None:
+            warnings.warn("eps parameter should be specified for metric 'lcss' and 'edr', default is 100 ")
+            eps=100
         for i in range(nb_traj):
             traj_list_i = traj_list[i]
             for j in range(i + 1, nb_traj):
