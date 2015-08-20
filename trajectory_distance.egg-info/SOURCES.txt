@@ -7,6 +7,7 @@ traj_dist/c_basic_geographical.pyx
 traj_dist/c_discret_frechet.pyx
 traj_dist/c_distance.pyx
 traj_dist/c_dtw.pyx
+traj_dist/c_edr.pyx
 traj_dist/c_erp.pyx
 traj_dist/c_frechet.pyx
 traj_dist/c_hausdorff.pyx
@@ -17,6 +18,7 @@ traj_dist/c_sspd.pyx
 traj_dist/discret_frechet.py
 traj_dist/distance.py
 traj_dist/dtw.py
+traj_dist/edr.py
 traj_dist/erp.py
 traj_dist/frechet.py
 traj_dist/hausdorff.py

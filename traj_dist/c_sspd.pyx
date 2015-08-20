@@ -6,6 +6,8 @@ from libc.math cimport fmin
 from c_basic_euclidean import c_point_to_trajectory
 from c_basic_geographical import c_point_to_path
 cimport numpy as np
+from numpy.math cimport INFINITY
+
 
 
 ################
@@ -125,7 +127,7 @@ cdef double _g_spd(np.ndarray[np.float64_t,ndim=2] t1, np.ndarray[np.float64_t,n
     lons1=t2[:,0]
     dist=0
     for j from 0 <= j < n1  :
-        dist_j0=9e100
+        dist_j0=INFINITY
         for i from 0 <= i < (n0-1):
             dist_j0=fmin(dist_j0,c_point_to_path(lons0[i],lats0[i],lons0[i+1],lats0[i+1],lons1[j],lats1[j]))
         dist=dist+dist_j0
@@ -162,7 +164,7 @@ def c_g_spd(np.ndarray[np.float64_t,ndim=2] t1, np.ndarray[np.float64_t,ndim=2] 
     lons1=t2[:,0]
     dist=0
     for j from 0 <= j < n1:
-        dist_j0=9e100
+        dist_j0=INFINITY
         for i from 0 <= i < (n0-1):
             dist_j0=fmin(dist_j0,c_point_to_path(lons0[i],lats0[i],lons0[i+1],lats0[i+1],lons1[j],lats1[j]))
         dist=dist+dist_j0

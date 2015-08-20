@@ -7,6 +7,8 @@ import numpy as np
 from libc.math cimport fmin
 from c_basic_euclidean import c_eucl_dist
 from cpython cimport bool
+from numpy.math cimport INFINITY
+
 
 
 cdef double _owd_grid_brut(np.ndarray[long,ndim=2] traj_cell_1, np.ndarray[long,ndim=2] traj_cell_2):
@@ -23,7 +25,7 @@ cdef double _owd_grid_brut(np.ndarray[long,ndim=2] traj_cell_1, np.ndarray[long,
         p1=traj_cell_1[i]
         p1x=p1[0]
         p1y=p1[1]
-        d=9e100
+        d=INFINITY
         for j from 0 <= j < n2:
             p2=traj_cell_2[j]
             p2x=p2[0]
@@ -47,7 +49,7 @@ def c_owd_grid_brut(np.ndarray[long,ndim=2] traj_cell_1, np.ndarray[long,ndim=2]
         p1=traj_cell_1[i]
         p1x=p1[0]
         p1y=p1[1]
-        d=9e100
+        d=INFINITY
         for j from 0 <= j < n2:
             p2=traj_cell_2[j]
             p2x=p2[0]
@@ -173,7 +175,7 @@ def c_owd_grid( np.ndarray[long,ndim=2] traj_cell_1,np.ndarray[long,ndim=2] traj
         px=p[0]
         py=p[1]
         S = np.array([],dtype=int)
-        d = 9e100
+        d = INFINITY
         n_S_old=len(S_old)
         for j from 0 <= j < n_S_old:
             ig = S_old[j]
@@ -209,14 +211,14 @@ def c_owd_grid( np.ndarray[long,ndim=2] traj_cell_1,np.ndarray[long,ndim=2] traj
                             pgpmy=pgpm[1]
                             dist_back=c_eucl_dist(pgpmx,pgpmy,px,py)
                         else:
-                            dist_back = 9e100
+                            dist_back = INFINITY
                         if igp !=n2-1:
                             pgpp = traj_cell_2[igp+1]
                             pgppx=pgpp[0]
                             pgppy=pgpp[1]
                             dist_forw=c_eucl_dist(pgppx,pgppy,px,py)
                         else:
-                            dist_forw = 9e100
+                            dist_forw = INFINITY
                         dist = c_eucl_dist(pgpx,pgpy,px,py)
                         if dist < dist_back and dist < dist_forw:
                             if not (igp in S):
@@ -265,7 +267,7 @@ cdef double _owd_grid( np.ndarray[long,ndim=2] traj_cell_1,np.ndarray[long,ndim=
         px=p[0]
         py=p[1]
         S = np.array([],dtype=int)
-        d = 9e100
+        d = INFINITY
         n_S_old=len(S_old)
         for j from 0 <= j < n_S_old:
             ig = S_old[j]
@@ -301,14 +303,14 @@ cdef double _owd_grid( np.ndarray[long,ndim=2] traj_cell_1,np.ndarray[long,ndim=
                             pgpmy=pgpm[1]
                             dist_back=c_eucl_dist(pgpmx,pgpmy,px,py)
                         else:
-                            dist_back = 9e100
+                            dist_back = INFINITY
                         if igp !=n2-1:
                             pgpp = traj_cell_2[igp+1]
                             pgppx=pgpp[0]
                             pgppy=pgpp[1]
                             dist_forw=c_eucl_dist(pgppx,pgppy,px,py)
                         else:
-                            dist_forw = 9e100
+                            dist_forw = INFINITY
                         dist = c_eucl_dist(pgpx,pgpy,px,py)
                         if dist < dist_back and dist < dist_forw:
                             if not (igp in S):
