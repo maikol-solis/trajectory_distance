@@ -2,6 +2,7 @@ from linecell import trajectory_set_grid
 
 from sspd import e_sspd, g_sspd
 from dtw import e_dtw, g_dtw
+from erp import e_erp, g_erp
 from lcss import e_lcss, g_lcss
 from frechet import frechet
 from discret_frechet import discret_frechet
@@ -10,6 +11,7 @@ from sowd import sowd_grid,sowd_grid_brut
 
 from c_sspd import c_e_sspd, c_g_sspd
 from c_dtw import c_e_dtw, c_g_dtw
+from c_erp import c_e_erp, c_g_erp
 from c_lcss import c_e_lcss, c_g_lcss
 from c_hausdorff import c_e_hausdorff, c_g_hausdorff
 from c_discret_frechet import c_discret_frechet
@@ -21,14 +23,16 @@ import numpy as np
 __all__ = ['distance']
 
 METRIC_DIC = {"geographical": {"cython": {"sspd": c_g_sspd, "dtw": c_g_dtw, "lcss": c_g_lcss, "hausdorff":
-    c_g_hausdorff, "sowd_grid": c_sowd_grid, "sowd_grid_brut": c_sowd_grid_brut },
+    c_g_hausdorff, "sowd_grid": c_sowd_grid, "sowd_grid_brut": c_sowd_grid_brut,"erp" : c_g_erp },
                                "python": {"sspd": g_sspd, "dtw": g_dtw, "lcss": g_lcss, "hausdorff":
-                                   g_hausdorff, "sowd_grid": sowd_grid, "sowd_grid_brut": sowd_grid_brut  }},
+                                   g_hausdorff, "sowd_grid": sowd_grid, "sowd_grid_brut": sowd_grid_brut, "erp" : g_erp
+                               }},
               "euclidean": {"cython": {"sspd": c_e_sspd, "dtw": c_e_dtw, "lcss": c_e_lcss, "hausdorff":
                   c_e_hausdorff, "discret_frechet": c_discret_frechet, "frechet": c_frechet, "sowd_grid": c_sowd_grid,
-                                       "sowd_grid_brut": c_sowd_grid_brut },
+                                       "sowd_grid_brut": c_sowd_grid_brut, "erp": c_e_erp },
                             "python": {"sspd": e_sspd, "dtw": e_dtw, "lcss": e_lcss, "hausdorff":
-                                e_hausdorff, "discret_frechet": discret_frechet, "frechet": frechet, "sowd_grid": sowd_grid, "sowd_grid_brut": sowd_grid_brut }}}
+                                e_hausdorff, "discret_frechet": discret_frechet, "frechet": frechet, "sowd_grid":
+                                sowd_grid, "sowd_grid_brut": sowd_grid_brut, "erp" : e_erp }}}
 
 # ####################
 # Pairwise Distance #
@@ -94,8 +98,8 @@ def pdist(traj_list, metric="sspd", type_d="euclidean", extra_arg=None, implemen
     dim= list_dim[0]
 
     if not (metric in ["sspd", "dtw", "lcss", "hausdorff", "frechet", "discret_frechet", "sowd_grid",
-                       "sowd_grid_brut"]):
-        raise ValueError("The metric argument should be 'sspd', 'dtw', 'lcss', 'hausdorff', 'frechet',"
+                       "sowd_grid_brut","erp"]):
+        raise ValueError("The metric argument should be 'sspd', 'dtw', 'lcss','erp', 'hausdorff', 'frechet',"
                          "'discret_frechet', 'sowd_grid' or 'sowd_grid_brut'\nmetric given is : " + metric)
 
     if not (type_d in ["geographical", "euclidean"]):
@@ -133,7 +137,14 @@ def pdist(traj_list, metric="sspd", type_d="euclidean", extra_arg=None, implemen
                 cells_list_j=cells_list[j]
                 M[i, j] = dist(cells_list_i, cells_list_j)
                 M[j, i] = M[i, j]
-
+    elif metric == "erp":
+        g = extra_arg["g"]
+        for i in range(nb_traj):
+            traj_list_i = traj_list[i]
+            for j in range(i + 1, nb_traj):
+                traj_list_j = traj_list[j]
+                M[i, j] = dist(traj_list_i, traj_list_j,g)
+                M[j, i] = M[i, j]
     elif metric == "lcss":
         eps = extra_arg["eps"]
         for i in range(nb_traj):
