@@ -24,7 +24,6 @@ def find_first_min_points(pt, n):
     return min_point_index
 
 def owd_grid(traj_cell_1,traj_cell_2):
-
     n1 = len(traj_cell_1)
     n2 = len(traj_cell_2)
 

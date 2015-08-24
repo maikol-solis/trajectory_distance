@@ -146,7 +146,7 @@ def get_extremum(traj):
     max_lat=max(lats)
     return min_lon,min_lat,max_lon,max_lat
 
-def trajectory_set_grid(traj_set,precision):
+def trajectory_set_grid(traj_set,precision,time=False):
     extremums=np.array(map(get_extremum,traj_set))
     p_bottom_left=[min(extremums[:,0]),min(extremums[:,1])]
     p_top_right=[max(extremums[:,2]),max(extremums[:,3])]
@@ -169,19 +169,32 @@ def trajectory_set_grid(traj_set,precision):
         cells = []
 
         for id_seg in range(len(traj)-1):
-
             start=traj[id_seg]
             end = traj[id_seg+1]
+            if time:
+                cell_start_time = start[2]
             if abs(start[0]-end[0])/dlon > abs(start[1]-end[1])/dlat:
-                cell,cells_coord=linecell_lons_bigger_step(start,end,cell_start,lons_all,lats_all,lons_center_all,lats_center_all)
+                cell,cells_coord=linecell_lons_bigger_step(start,end,cell_start[:2],lons_all,lats_all,lons_center_all,
+                                                           lats_center_all)
             else:
-                cell,cells_coord=linecell_lats_bigger_step(start,end,cell_start,lons_all,lats_all,lons_center_all,
+                cell,cells_coord=linecell_lats_bigger_step(start,end,cell_start[:2],lons_all,lats_all,lons_center_all,
                                                           lats_center_all)
-            cells.extend(cell[:-1])
+            if len(cell)!=1:
+                if time:
+                    cell_time = [cell[0]+[True, cell_start_time]]
+                    cell_time = cell_time + map(lambda x : x + [False,-1],cell[1:-1])
+                else:
+                    cell_time = [cell[0]+[True]]
+                    cell_time = cell_time + map(lambda x : x + [False],cell[1:-1])
+                cells.extend(cell_time)
             cell_start=cell[-1]
-        cells.append(cell_start)
+        if time:
+            cell_end_time = end[2]
+            cells.append(cell_start+[True,cell_end_time])
+        else:
+            cells.append(cell_start+[True])
         cells_traj.append(cells)
-        cells_traj_=map(np.array,cells_traj)
+    cells_traj_=map(np.array,cells_traj)
     return cells_traj_,lons_all,lats_all
 
 def trajectory_grid(traj_0,precision):
@@ -219,26 +232,45 @@ def plot_line_cells_trajectory(fig,ax,traj,lons,lats,cells,display="number",grid
 
     #plot linecell
     if display=="order":
-        for idx,(x,y) in enumerate(cells):
+        for idx,cell in enumerate(cells):
+            x=cell[0]
+            y=cell[1]
             plt.text(lons_center[x],lats_center[y],"%d" %(idx),fontsize=6,verticalalignment="center",
                      horizontalalignment="center",
                      color="blue")
     elif display=="cell":
-        for idx,(x,y) in enumerate(cells):
+        for idx,cell in enumerate(cells):
+            x=cell[0]
+            y=cell[1]
             plt.text(lons_center[x],lats_center[y],"(%d,%d)" %(x,y),fontsize=5,verticalalignment="center",
                      horizontalalignment="center",
                      color="blue")
     elif display=="coord":
-        for idx,(x,y) in enumerate(cells):
+        for idx,cell in enumerate(cells):
+            x=cell[0]
+            y=cell[1]
             plt.text(lons_center[x],lats_center[y],"(%.3f \n %.3f)" %(lons_center[x],lats_center[y]),fontsize=3,
                      verticalalignment="center",
                      horizontalalignment="center",
                      color="blue")
-    if patch:
+    if patch=='all':
         patches=[]
-        for idx,(x,y) in enumerate(cells):
+        for idx,cell in enumerate(cells):
+            x=cell[0]
+            y=cell[1]
             rect=mpatches.Rectangle([lons_center[x]-dlon,lats_center[y]-dlat],2*dlon,2*dlat,color="blue")
             patches.append(rect)
+        collection = PatchCollection(patches)
+        ax.add_collection(collection)
+    if patch=='original':
+        patches=[]
+        for idx,cell in enumerate(cells):
+            x=cell[0]
+            y=cell[1]
+            b=cell[2]
+            if b==1:
+                rect=mpatches.Rectangle([lons_center[x]-dlon,lats_center[y]-dlat],2*dlon,2*dlat,color="blue")
+                patches.append(rect)
         collection = PatchCollection(patches)
         ax.add_collection(collection)
 
@@ -248,6 +280,7 @@ def plot_line_cells_trajectory(fig,ax,traj,lons,lats,cells,display="number",grid
 
 def plot_line_cells_trajectory_set(fig,ax,traj_list,lons,lats,cells_list,grid=True,patch="None",
                                    plot_traj=True,cmap=CMAP):
+
 
     maplon = [min(lons),max(lons)]
     maplat = [min(lats),max(lats)]
@@ -274,27 +307,40 @@ def plot_line_cells_trajectory_set(fig,ax,traj_list,lons,lats,cells_list,grid=Tr
             m.plot(x,y,marker=".", linestyle="-",color=color)
             plt.text(x[0],y[0],"start",fontsize=6,color=color)
             plt.text(x[-1],y[-1],"end",fontsize=6,color=color)
-
+    if patch=="original":
+        for i_traj,cells in enumerate(cells_list):
+            for idx,cell in enumerate(cells):
+                x=cell[0]
+                y=cell[1]
+                b=cell[2]
+                if b==1:
+                    rect=mpatches.Rectangle([lons_center[x]-dlon,lats_center[y]-dlat],2*dlon,2*dlat,facecolor=cmap(int(
+                        i_traj * 225 / (nb_traj - 1))),linewidth=0)
+                    ax.add_patch(rect)
     if patch=="simple":
         for i_traj,cells in enumerate(cells_list):
-            for idx,(x,y) in enumerate(cells):
+            for idx,cell in enumerate(cells):
+                x=cell[0]
+                y=cell[1]
                 rect=mpatches.Rectangle([lons_center[x]-dlon,lats_center[y]-dlat],2*dlon,2*dlat,facecolor=cmap(int(
-                    i_traj * 225 / (nb_traj - 1))))
+                    i_traj * 225 / (nb_traj - 1))),linewidth=0)
                 ax.add_patch(rect)
     elif patch=="hist":
         all_cell=reduce(lambda x,y :x+y,cells_list)
-        counter= collections.Counter(map(tuple,all_cell))
-        max_c= max(counter.values())
+        counter= collections.Counter(map(lambda x : tuple(x[:2]),all_cell))
         patches=[]
         my_colors=[]
         for i_traj,cells in enumerate(cells_list):
-            for idx,(x,y) in enumerate(cells):
+            for idx,cell in enumerate(cells):
+                x=cell[0]
+                y=cell[1]
                 color=counter[(x,y)]
-                rect=mpatches.Rectangle([lons_center[x]-dlon,lats_center[y]-dlat],2*dlon,2*dlat)
+                rect=mpatches.Rectangle([lons_center[x]-dlon,lats_center[y]-dlat],2*dlon,2*dlat,linewidth=0)
                 patches.append(rect)
                 my_colors.append(color)
         rect_collection=PatchCollection(patches,cmap=CMAP_HIST)
         rect_collection.set_array(np.array(my_colors))
+        rect_collection.set_linewidth(0)
         ax.add_collection(rect_collection)
         fig.colorbar(rect_collection)
 
