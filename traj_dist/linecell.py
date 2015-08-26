@@ -179,23 +179,42 @@ def trajectory_set_grid(traj_set,precision,time=False):
             else:
                 cell,cells_coord=linecell_lats_bigger_step(start,end,cell_start[:2],lons_all,lats_all,lons_center_all,
                                                           lats_center_all)
-            if len(cell)!=1:
-                if time:
-                    cell_time = [cell[0]+[True, cell_start_time]]
-                    cell_time = cell_time + map(lambda x : x + [False,-1],cell[1:-1])
+            if time:
+                if not cells:
+                    cell_time = [cell[0]+[True, [cell_start_time]]]
                 else:
+                    if cell[0] == cells[-1][:2]:
+                        cells[-1][3].append(cell_start_time)
+                        cell_time=[]
+                    else:
+                        cell_time = [cell[0]+[True, [cell_start_time]]]
+                cell_time = cell_time + map(lambda x : x + [False,-1],cell[1:-1])
+            else:
+                if not cells:
                     cell_time = [cell[0]+[True]]
-                    cell_time = cell_time + map(lambda x : x + [False],cell[1:-1])
-                cells.extend(cell_time)
+                else:
+                    if cell[0] == cells[-1][:2]:
+                        cell_time=[]
+                    else:
+                        cell_time = [cell[0]+[True]]
+                cell_time = cell_time + map(lambda x : x + [False],cell[1:-1])
+
+            cells.extend(cell_time)
             cell_start=cell[-1]
         if time:
             cell_end_time = end[2]
-            cells.append(cell_start+[True,cell_end_time])
+            if cell_start == cells[-1][:2]:
+                cells[-1][3].append(cell_end_time)
+            else:
+                cells.append(cell_start+[True,cell_end_time])
         else:
-            cells.append(cell_start+[True])
+            if cell_start != cells[-1][:2]:
+                cells.append(cell_start+[True])
         cells_traj.append(cells)
-    cells_traj_=map(np.array,cells_traj)
-    return cells_traj_,lons_all,lats_all
+    #cells_traj_=map(np.array,cells_traj)
+    return cells_traj,lons_all,lats_all
+
+
 
 def trajectory_grid(traj_0,precision):
     cells_list,lons_all,lats_all=trajectory_set_grid([traj_0],precision)

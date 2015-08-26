@@ -15,7 +15,7 @@ def c_e_erp(np.ndarray[np.float64_t,ndim=2] t0, np.ndarray[np.float64_t,ndim=2] 
     """
     Usage
     -----
-    The Dynamic-Time Warping distance between trajectory t0 and t1.
+    The Edit distance with Real Penalty between trajectory t0 and t1.
 
     Parameters
     ----------
@@ -69,7 +69,7 @@ def c_g_erp(np.ndarray[np.float64_t,ndim=2] t0, np.ndarray[np.float64_t,ndim=2] 
     """
     Usage
     -----
-    The Dynamic-Time Warping distance between trajectory t0 and t1.
+    The Edit distance with Real Penalty between trajectory t0 and t1.
 
     Parameters
     ----------

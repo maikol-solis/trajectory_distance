@@ -1204,7 +1204,7 @@ static PyObject *__pyx_codeobj__18;
 
 /* Python wrapper */
 static PyObject *__pyx_pw_9traj_dist_5c_erp_1c_e_erp(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static char __pyx_doc_9traj_dist_5c_erp_c_e_erp[] = "\n    Usage\n    -----\n    The Dynamic-Time Warping distance between trajectory t0 and t1.\n\n    Parameters\n    ----------\n    param t0 : len(t0)x2 numpy_array\n    param t1 : len(t1)x2 numpy_array\n\n    Returns\n    -------\n    dtw : float\n          The Dynamic-Time Warping distance between trajectory t0 and t1\n    ";
+static char __pyx_doc_9traj_dist_5c_erp_c_e_erp[] = "\n    Usage\n    -----\n    The Edit distance with Real Penalty between trajectory t0 and t1.\n\n    Parameters\n    ----------\n    param t0 : len(t0)x2 numpy_array\n    param t1 : len(t1)x2 numpy_array\n\n    Returns\n    -------\n    dtw : float\n          The Dynamic-Time Warping distance between trajectory t0 and t1\n    ";
 static PyMethodDef __pyx_mdef_9traj_dist_5c_erp_1c_e_erp = {"c_e_erp", (PyCFunction)__pyx_pw_9traj_dist_5c_erp_1c_e_erp, METH_VARARGS|METH_KEYWORDS, __pyx_doc_9traj_dist_5c_erp_c_e_erp};
 static PyObject *__pyx_pw_9traj_dist_5c_erp_1c_e_erp(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   PyArrayObject *__pyx_v_t0 = 0;
@@ -2252,7 +2252,7 @@ static PyObject *__pyx_pf_9traj_dist_5c_erp_c_e_erp(CYTHON_UNUSED PyObject *__py
 
 /* Python wrapper */
 static PyObject *__pyx_pw_9traj_dist_5c_erp_3c_g_erp(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static char __pyx_doc_9traj_dist_5c_erp_2c_g_erp[] = "\n    Usage\n    -----\n    The Dynamic-Time Warping distance between trajectory t0 and t1.\n\n    Parameters\n    ----------\n    param t0 : len(t0)x2 numpy_array\n    param t1 : len(t1)x2 numpy_array\n\n    Returns\n    -------\n    dtw : float\n          The Dynamic-Time Warping distance between trajectory t0 and t1\n    ";
+static char __pyx_doc_9traj_dist_5c_erp_2c_g_erp[] = "\n    Usage\n    -----\n    The Edit distance with Real Penalty between trajectory t0 and t1.\n\n    Parameters\n    ----------\n    param t0 : len(t0)x2 numpy_array\n    param t1 : len(t1)x2 numpy_array\n\n    Returns\n    -------\n    dtw : float\n          The Dynamic-Time Warping distance between trajectory t0 and t1\n    ";
 static PyMethodDef __pyx_mdef_9traj_dist_5c_erp_3c_g_erp = {"c_g_erp", (PyCFunction)__pyx_pw_9traj_dist_5c_erp_3c_g_erp, METH_VARARGS|METH_KEYWORDS, __pyx_doc_9traj_dist_5c_erp_2c_g_erp};
 static PyObject *__pyx_pw_9traj_dist_5c_erp_3c_g_erp(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   PyArrayObject *__pyx_v_t0 = 0;

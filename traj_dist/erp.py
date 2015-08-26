@@ -46,7 +46,7 @@ def g_erp(t0,t1,g):
     """
     Usage
     -----
-    The Dynamic-Time Warping distance between trajectory t0 and t1.
+    The Edit distance with Real Penalty between trajectory t0 and t1.
 
     Parameters
     ----------

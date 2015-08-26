@@ -181,7 +181,7 @@ def pdist(traj_list, metric="sspd", type_d="euclidean", implementation="auto", c
                       "is False. Default is 7")
                 precision = 7
             cells_list_, _, _ =trajectory_set_grid(traj_list,precision)
-            cells_list = map(lambda x : x[:,:2],cells_list_)
+            cells_list = map(lambda x : np.array(x)[:,:2],cells_list_)
         for i in range(nb_traj):
             cells_list_i=cells_list[i]
             for j in range(i + 1, nb_traj):
@@ -370,8 +370,8 @@ def cdist(traj_list_1, traj_list_2, metric="sspd", type_d="euclidean", implement
                       "is False. Default is 7")
                 precision = 7
             cells_list, _, _ =trajectory_set_grid(traj_list_1+traj_list_2,precision)
-            cells_list_1 =  map(lambda x : x[:,:2],cells_list[:nb_traj_1])
-            cells_list_2 =  map(lambda x : x[:,:2],cells_list[nb_traj_1:])
+            cells_list_1 =  map(lambda x : np.array(x)[:,:2],cells_list[:nb_traj_1])
+            cells_list_2 =  map(lambda x : np.array(x)[:,:2],cells_list[nb_traj_1:])
         for i in range(nb_traj_1):
             cells_list_1_i = cells_list_1[i]
             for j in range(nb_traj_2):

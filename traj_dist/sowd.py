@@ -3,15 +3,46 @@ import linecell as linec
 
 
 def owd_grid_brut(traj_cell_1,traj_cell_2):
+    """
+    Usage
+    -----
+    The owd-distance of trajectory t2 from trajectory t1
+
+    Parameters
+    ----------
+    param traj_cell_1 :  len(t1)x2 numpy_array
+    param traj_cell_2 :  len(t2)x2 numpy_array
+
+    Returns
+    -------
+    owd : float
+           owd-distance of trajectory t2 from trajectory t1
+    """
     D=0
     n=len(traj_cell_1)
     for p1 in traj_cell_1:
         d=map(lambda x : np.linalg.norm(p1-x),traj_cell_2)
         D+=min(d)
+    owd = D/n
     return D/n
 
 
 def find_first_min_points(pt, n):
+    """
+    Usage
+    -----
+    Return the index of the min-point in the vector pt of size n.
+
+    Parameters
+    ----------
+    param pt :  len(t1)x1 numpy_array
+    param n :  int
+
+    Returns
+    -------
+    min_point_index  : nbumber of min points x1 numpy_array
+
+    """
     if n == 1:
         min_points = [True]
     else:
@@ -24,6 +55,21 @@ def find_first_min_points(pt, n):
     return min_point_index
 
 def owd_grid(traj_cell_1,traj_cell_2):
+    """
+    Usage
+    -----
+    The owd-distance of trajectory t2 from trajectory t1
+
+    Parameters
+    ----------
+    param traj_cell_1 :  len(t1)x2 numpy_array
+    param traj_cell_2 :  len(t2)x2 numpy_array
+
+    Returns
+    -------
+    owd : float
+           owd-distance of trajectory t2 from trajectory t1
+    """
     n1 = len(traj_cell_1)
     n2 = len(traj_cell_2)
 
