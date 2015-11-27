@@ -52,10 +52,10 @@ def c_great_circle_distance(double lon1,double lat1,double lon2,double lat2):
 
     Parameters
     ----------
-    param lat1: float, latitude of the first point
     param lon1: float, longitude of the first point
-    param lat2: float, latitude of the second point
+    param lat1: float, latitude of the first point
     param lon2: float, longitude of the second point
+    param lat2: float, latitude of the second point
 
     Returns
     -------

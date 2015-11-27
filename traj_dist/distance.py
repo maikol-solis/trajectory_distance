@@ -180,8 +180,10 @@ def pdist(traj_list, metric="sspd", type_d="euclidean", implementation="auto", c
                 warnings.warn("precision parameter should be specified for metric sowd_grid and sowd_grid_brut if converted "
                       "is False. Default is 7")
                 precision = 7
-            cells_list_, _, _ =trajectory_set_grid(traj_list,precision)
+            print("Cells conversion start")
+            cells_list_, _, _, _, _ =trajectory_set_grid(traj_list,precision)
             cells_list = map(lambda x : np.array(x)[:,:2],cells_list_)
+            print("Cells conversion ok")
         for i in range(nb_traj):
             cells_list_i=cells_list[i]
             for j in range(i + 1, nb_traj):

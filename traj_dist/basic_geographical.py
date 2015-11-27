@@ -69,7 +69,7 @@ def cross_track_distance(lon1, lat1, lon2, lat2, lon3, lat3):
     The sign of this distance tells which side of the path the third point is on.
 
     Parameters :
-
+    ----------
     param lat1: float, latitude of the first point
     param lon1: float, longitude of the first point
     param lat2: float, latitude of the second point

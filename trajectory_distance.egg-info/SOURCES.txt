@@ -30,4 +30,5 @@ traj_dist/sspd.py
 trajectory_distance.egg-info/PKG-INFO
 trajectory_distance.egg-info/SOURCES.txt
 trajectory_distance.egg-info/dependency_links.txt
+trajectory_distance.egg-info/pbr.json
 trajectory_distance.egg-info/top_level.txt
