@@ -25,9 +25,7 @@ setup(
     cmdclass = { 'build_ext': build_ext },
     ext_modules=ext_modules,
     include_dirs=[numpy.get_include()],
-    #install_requires =
+    install_requires =  ["numpy>=1.9.1", "cython>=0.21.2", "shapely>=1.5.6", "Geohash"],
     description = "Distance to compare trajectories in Cython",
-    #packages = find_packages()
     packages = ["traj_dist", "traj_dist.cydist", "traj_dist.pydist"],
-    #namespace_package = ["traj_dist.cydist","tran_dist.pydist"]
 )
