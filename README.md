@@ -17,12 +17,6 @@ It is implemented in both Python and Cython.
 7. LCSS (Longuest Common Subsequence)
 8. ERP (Edit distance with Real Penalty)
 9. EDR (Edit Distance on Real sequence)
-
-and one distance between segments (10).
-
-These distance are implemented in Cython for 2-D Trajectory. And Python for all dimensions. 
-
-
  
 
 ## Dependencies
@@ -40,6 +34,20 @@ python setup.py install
 ```
 
 ## How to use it
+
+You only need to import the distance module.
+
+```
+import traj_dist.distance as tdist
+```
+
+All distances are in this module. There is also two extra function 'cdist', and 'pdist' to compute distances between all trajectories in a list. 
+
+Trajectory should be represented as 2-Dimensions numpy array. 
+See traj_dist/example.py file. 
+
+Some distance requires extra-parameters.
+See the help function for more information about how to use each distance.
 
 ## References
 

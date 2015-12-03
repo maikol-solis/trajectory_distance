@@ -1,21 +1,21 @@
-from setuptools import setup
+from setuptools import setup, find_packages
 from distutils.extension import Extension
 from Cython.Distutils import build_ext
 import numpy
 
-ext_modules = [Extension("traj_dist.c_basic_geographical", [ "traj_dist/c_basic_geographical.pyx" ]),
-               Extension("traj_dist.c_basic_euclidean", [ "traj_dist/c_basic_euclidean.pyx" ]),
-               Extension("traj_dist.c_sspd", [ "traj_dist/c_sspd.pyx" ]),
-               Extension("traj_dist.c_dtw", [ "traj_dist/c_dtw.pyx" ]),
-               Extension("traj_dist.c_lcss", [ "traj_dist/c_lcss.pyx" ]),
-               Extension("traj_dist.c_hausdorff", [ "traj_dist/c_hausdorff.pyx" ]),
-               Extension("traj_dist.c_discret_frechet", [ "traj_dist/c_discret_frechet.pyx" ]),
-               Extension("traj_dist.c_frechet", [ "traj_dist/c_frechet.pyx" ]),
-               Extension("traj_dist.c_distance", [ "traj_dist/c_distance.pyx" ]),
-               Extension("traj_dist.c_segment_distance", [ "traj_dist/c_segment_distance.pyx" ]),
-               Extension("traj_dist.c_sowd", [ "traj_dist/c_sowd.pyx" ]),
-               Extension("traj_dist.c_erp", [ "traj_dist/c_erp.pyx" ]),
-               Extension("traj_dist.c_edr", [ "traj_dist/c_edr.pyx" ])]
+ext_modules = [Extension("traj_dist.cydist.basic_geographical", [ "traj_dist/cydist/basic_geographical.pyx" ]),
+               Extension("traj_dist.cydist.basic_euclidean", [ "traj_dist/cydist/basic_euclidean.pyx" ]),
+               Extension("traj_dist.cydist.sspd", [ "traj_dist/cydist/sspd.pyx" ]),
+               Extension("traj_dist.cydist.dtw", [ "traj_dist/cydist/dtw.pyx" ]),
+               Extension("traj_dist.cydist.lcss", [ "traj_dist/cydist/lcss.pyx" ]),
+               Extension("traj_dist.cydist.hausdorff", [ "traj_dist/cydist/hausdorff.pyx" ]),
+               Extension("traj_dist.cydist.discret_frechet", [ "traj_dist/cydist/discret_frechet.pyx" ]),
+               Extension("traj_dist.cydist.frechet", [ "traj_dist/cydist/frechet.pyx" ]),
+               #Extension("traj_dist.cydist.distance", [ "traj_dist/cydist/distance.pyx" ]),
+               Extension("traj_dist.cydist.segment_distance", [ "traj_dist/cydist/segment_distance.pyx" ]),
+               Extension("traj_dist.cydist.sowd", [ "traj_dist/cydist/sowd.pyx" ]),
+               Extension("traj_dist.cydist.erp", [ "traj_dist/cydist/erp.pyx" ]),
+               Extension("traj_dist.cydist.edr", [ "traj_dist/cydist/edr.pyx" ])]
 
 setup(
     name = "trajectory_distance",
@@ -25,6 +25,9 @@ setup(
     cmdclass = { 'build_ext': build_ext },
     ext_modules=ext_modules,
     include_dirs=[numpy.get_include()],
+    #install_requires =
     description = "Distance to compare trajectories in Cython",
-    packages = ['traj_dist',]
+    #packages = find_packages()
+    packages = ["traj_dist", "traj_dist.cydist", "traj_dist.pydist"],
+    #namespace_package = ["traj_dist.cydist","tran_dist.pydist"]
 )
